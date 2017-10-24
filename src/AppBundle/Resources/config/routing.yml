@@ -5,6 +5,9 @@ app_user:
 app_portada:
     resource: "@AppBundle/Resources/config/routing/portada.yml"
     prefix: /
+app_ctacte:
+    resource: "@AppBundle/Resources/config/routing/ctacte.yml"
+    prefix: /
 #    
 #app_publication:
 #    resource: "@AppBundle/Resources/config/routing/publication.yml"

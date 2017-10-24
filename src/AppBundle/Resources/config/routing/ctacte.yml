@@ -1,0 +1,3 @@
+ctacte:
+    path: /cuenta-corriente
+    defaults: { _controller: AppBundle:Ctacte:CuentaCorriente}
