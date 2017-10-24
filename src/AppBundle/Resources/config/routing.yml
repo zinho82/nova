@@ -1,7 +1,7 @@
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
-#   
+   
 app_portada:
     resource: "@AppBundle/Resources/config/routing/portada.yml"
     prefix: /
@@ -14,11 +14,16 @@ app_portada:
 #    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
 #    prefix: / 
 # 
+#
+app_proyectos:
+    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
+    prefix: / 
+ 
 #app_like:
 #    resource: "@AppBundle/Resources/config/routing/like.yml"
 #    prefix: /
-#    
-#    
+#     
+#      
 app_homepage: 
         path: /
         defaults: { _controller: AppBundle:User:portada } 
@@ -26,11 +31,12 @@ app_homepage:
 #app_following:
 #    resource: "@AppBundle/Resources/config/routing/following.yml"
 #    prefix: /
-#    
-#app_notifications:
-#    resource: "@AppBundle/Resources/config/routing/notification.yml"
-#    prefix: /
-#    
-#app_private_message:
-#    resource: "@AppBundle/Resources/config/routing/private_message.yml"
-#    prefix: /
+#      
+app_notifications:
+    resource: "@AppBundle/Resources/config/routing/notification.yml"
+    prefix: /
+    
+app_private_message:
+    resource: "@AppBundle/Resources/config/routing/private_message.yml"
+    prefix: /
+ 
