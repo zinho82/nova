@@ -67,8 +67,9 @@ class Usuario implements UserInterface, \Serializable
      * @var string
      */
     private $image;
-
-
+    private $ctacte;
+    private $tc;
+    private $bio;
     /**
      * Get idusuario
      *
@@ -89,6 +90,61 @@ class Usuario implements UserInterface, \Serializable
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
+
+        return $this;
+    }
+    
+    public function getCtacte()
+    {
+        return $this->ctacte;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setCtacte($ctacte)
+    {
+        $this->ctacte = $ctacte;
+
+        return $this;
+    }
+    public function getTc()
+    {
+        return $this->tc;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setTc($tc)
+    {
+        $this->tc = $tc;
+
+        return $this;
+    }
+    public function getBio()
+    {
+        return $this->bio;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setBio($bio)
+    {
+        $this->bio = $bio;
 
         return $this;
     }
