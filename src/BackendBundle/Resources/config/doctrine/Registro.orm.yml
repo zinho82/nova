@@ -1,0 +1,43 @@
+BackendBundle\Entity\Registro:
+    type: entity
+    table: registro
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        codigoproyecto:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        idusuario:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        estado:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        acciones:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        readed:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        fecha:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

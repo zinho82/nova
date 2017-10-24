@@ -1,0 +1,41 @@
+BackendBundle\Entity\MessagesPrived:
+    type: entity
+    table: messages_prived
+    indexes:
+        fk_messages_prived_usuario1_idx:
+            columns:
+                - usuario_idusuario
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        mensaje:
+            type: string
+            nullable: true
+            length: 500
+            options:
+                fixed: false
+        usrdestino:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        usuariousuario:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuario_idusuario:
+                    referencedColumnName: idusuario
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

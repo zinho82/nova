@@ -1,0 +1,102 @@
+BackendBundle\Entity\Usuario:
+    type: entity
+    table: usuario
+    uniqueConstraints:
+        email:
+            columns:
+                - email
+    id:
+        idusuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        app:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        apm:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        direccion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        comuna:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        region:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        ciudad:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        role:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        image:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        ctacte:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        tc:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        bio:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,50 @@
+BackendBundle\Entity\Noticias:
+    type: entity
+    table: noticias
+    indexes:
+        fk_noticias_usuario1_idx:
+            columns:
+                - usuario_idusuario
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        resumen:
+            type: string
+            nullable: true
+            length: 450
+            options:
+                fixed: false
+        link:
+            type: string
+            nullable: true
+            length: 500
+            options:
+                fixed: false
+        titulo:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        fecha:
+            type: datetime
+            nullable: true
+    manyToOne:
+        usuariousuario:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuario_idusuario:
+                    referencedColumnName: idusuario
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

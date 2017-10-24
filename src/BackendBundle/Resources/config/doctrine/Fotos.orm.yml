@@ -1,0 +1,35 @@
+BackendBundle\Entity\Fotos:
+    type: entity
+    table: fotos
+    indexes:
+        FK_codproy_fotos:
+            columns:
+                - codigoproy
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        url:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+    manyToOne:
+        codigoproy:
+            targetEntity: Proyectos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigoproy:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
