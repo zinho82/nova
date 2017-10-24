@@ -1,7 +1,7 @@
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
-#  
+#   
 #app_portada:
 #    resource: "@AppBundle/Resources/config/routing/portada.yml"
 #    prefix: /
@@ -19,9 +19,9 @@ app_user:
 #    prefix: /
 #    
 #    
-#app_homepage:
-#        path: /
-#        defaults: { _controller: AppBundle:User:portada } 
+app_homepage:
+        path: /
+        defaults: { _controller: AppBundle:User:portada } 
 #        
 #app_following:
 #    resource: "@AppBundle/Resources/config/routing/following.yml"
