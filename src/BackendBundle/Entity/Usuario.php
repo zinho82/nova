@@ -2,10 +2,11 @@
 
 namespace BackendBundle\Entity;
 
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Usuario
- */
-class Usuario
+ */  
+class Usuario implements UserInterface, \Serializable
 {
     /**
      * @var integer
@@ -66,21 +67,6 @@ class Usuario
      * @var string
      */
     private $image;
-
-    /**
-     * @var string
-     */
-    private $ctacte;
-
-    /**
-     * @var string
-     */
-    private $tc;
-
-    /**
-     * @var string
-     */
-    private $bio;
 
 
     /**
@@ -356,77 +342,39 @@ class Usuario
     {
         return $this->image;
     }
-
-    /**
-     * Set ctacte
-     *
-     * @param string $ctacte
-     *
-     * @return Usuario
-     */
-    public function setCtacte($ctacte)
-    {
-        $this->ctacte = $ctacte;
-
-        return $this;
+     public function __toString() {
+        return $this->nombre;
+    }
+    public function serialize() {
+        return serialize(array(
+        $this->idusuario,
+        $this->email,
+        $this->password
+        ));
+    }
+    public function unserialize($serialized) {
+        list(
+        $this->idusuario,
+        $this->email,
+        $this->password
+                )= unserialize($serialized);
+        
     }
 
-    /**
-     * Get ctacte
-     *
-     * @return string
-     */
-    public function getCtacte()
-    {
-        return $this->ctacte;
+    public function eraseCredentials() {
+        
     }
 
-    /**
-     * Set tc
-     *
-     * @param string $tc
-     *
-     * @return Usuario
-     */
-    public function setTc($tc)
-    {
-        $this->tc = $tc;
-
-        return $this;
+ public function getRoles() {
+        return array('ROLE_USER','ROLE_ADMIN');
+    }
+    public function getSalt() {
+        return null;
     }
 
-    /**
-     * Get tc
-     *
-     * @return string
-     */
-    public function getTc()
-    {
-        return $this->tc;
-    }
-
-    /**
-     * Set bio
-     *
-     * @param string $bio
-     *
-     * @return Usuario
-     */
-    public function setBio($bio)
-    {
-        $this->bio = $bio;
-
-        return $this;
-    }
-
-    /**
-     * Get bio
-     *
-     * @return string
-     */
-    public function getBio()
-    {
-        return $this->bio;
+    public function getUsername() {
+        $this->email;
+        
     }
 }
 

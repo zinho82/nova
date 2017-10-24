@@ -1,7 +1,7 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/service_container.html
-imports:
-    - { resource: twitter.conf.yml }
+#imports:
+#    - { resource: twitter.conf.yml }
 parameters:
 #    parameter_name: value
      class.guzzle.response: GuzzleHttpMessageResponse

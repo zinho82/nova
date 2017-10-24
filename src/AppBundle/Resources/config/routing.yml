@@ -1,10 +1,10 @@
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
-#   
-#app_portada:
-#    resource: "@AppBundle/Resources/config/routing/portada.yml"
-#    prefix: /
+   
+app_portada:
+    resource: "@AppBundle/Resources/config/routing/portada.yml"
+    prefix: /
 #    
 #app_publication:
 #    resource: "@AppBundle/Resources/config/routing/publication.yml"
