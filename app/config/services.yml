@@ -1,9 +1,33 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/service_container.html
+imports:
+    - { resource: twitter.conf.yml }
 parameters:
 #    parameter_name: value
+     class.guzzle.response: GuzzleHttpMessageResponse
+     class.guzzle.client: GuzzleHttpClient
+     class.guzzle.oauthplugin: GuzzlePluginOauthOauthPlugin
 
-services:
-#    service_name:
+services: 
+#    service_name: 
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.notification_service:
+        class: AppBundle\Services\NotificationService
+        arguments: ["@doctrine.orm.entity_manager"] 
+    app.proyectos_service:
+        class: AppBundle\Services\ProyectosService
+        arguments: ["@doctrine.orm.entity_manager"] 
+ 
+#    user_stats.twig_extension:
+#        class: AppBundle\Twig\UserStatsExtension
+#        public: false
+#        arguments:
+#           doctrine: "@doctrine"
+#        tags:
+#            - { name: twig.extension }
+    long_time.twig_extension:
+        class: AppBundle\Twig\LongTimeExtension
+        public: false
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,4 @@
+    
+remove_publications:
+    path: /publication/remove/{id}
+    defaults: { _controller: AppBundle:Publication:removePublication, id:null }

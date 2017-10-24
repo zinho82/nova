@@ -1,0 +1,9 @@
+portada_qs:
+    path: /quienes-somos
+    defaults: { _controller: AppBundle:Portada:qs}
+portada_contacto:
+    path: /Contactenos
+    defaults: { _controller: AppBundle:Portada:contacto}
+portada_index:
+    path: /index
+    defaults: { _controller: AppBundle:Portada:portada}

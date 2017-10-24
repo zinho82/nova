@@ -1,0 +1,25 @@
+proyectos_lista:
+    path: /proyectos-admin
+    defaults: { _controller: AppBundle:Proyectos:index}
+    
+proyectos_ficha:
+    path: /proyectos/ficha/{id}
+    defaults: { _controller: AppBundle:Proyectos:ficha, id:null}
+proyectos_index:
+    path: /proyectos
+    defaults: { _controller: AppBundle:Proyectos:lista}
+proyectos_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Proyectos:show" }
+    methods:  GET
+proyectos_edit:
+    path:     /edit/{id}
+    defaults: { _controller: "AppBundle:Proyectos:edit", id:null }
+    methods:  GET
+proyectos_delete:
+    path:     /delete/{id}
+    defaults: { _controller: "AppBundle:Proyectos:delete", id:null }
+    methods:  GET
+proyectos_new:
+    path:     /proyectos-new
+    defaults: { _controller: "AppBundle:Proyectos:new" }

@@ -1,0 +1,24 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+{% block content %}
+    {{dump(form)}}
+    <div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+    <h1>{{TituloForm}}</h1>
+        </div>
+        <div class="panel-body">
+
+    {{form_start(form,{action:'','method':'GET'})}}
+    {{form_end(form)}}
+    
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('proyectos_lista') }}">Back to the list</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

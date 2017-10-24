@@ -1,0 +1,243 @@
+/*GENERALES*/
+body{
+    background: #ccc;
+}
+/*HEADER*/
+.navbar-collapse .avatar{
+    background: white;
+    border-radius: 500px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    float: left;
+    margin-right: 12px;
+    margin-top: -7px;
+}
+.navbar-collapse .avatar img{
+    height: 100%;
+    text-align: center;
+}
+/*REGISTRO*/
+.box-form, .box-default{
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0px auto;
+    float: none;
+    padding-top: 0px;
+}
+.box-form input{
+    margin-bottom: 10px;
+}
+/*GENTE*/
+.user-item .avatar,
+.publication-item .avatar {
+    background: #eee;
+    border-radius: 550px;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    float: left;
+}
+.publication-item .avatar img,
+.user-item .avatar img{
+    height: 100%;
+    text-align: center;
+}
+.user-item .user-item-content,
+.publication-item .publication-item-content {
+    padding: 10px;
+    margin-left: 85px;
+}
+.user-item.contener{
+    padding: 10px;
+    margin-left: 85px;
+}
+/*HOME*/
+#timeline{
+    background:  #fff;
+    margin-right: 20px;
+    min-height:750px;
+    padding-bottom:20px;
+}
+.box-header{
+    border: 1px solid #ccc;
+}
+#user-card{
+    padding: 10px;
+    background: white;
+}
+#user-card .following-data{
+    float: left;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    width: 25%;
+    padding: 5px;
+    margin-top: 10px;
+}
+#user-card .following-data a{
+    color: #444;
+}
+#user-card .following-data a:hover{
+    color: black;
+    text-decoration: none;
+}
+#user-card .following-data .label-stat{
+    display: block;
+}
+#user-card .following-data .number-stat{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+#user-card .avatar{
+    background: #eee;
+    border-radius: 550px;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    float: left;
+}
+#user-card .avatar img{
+    height: 100%;
+    text-align: center;
+}
+
+#user-card .avatar img.default{
+    opacity: 0.5;
+}
+#user-card .name-surname{
+    float: left;
+    padding: 10px;
+    font-size: 20px;
+}
+#user-card .name-surname a{
+    color: black;
+}
+#user-card .nickname{
+    opacity: 0.7;
+}
+#new-publication{
+    background: white;
+}
+#new-publication input,
+#new-publication textarea{
+    margin-bottom:  10px;
+}
+
+.pub-name-link{
+    font-weight: bold;
+    color: #000;
+}
+.pub-date{
+    color: #aaa;
+} 
+.pub-img{
+    display: none;
+    transition: all 300ms;    
+}
+.pub-img img{
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+}
+.publication-item .glyphicon{
+    margin-right: 7px;
+    cursor: pointer;
+    color:#444 !important;
+}
+.like{
+    font-size: 25px;
+    margin-top: -45px;
+    
+}
+.like .btn-like:hover{
+    color: #ff0039 !important;
+    cursor: pointer;
+}
+.like .btn-like:active{
+    color: #ff0039;
+}
+
+/*PROYECTOS*/
+.box-proyecto{
+    background: grey;
+    border: 1px solid #444;
+    float: left;
+    color: white;
+    margin-left: 2px;
+    box-shadow: 5px 5px #000;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+.box-proyecto .proyecto-header{
+    border-bottom: 1px solid white;
+    padding: 20px;
+    text-align: center;
+    font-size: 23px;
+    text-decoration: none;
+}
+.proyecto-proyeccion{
+    text-align: justify;
+    border:  1px solid whitesmoke;
+    padding: 15px;
+}
+.proyecto-txt .btn{
+    border-radius: 15px;
+    width: 100%;
+    color: white;
+    margin-bottom: 5px;
+    background: #10427b
+}
+.box-proyecto .proyecto-body{
+    padding: 5px;
+}
+.proyecto-img{
+    float: left;
+    width: 100%;
+    
+}
+.proyecto-txt{
+    float: left;
+    font-size: 20px;
+}
+.box-proyecto .proyecto-footer{
+    padding: 10px;
+    background: #eee;
+    margin-top: 5px;
+    position: inherit;
+}
+
+
+/*FOOTER*/
+footer{
+    background: #000;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+/*PORTADA*/
+
+.card-body p{
+    text-align: justify;
+    
+}
+/*box-proyecto*/
+.proyecto-header{
+    padding: 5px;
+    background: black;
+    font-size: 20px;
+    color: whitesmoke;
+    border-bottom: 1px white solid;
+    font-weight: bold
+}
+.proyecto-header:hover{
+    background: #aaa;
+}
+.proyecto-body{
+    background: black;
+    color: white;
+    
+}

@@ -1,0 +1,37 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block javascript %}
+    {{parent()}}
+    <script type='txt/javacript' src='{{asset('assets/js/custom/home.js')}}' ></script>
+{% endblock %}
+{% block content %}
+    <div class=" container">
+        {%include "AppBundle:User:paneluser.html.twig"%}
+        <div class="col-lg-8 box-default pull-right">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Ultimos Proyectos Publicados</div>
+                <div class="panel-body">
+                    {% for proy in proyectos %}
+                        <div class="box-default">
+                            <div class="proyecto-header">
+                                <p class="tituloTimeline">Proyecto Publicado:  {{proy.nombre}}</p>
+                            </div>
+                            <div class="proyecto-body">
+                                <p>Valor Accion: <strong>{{proy.valor|number_format}}</strong></p>                
+                                <p>Acciones Disponibles: {{proy.acciones}}</p>
+                                <p>Fecha estimada de compra: {{proy.fechaCompraEst|  date('d-m-Y')}}</p>
+                                <a id="button-ficha" href="{{path('proyectos_ficha',{'id':proy.id})}}" data-id="{{proy.id}}"  class=" btn btn-success btn-block"> Mas Informacion </a>
+                            </div>
+                        </div>
+                        <hr/>
+
+                    {% endfor %}
+                    <div class="navigation">
+                    {{ knp_pagination_render(proyectos) }}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
