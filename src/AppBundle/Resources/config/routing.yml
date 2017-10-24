@@ -2,14 +2,14 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
 #   
-#app_portada:
-#    resource: "@AppBundle/Resources/config/routing/portada.yml"
-#    prefix: /
+app_portada:
+    resource: "@AppBundle/Resources/config/routing/portada.yml"
+    prefix: /
 #    
 #app_publication:
 #    resource: "@AppBundle/Resources/config/routing/publication.yml"
 #    prefix: /
-#
+# 
 #app_proyectos:
 #    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
 #    prefix: / 
@@ -19,7 +19,7 @@ app_user:
 #    prefix: /
 #    
 #    
-app_homepage:
+app_homepage: 
         path: /
         defaults: { _controller: AppBundle:User:portada } 
 #        
