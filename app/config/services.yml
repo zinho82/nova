@@ -26,6 +26,15 @@ services:
 #           doctrine: "@doctrine"
 #        tags:
 #            - { name: twig.extension }
+    cuenta_stats.twig_extension:
+        class: AppBundle\Twig\CuentaStatsExtension
+        public: false
+        arguments:
+           doctrine: "@doctrine"
+        tags:
+            - { name: twig.extension }
+
+
     long_time.twig_extension:
         class: AppBundle\Twig\LongTimeExtension
         public: false

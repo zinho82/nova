@@ -21,7 +21,17 @@
                 </span>
             </div>
             <div class="clearfix"></div>
+             {% set cuenta_stats= app.user|cuenta_stats %}
             <div class=" box-default">
-                estadisticas
+                <div class="following-data">
+                <a href="#">
+                    <span class="label-stat">
+                        Siguiendo
+                    </span>
+                     <span class="number-stat">
+                        {{ cuenta_stats.following}}
+                    </span>
+                </a>
+            </div>
             </div>
         </div>
