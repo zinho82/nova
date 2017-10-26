@@ -26,10 +26,20 @@
                 <div class="following-data">
                 <a href="#">
                     <span class="label-stat">
-                        Siguiendo
+                        Invertido
                     </span>
                      <span class="number-stat">
-                        {{ cuenta_stats.following}}
+                         {{ (-1*cuenta_stats.inversion)|number_format}}
+                    </span>
+                </a>
+            </div>
+                    <div class="following-data">
+                <a href="#">
+                    <span class="label-stat">
+                        Utilidad
+                    </span>
+                     <span class="number-stat">
+                         {{ cuenta_stats.utilidad|number_format}}
                     </span>
                 </a>
             </div>

@@ -19,19 +19,27 @@ class CuentaStatsExtension extends \Twig_Extension {
     }
 
     public function cuentaStatsFilter($user) {
-        $following_repo = $this->doctrine->getRepository('BackendBundle:Following');
-        $publication_repo = $this->doctrine->getRepository('BackendBundle:Publication');
-        $liked_repo = $this->doctrine->getRepository('BackendBundle:Like');
+        $inversion_repo = $this->doctrine->getRepository('BackendBundle:Ctacte');
 
-        $users_following = $following_repo->findBy(array('user' => $user));
-        $users_followers = $following_repo->findBy(array('followed' => $user));
-        $users_liked = $liked_repo->findBy(array('user' => $user));
-        $user_publications = $publication_repo->findBy(array('user' => $user));
+        $user_Inversion=$inversion_repo->createQueryBuilder("ct")
+                ->andWhere('ct.movimiento=:tipo')
+                ->andWhere('ct.usuariousuario=:usuario')
+                ->setParameter('tipo','Inversion')
+                ->setParameter('usuario',$user)
+                ->select('sum(ct.monto) as total ')
+                ->getQuery()
+                ->getSingleScalarResult();
+        $user_utilidad=$inversion_repo->createQueryBuilder("ct")
+                ->andWhere('ct.movimiento=:tipo')
+                ->andWhere('ct.usuariousuario=:usuario')
+                ->setParameter('tipo','Utilidades')
+                ->setParameter('usuario',$user)
+                ->select('sum(ct.monto) as total ')
+                ->getQuery()
+                ->getSingleScalarResult();
         $result = array(
-            'following' => count($users_following), 
-            'followers' => count($users_followers),
-            'publications' => count($user_publications),
-            'likes' => count($users_liked)
+            'inversion' => $user_Inversion, 
+            'utilidad' => $user_utilidad
         );
         return $result;
     }
