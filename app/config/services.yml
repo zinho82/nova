@@ -34,7 +34,13 @@ services:
         tags:
             - { name: twig.extension }
 
-
+    get_user.twig_extension:
+        class: AppBundle\Twig\GetUserExtension
+        public: false
+        arguments:
+           doctrine: "@doctrine"
+        tags:
+            - { name: twig.extension }
     long_time.twig_extension:
         class: AppBundle\Twig\LongTimeExtension
         public: false
