@@ -41,4 +41,20 @@ class NotificationService {
         
         
     }
+    public function read($user) {
+        $em= $this->manager;
+        $notification_repo=$em->getRepository('BackendBundle:Movimientos');
+        $notificarions=$notification_repo->findBy(array('usuariousuario' => $user));
+        foreach ($notificarions as $notificarion){
+            $notificarion->setReaded(1);
+            $em->persist($notificarion);
+        }
+        $flush=$em->flush();
+        if($flush===null){
+            return true;
+        }else{
+            return FALSE;
+            
+        }
+    }
 }

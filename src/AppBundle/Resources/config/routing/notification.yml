@@ -1,5 +1,5 @@
 notifications_page:
-    path: notifications
+    path: /notifications
     defaults: { _controller: AppBundle:Notification:index}
 
 notifications_ajax:
