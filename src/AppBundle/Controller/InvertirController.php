@@ -41,7 +41,7 @@ class InvertirController extends Controller {
         $proyecto_repo=$em->getRepository("BackendBundle:Proyectos")->findOneBy(array('id' => $id));
         return $this->render('AppBundle:Invertir:index.html.twig', array(
             'proyecto'      =>  $proyecto_repo, 
-            'movimiento'    =>  $form->createView()
+            'form'    =>  $form->createView()
         ));
         
     }
