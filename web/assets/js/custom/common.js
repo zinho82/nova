@@ -4,10 +4,10 @@ $(document).ready(function(){
     }else{
         $(".label-notifications").removeClass('hidden');
     }
-    notifications();
-    setInterval(function(){
-        notifications();
-    },60000);
+//    notifications();
+//    setInterval(function(){
+//        notifications();
+//    },60000);
     
 });
 

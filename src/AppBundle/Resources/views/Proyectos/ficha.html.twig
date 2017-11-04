@@ -23,7 +23,7 @@
                
                 <p class="proyecto-proyeccion"><strong><span class="glyphicon glyphicon-stats"> </span> Proyeccion:</strong> {{ficha.proyeccion}}</p>
                 Fecha Aproximada de Compra: 
-                <button data-id="{{ficha.id}}" type="button" class=" btn btn-success"> Invertir </button>
+                <a href="{{path('invertir',{'id':ficha.id})}}" data-id="{{ficha.id}}"  class=" btn btn-success"> Invertir </a>
                 </div>
                
             </div>

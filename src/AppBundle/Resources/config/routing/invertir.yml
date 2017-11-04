@@ -1,0 +1,4 @@
+invertir:
+    path: /invertir/{id}
+    defaults: { _controller: AppBundle:Invertir:invertir,id:null}
+    methods: [get]

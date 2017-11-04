@@ -13,11 +13,11 @@ app_ctacte:
 #    resource: "@AppBundle/Resources/config/routing/publication.yml"
 #    prefix: /
 # 
-#app_proyectos:
-#    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
-#    prefix: / 
-# 
-#
+app_invertir:
+    resource: "@AppBundle/Resources/config/routing/invertir.yml"
+    prefix: / 
+ 
+
 app_proyectos:
     resource: "@AppBundle/Resources/config/routing/proyectos.yml"
     prefix: / 
