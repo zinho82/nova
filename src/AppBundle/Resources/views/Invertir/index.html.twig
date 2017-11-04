@@ -1,4 +1,8 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block javascript %}
+    {{parent()}}
+    <script src="{{asset('assets/js/custom/invertir.js')}}"></script>
+    {% endblock %}
 {% block content %}
     <div class="box-default">
         {{dump(proyecto)}}
