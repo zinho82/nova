@@ -29,8 +29,10 @@ group by c.movimiento")->getResult();
         ));
     }
     public function DepositoAction(Request $request) {
-        $em= $this->getDoctrine()->getManager()->getRepository("BackendBundle:Ctacte")->findBy(array('usuariousuario' => $this->getUser()));
+        $em= $this->getDoctrine()->getManager();
+        $ctacte=$em->getRepository("BackendBundle:Ctacte")->findBy(array('usuariousuario' => $this->getUser()));
         $depo=new Ctacte();
+        $etado=$em->getRepository("BackendBundle:config")->find(21);
         $form= $this->createForm('AppBundle\Form\CtacteDepositoType',$depo);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -38,6 +40,7 @@ group by c.movimiento")->getResult();
             $depo->setUsuariousuario($this->getUser());
             $depo->setFechaingreso(new \DateTime('now'));
             $depo->setMovimiento('Deposito');
+            $depo->setEstado($etado);
             $em->persist($depo);
             $flush = $em->flush();
             if ($flush == null) {
@@ -49,11 +52,11 @@ group by c.movimiento")->getResult();
 
 
 
-            $nextAction = $request->get('submit') == 'save' ? 'proyectos' : 'proyectos_new';
+            $nextAction = $request->get('submit') == 'save' ? 'ctacte' : 'ctacte_deposito';
             return $this->redirectToRoute($nextAction); 
         }
          return $this->render('AppBundle:Ctacte:depositos.html.twig',array(
-            'cuenta' => $em,
+            'cuenta' => $ctacte,
              'form' =>  $form->createView()
         ));
         
