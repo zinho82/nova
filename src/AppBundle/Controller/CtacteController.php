@@ -20,9 +20,9 @@ class CtacteController extends Controller {
 
     public function CuentaCorrienteAction(Request $request) {
         $em= $this->getDoctrine()->getManager();
-        $query=$em->createQuery(""
-                . "select  c.movimiento ,sum(c.monto) as monto from BackendBundle:Ctacte c
-group by c.movimiento")->getResult();
+        $query=$em->createQuery(
+                "select  c.movimiento ,sum(c.monto) as monto,IDENTITY(c.estado)  as estado from BackendBundle:Ctacte c
+ group by c.movimiento,c.estado")->getResult();
 
         return $this->render('AppBundle:Ctacte:index.html.twig',array(
             'cuenta' => $query
