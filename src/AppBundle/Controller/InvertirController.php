@@ -29,7 +29,7 @@ class InvertirController extends Controller {
         $form = $this->createForm('AppBundle\Form\MovimientosType', $compra);
         $ctacte_repo = $em->createQuery(
                         "select sum(c.monto)  from BackendBundle:Ctacte c where c.usuariousuario=$idu and c.estado=3")->setMaxResults(1)->getOneOrNullResult();
-
+$edo_hecho=$em->getRepository("BackendBundle:Config")->find(3);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $acciones = $form->get('acciones')->getData();
@@ -48,7 +48,17 @@ class InvertirController extends Controller {
                             $flush = $em->flush();
 
                             if ($flush == null) {
-                                $this->get('session')->getFlashBag()->add('success', "Acciones Compradas");
+                                $cta = new Ctacte();
+                                $cta->setEstado($edo_hecho);
+                                $cta->setFechaingreso(new \DateTime('now'));
+                                $cta->setFechavalidacion(new \DateTime('now'));
+                                $cta->setMonto(-1*$apago);
+                                $cta->setMovimiento($moviemiento);
+                                $cta->setUsuariousuario($user);
+                                $em->persist($cta);
+                                if ($em->flush($cta) == null) {
+                                    $this->get('session')->getFlashBag()->add('success', "Acciones Compradas");
+                                }
                             } else {
                                 $this->get('session')->getFlashBag()->add('danger', ">Acciones NO  Compradas");
                             }
@@ -59,7 +69,7 @@ class InvertirController extends Controller {
                         $this->get('session')->getFlashBag()->add('danger', "La Cantidad de acciones a comprar, es mayor que las acciones disponibles");
                     }
                 }
-            }else{
+            } else {
                 $this->get('session')->getFlashBag()->add('danger', "Debe al menos transar 1 accion");
             }
         }
