@@ -21,11 +21,11 @@ class NotificationService {
                 
     }
     
-    public function set($codProy,$stado,$user) {
+    public function set($codProy,$stado,$user,$acciones) {
         $em= $this->manager;
         $notification=new Registro();
         $notification->setIdusuario($user);
-        $notification->setAcciones(0);
+        $notification->setAcciones($acciones);
         $notification->setReaded(0);
         $notification->setEstado($stado);
         $notification->setCodigoproyecto($codProy);

@@ -81,4 +81,3 @@ class Fotos
         return $this->codigoproy;
     }
 }
-

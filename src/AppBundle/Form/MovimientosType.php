@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class MovimientosType extends AbstractType
 {
@@ -18,7 +19,7 @@ class MovimientosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('acciones', NumberType::class,array(
+                ->add('acciones', IntegerType::class,array(
                     'label'     => 'Acciones a Comprar',
                     'attr'      =>  array(
                         'class' =>  'form-control',

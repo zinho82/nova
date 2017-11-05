@@ -5,7 +5,13 @@
     {% endblock %}
 {% block content %}
     <div class="box-default">
+        {{dump(acciones)}}
         {{dump(proyecto)}}
+        {{dump(monto)}}
+        <p>Codigo Proyecto a Invertir: <b>{{proyecto.codigo}}</b></p>
+        <p>Nombre Proyecto a Invertir: <b>{{proyecto.Nombre}}</b></p>
+        <p>Acciones disponibles: <b>{{proyecto.acciones-proyecto.vendidas}}</b></p>
+        <p>Valor Accion:<strong>{{(proyecto.valor+proyecto.cop)|number_format}}</strong></p>
         {{form_start(form)}}
         {{form_end(form)}}
     </div>

@@ -8,8 +8,9 @@ namespace BackendBundle\Entity;
 class Movimientos
 {
     /**
-     * @var integer
-     */
+ * @var integer $id
+ *
+ */
     private $id;
 
     /**
@@ -210,5 +211,33 @@ class Movimientos
     {
         return $this->usrdestino;
     }
-}
+    /**
+     * @var string
+     */
+    private $estado = '0';
 
+
+    /**
+     * Set estado
+     *
+     * @param string $estado
+     *
+     * @return Movimientos
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return string
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+}

@@ -197,4 +197,3 @@ class Ctacte
         return $this->usuariousuario;
     }
 }
-
