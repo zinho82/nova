@@ -196,5 +196,33 @@ class Ctacte
     {
         return $this->usuariousuario;
     }
-}
+    /**
+     * @var string
+     */
+    private $codigocomprobante;
 
+
+    /**
+     * Set codigocomprobante
+     *
+     * @param string $codigocomprobante
+     *
+     * @return Ctacte
+     */
+    public function setCodigocomprobante($codigocomprobante)
+    {
+        $this->codigocomprobante = $codigocomprobante;
+
+        return $this;
+    }
+
+    /**
+     * Get codigocomprobante
+     *
+     * @return string
+     */
+    public function getCodigocomprobante()
+    {
+        return $this->codigocomprobante;
+    }
+}

@@ -168,4 +168,3 @@ class Noticias
         return $this->usuariousuario;
     }
 }
-

@@ -3,12 +3,31 @@
     <div class="col-lg-12 box-default">
         <div class="row">
             {% for cta in cuenta %}
-                {% if(cta.movimiento=='Deposito') %}
+                {% if(cta.movimiento=='Deposito' and cta.estado==3) %}
                     <div class="col-lg-2">
                         <div class="panel panel-success">
                             <div class="panel-heading">
                                 <i class="fa fa-money fa-2x"></i>
                                 Mis Depositos 
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="monto">
+
+                                     ${{cta.monto|number_format}}
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                 {% if(cta.movimiento=='Deposito' and cta.estado==21) %}
+                    <div class="col-lg-2">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <i class="fa fa-money fa-2x"></i>
+                                Mis Depositos Pendientes
 
                             </div>
                             <div class="panel-body">
@@ -92,6 +111,7 @@
                   </div>
                   {% endif %}
             {% endfor %}
+            <a href="{{path('ctacte_deposito')}}" class="btn btn-info">Depositar</a>
         </div>
 
     </div>

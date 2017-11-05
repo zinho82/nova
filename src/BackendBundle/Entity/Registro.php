@@ -197,4 +197,3 @@ class Registro
         return $this->fecha;
     }
 }
-
