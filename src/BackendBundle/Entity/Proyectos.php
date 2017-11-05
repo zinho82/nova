@@ -342,4 +342,3 @@ class Proyectos
         return $this->fechaCompraEst;
     }
 }
-

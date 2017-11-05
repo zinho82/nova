@@ -1,0 +1,36 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block content %}
+    <div class="col-lg-12 box-default">
+        <div class="row">
+            {{dump(cuenta)}}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Movieniento</th>
+                        <th>Monto</th>
+                        <th>Fecha Ingreso</th>
+                        <th>Fecha Activo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for de in cuenta %}
+                <tr>
+                    <td>{{de.movimiento}}</td>
+                    <td>{{de.monto}}</td>
+                    <td>{{de.fechaingreso|date('d-m-Y')}}</td>
+                    <td>{{de.fechavalidacion}}</td>
+                    <td>{{de.estado}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+                
+        </div>
+            <div>
+                {{form_start(form)}}
+                {{form_end(form)}}
+            </div>
+
+    </div>
+{% endblock %}

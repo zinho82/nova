@@ -16,3 +16,4 @@
 /web/bundles/
 /bd/
 *_rsp_*
+/src/BackendBundle/Entity_rsp/
