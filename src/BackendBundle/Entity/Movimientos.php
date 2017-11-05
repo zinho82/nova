@@ -8,8 +8,9 @@ namespace BackendBundle\Entity;
 class Movimientos
 {
     /**
-     * @var integer
-     */
+ * @var integer $id
+ *
+ */
     private $id;
 
     /**

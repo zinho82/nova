@@ -196,6 +196,7 @@ class Ctacte
     {
         return $this->usuariousuario;
     }
+<<<<<<< HEAD
     /**
      * @var string
      */
@@ -225,4 +226,6 @@ class Ctacte
     {
         return $this->codigocomprobante;
     }
+=======
+>>>>>>> compraaccciones
 }
