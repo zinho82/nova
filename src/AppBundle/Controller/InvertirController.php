@@ -29,7 +29,7 @@ class InvertirController extends Controller {
         $form = $this->createForm('AppBundle\Form\MovimientosType', $compra);
         $ctacte_repo = $em->createQuery(
                         "select sum(c.monto)  from BackendBundle:Ctacte c where c.usuariousuario=$idu and c.estado=3")->setMaxResults(1)->getOneOrNullResult();
-$edo_hecho=$em->getRepository("BackendBundle:Config")->find(3);
+        $edo_hecho = $em->getRepository("BackendBundle:Config")->find(3);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $acciones = $form->get('acciones')->getData();
@@ -44,6 +44,7 @@ $edo_hecho=$em->getRepository("BackendBundle:Config")->find(3);
                             $compra->setUsrdestino($user);
                             $compra->setUsuariousuario($user);
                             $compra->setEstado(1);
+
                             $em->persist($compra);
                             $flush = $em->flush();
 
@@ -52,9 +53,10 @@ $edo_hecho=$em->getRepository("BackendBundle:Config")->find(3);
                                 $cta->setEstado($edo_hecho);
                                 $cta->setFechaingreso(new \DateTime('now'));
                                 $cta->setFechavalidacion(new \DateTime('now'));
-                                $cta->setMonto(-1*$apago);
-                                $cta->setMovimiento($moviemiento);
+                                $cta->setMonto(-1 * $apago);
+                                $cta->setMovimiento('Inversion');
                                 $cta->setUsuariousuario($user);
+                                $cta->setCodigocomprobante($proyectos->getCodigo());
                                 $em->persist($cta);
                                 if ($em->flush($cta) == null) {
                                     $this->get('session')->getFlashBag()->add('success', "Acciones Compradas");
