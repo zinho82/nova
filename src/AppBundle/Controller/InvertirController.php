@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use BackendBundle\Entity\Ctacte;
 use BackendBundle\Entity\Proyectos;
 use BackendBundle\Entity\Movimientos;
+use BackendBundle\Entity\Notificacion;
 
 class InvertirController extends Controller {
 
@@ -29,32 +30,53 @@ class InvertirController extends Controller {
         $form = $this->createForm('AppBundle\Form\MovimientosType', $compra);
         $ctacte_repo = $em->createQuery(
                         "select sum(c.monto)  from BackendBundle:Ctacte c where c.usuariousuario=$idu and c.estado=3")->setMaxResults(1)->getOneOrNullResult();
-$edo_hecho=$em->getRepository("BackendBundle:Config")->find(3);
+        $edo_hecho = $em->getRepository("BackendBundle:Config")->find(3);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $acciones = $form->get('acciones')->getData();
             $moviemiento = $form->get('tipoaccion')->getData();
+            $accd = $proyectos->getAcciones() - $proyectos->getVendidas();
             if ($acciones > 0) {
                 if ($moviemiento == 'Compra') {
-                    if ($compra->getAcciones() <= $acciones) {
+                    if ($accd >= $acciones) {
                         $apago = $compra->getAcciones() * ($proyectos->getValor() + $proyectos->getCop());
                         if ($ctacte_repo[1] >= $apago) {
+                            //GURDANDO DETALLE COMPRA
                             $compra->setReaded(0);
                             $compra->setProyectos($proyectos);
                             $compra->setUsrdestino($user);
                             $compra->setUsuariousuario($user);
+                            $compra->setPrecio($apago); //NO LO GUARDA
                             $compra->setEstado(1);
                             $em->persist($compra);
-                            $flush = $em->flush();
+                            $flush = $em->flush($compra);
+                            
+                            //FIN COMPRA
+                            //GENERANDO NOTIFICACION
+                            $noti = new Notificacion();
+                            $noti->setReaded(0);
+                            $noti->setTexto("Ha realizado la compra de " . $compra->getAcciones() . " Acciones del proyecto: " . $proyectos->getCodigo());
+                            $noti->setUsuarioorigen($user->getIdusuario());
+                            $noti->setUsuariodestino($user->getIdusuario());
+                            $em->persist($noti);
+                            $em->flush($noti);
+                            //FIN NOTIFICACION
+                            //ACTUALIZANDO ACCIONES VENDIDAS
+                            $proyectos->setVendidas($compra->getAcciones() + $proyectos->getVendidas());
+                            $em->persist($proyectos);
+                            $em->flush($proyectos);
+                            //FIN ACTUALIZACION
 
                             if ($flush == null) {
+                                //ASIGNANDO COSTO A CTACTE
                                 $cta = new Ctacte();
                                 $cta->setEstado($edo_hecho);
                                 $cta->setFechaingreso(new \DateTime('now'));
                                 $cta->setFechavalidacion(new \DateTime('now'));
-                                $cta->setMonto(-1*$apago);
-                                $cta->setMovimiento($moviemiento);
+                                $cta->setMonto(-1 * $apago);
+                                $cta->setMovimiento('Inversion');
                                 $cta->setUsuariousuario($user);
+                                $cta->setCodigocomprobante($proyectos->getCodigo());
                                 $em->persist($cta);
                                 if ($em->flush($cta) == null) {
                                     $this->get('session')->getFlashBag()->add('success', "Acciones Compradas");
@@ -68,6 +90,7 @@ $edo_hecho=$em->getRepository("BackendBundle:Config")->find(3);
                     } else {
                         $this->get('session')->getFlashBag()->add('danger', "La Cantidad de acciones a comprar, es mayor que las acciones disponibles");
                     }
+                    //FIN ASIGNACION CTACTE
                 }
             } else {
                 $this->get('session')->getFlashBag()->add('danger', "Debe al menos transar 1 accion");

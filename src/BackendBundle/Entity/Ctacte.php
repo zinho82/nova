@@ -196,7 +196,6 @@ class Ctacte
     {
         return $this->usuariousuario;
     }
-
     /**
      * @var string
      */

@@ -1,0 +1,53 @@
+BackendBundle\Entity\Notificacion:
+    type: entity
+    table: notificacion
+    indexes:
+        FK_usrorigen:
+            columns:
+                - usuarioorigen
+        FK_usrdestino:
+            columns:
+                - usuariodestino
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        texto:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        readed:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    manyToOne:
+        usuarioorigen:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuarioorigen:
+                    referencedColumnName: idusuario
+            orphanRemoval: false
+        usuariodestino:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuariodestino:
+                    referencedColumnName: idusuario
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

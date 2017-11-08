@@ -19,13 +19,17 @@ class CtacteController extends Controller {
     }
 
     public function CuentaCorrienteAction(Request $request) {
+        $user= $this->getUser();
+                
         $em= $this->getDoctrine()->getManager();
         $query=$em->createQuery(
                 "select  c.movimiento ,sum(c.monto) as monto,IDENTITY(c.estado)  as estado from BackendBundle:Ctacte c
  group by c.movimiento,c.estado")->getResult();
-
+$inversiones=$em->getRepository("BackendBundle:Movimientos")
+            ->findBy(array('usuariousuario' => $user));
         return $this->render('AppBundle:Ctacte:index.html.twig',array(
-            'cuenta' => $query
+            'cuenta'        =>  $query,
+            'inversiones'   =>  $inversiones
         ));
     }
     public function DepositoAction(Request $request) {

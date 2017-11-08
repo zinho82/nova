@@ -240,4 +240,33 @@ class Movimientos
     {
         return $this->estado;
     }
+    /**
+     * @var integer
+     */
+    private $precio;
+
+
+    /**
+     * Set precio
+     *
+     * @param integer $precio
+     *
+     * @return Movimientos
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get precio
+     *
+     * @return integer
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
 }
