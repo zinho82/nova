@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use BackendBundle\Entity\Ctacte;
 use BackendBundle\Entity\Proyectos;
 use BackendBundle\Entity\Movimientos;
+use BackendBundle\Entity\Notificacion;
 
 class InvertirController extends Controller {
 
@@ -34,11 +35,13 @@ class InvertirController extends Controller {
         if ($form->isSubmitted() && $form->isValid()) {
             $acciones = $form->get('acciones')->getData();
             $moviemiento = $form->get('tipoaccion')->getData();
+            $accd = $proyectos->getAcciones() - $proyectos->getVendidas();
             if ($acciones > 0) {
                 if ($moviemiento == 'Compra') {
-                    if (($proyectos->getAcciones()-$proyectos->getVendidas()) <= $acciones) {
+                    if ($accd >= $acciones) {
                         $apago = $compra->getAcciones() * ($proyectos->getValor() + $proyectos->getCop());
                         if ($ctacte_repo[1] >= $apago) {
+                            //GURDANDO DETALLE COMPRA
                             $compra->setReaded(0);
                             $compra->setProyectos($proyectos);
                             $compra->setUsrdestino($user);
@@ -47,12 +50,25 @@ class InvertirController extends Controller {
                             $compra->setEstado(1);
                             $em->persist($compra);
                             $flush = $em->flush($compra);
-
+                            
+                            //FIN COMPRA
+                            //GENERANDO NOTIFICACION
+                            $noti = new Notificacion();
+                            $noti->setReaded(0);
+                            $noti->setTexto("Ha realizado la compra de " . $compra->getAcciones() . " Acciones del proyecto: " . $proyectos->getCodigo());
+                            $noti->setUsuarioorigen($user->getIdusuario());
+                            $noti->setUsuariodestino($user->getIdusuario());
+                            $em->persist($noti);
+                            $em->flush($noti);
+                            //FIN NOTIFICACION
+                            //ACTUALIZANDO ACCIONES VENDIDAS
                             $proyectos->setVendidas($compra->getAcciones() + $proyectos->getVendidas());
                             $em->persist($proyectos);
                             $em->flush($proyectos);
-                            
+                            //FIN ACTUALIZACION
+
                             if ($flush == null) {
+                                //ASIGNANDO COSTO A CTACTE
                                 $cta = new Ctacte();
                                 $cta->setEstado($edo_hecho);
                                 $cta->setFechaingreso(new \DateTime('now'));
@@ -74,6 +90,7 @@ class InvertirController extends Controller {
                     } else {
                         $this->get('session')->getFlashBag()->add('danger', "La Cantidad de acciones a comprar, es mayor que las acciones disponibles");
                     }
+                    //FIN ASIGNACION CTACTE
                 }
             } else {
                 $this->get('session')->getFlashBag()->add('danger', "Debe al menos transar 1 accion");
