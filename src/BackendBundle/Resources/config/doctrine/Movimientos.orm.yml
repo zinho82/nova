@@ -39,6 +39,11 @@ BackendBundle\Entity\Movimientos:
             length: 45
             options:
                 fixed: false
+        precio:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
         estado:
             type: string
             nullable: false

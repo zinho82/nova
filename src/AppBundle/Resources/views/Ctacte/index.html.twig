@@ -1,5 +1,6 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
 {% block content %}
+    {{dump(inversiones)}}
     <div class="col-lg-12 box-default">
         <div class="row">
             {% for cta in cuenta %}
@@ -122,9 +123,27 @@
                                 <th>Codigo Proyecto</th>
                                 <th>Acciones Compradas</th>
                                 <th>Utilidades Pagadas</th>
+                                <th>Accion</th>
                                 <th>Documentos</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            {% for inv in inversiones%}
+                                <tr>
+                                    <td>{{inv.proyectos}}</td>
+                                    <td>{{inv.acciones}}</td>
+                                    <td></td>
+                                    <td>{{inv.tipoaccion}}</td>
+                                    
+                                    <td>
+                                        <a href="" title="Contrato Arrendamiento"><i class="fa fa-file-pdf-o"></i></a>
+                                        <a href="" title="Certificado Acciones"><i class="fa fa-bookmark-o"></i></a>
+                                    </td>
+                                    
+                                </tr>
+                            {% endfor %}
+                            
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -36,18 +36,22 @@ class InvertirController extends Controller {
             $moviemiento = $form->get('tipoaccion')->getData();
             if ($acciones > 0) {
                 if ($moviemiento == 'Compra') {
-                    if ($compra->getAcciones() <= $acciones) {
+                    if (($proyectos->getAcciones()-$proyectos->getVendidas()) <= $acciones) {
                         $apago = $compra->getAcciones() * ($proyectos->getValor() + $proyectos->getCop());
                         if ($ctacte_repo[1] >= $apago) {
                             $compra->setReaded(0);
                             $compra->setProyectos($proyectos);
                             $compra->setUsrdestino($user);
                             $compra->setUsuariousuario($user);
+                            $compra->setPrecio($apago); //NO LO GUARDA
                             $compra->setEstado(1);
-
                             $em->persist($compra);
-                            $flush = $em->flush();
+                            $flush = $em->flush($compra);
 
+                            $proyectos->setVendidas($compra->getAcciones() + $proyectos->getVendidas());
+                            $em->persist($proyectos);
+                            $em->flush($proyectos);
+                            
                             if ($flush == null) {
                                 $cta = new Ctacte();
                                 $cta->setEstado($edo_hecho);
