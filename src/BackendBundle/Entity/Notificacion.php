@@ -13,16 +13,6 @@ class Notificacion
     private $id;
 
     /**
-     * @var integer
-     */
-    private $usuarioorigen;
-
-    /**
-     * @var integer
-     */
-    private $usuariodestino;
-
-    /**
      * @var string
      */
     private $texto;
@@ -31,6 +21,16 @@ class Notificacion
      * @var integer
      */
     private $readed;
+
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $usuariodestino;
+
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $usuarioorigen;
 
 
     /**
@@ -41,54 +41,6 @@ class Notificacion
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set usuarioorigen
-     *
-     * @param integer $usuarioorigen
-     *
-     * @return Notificacion
-     */
-    public function setUsuarioorigen($usuarioorigen)
-    {
-        $this->usuarioorigen = $usuarioorigen;
-
-        return $this;
-    }
-
-    /**
-     * Get usuarioorigen
-     *
-     * @return integer
-     */
-    public function getUsuarioorigen()
-    {
-        return $this->usuarioorigen;
-    }
-
-    /**
-     * Set usuariodestino
-     *
-     * @param integer $usuariodestino
-     *
-     * @return Notificacion
-     */
-    public function setUsuariodestino($usuariodestino)
-    {
-        $this->usuariodestino = $usuariodestino;
-
-        return $this;
-    }
-
-    /**
-     * Get usuariodestino
-     *
-     * @return integer
-     */
-    public function getUsuariodestino()
-    {
-        return $this->usuariodestino;
     }
 
     /**
@@ -137,5 +89,53 @@ class Notificacion
     public function getReaded()
     {
         return $this->readed;
+    }
+
+    /**
+     * Set usuariodestino
+     *
+     * @param \BackendBundle\Entity\Usuario $usuariodestino
+     *
+     * @return Notificacion
+     */
+    public function setUsuariodestino(\BackendBundle\Entity\Usuario $usuariodestino = null)
+    {
+        $this->usuariodestino = $usuariodestino;
+
+        return $this;
+    }
+
+    /**
+     * Get usuariodestino
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getUsuariodestino()
+    {
+        return $this->usuariodestino;
+    }
+
+    /**
+     * Set usuarioorigen
+     *
+     * @param \BackendBundle\Entity\Usuario $usuarioorigen
+     *
+     * @return Notificacion
+     */
+    public function setUsuarioorigen(\BackendBundle\Entity\Usuario $usuarioorigen = null)
+    {
+        $this->usuarioorigen = $usuarioorigen;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioorigen
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getUsuarioorigen()
+    {
+        return $this->usuarioorigen;
     }
 }
