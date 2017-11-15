@@ -15,11 +15,15 @@ proyectos_show:
 proyectos_edit:
     path:     /edit/{id}
     defaults: { _controller: "AppBundle:Proyectos:edit", id:null }
-    methods:  GET
+    methods:  [GET]
 proyectos_delete:
     path:     /delete/{id}
     defaults: { _controller: "AppBundle:Proyectos:delete", id:null }
-    methods:  GET
+    methods:  [GET]
 proyectos_new:
     path:     /proyectos-new
     defaults: { _controller: "AppBundle:Proyectos:new" }
+proyectos_pagos:
+    path:     /pagos/{id}
+    defaults: { _controller: "AppBundle:Proyectos:pagos", id:null }
+    methods:  [GET|POST]

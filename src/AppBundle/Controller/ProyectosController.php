@@ -12,6 +12,7 @@ use BackendBundle\Entity\Proyectos;
 use BackendBundle\Entity\Usuario;
 use AppBundle\Form\RegisterType;
 use AppBundle\Form\UserType;
+use BackendBundle\Entity\Pagos;
 
 /**
  * Proyecto controller.
@@ -157,5 +158,24 @@ class ProyectosController extends Controller {
                 $query, $request->query->getInt('page', 1), 5
         );
         return $pagination;
+    }
+    public function pagosAction(Request $request, Pagos $pagos) {
+        $form = $this->createForm('AppBundle\Form\PagosType', $pagos);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($proyectos);
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
+            return $this->redirectToRoute('proyectos_lista', array('id' => $proyectos->getId()));
+        }
+        return $this->render('AppBundle:Proyectos/crud:new.html.twig', array(
+                    'campana' => $proyectos,
+                    'form' => $form->createView(),
+                    'TituloForm'   =>  'Editar Proyecto '
+//                    'delete_form' => $deleteForm->createView(),
+        ));
     }
 }

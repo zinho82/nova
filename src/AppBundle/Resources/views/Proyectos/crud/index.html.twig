@@ -54,9 +54,13 @@
                                     <a title="Editar" href="{{ path('proyectos_edit', { 'id': proyecto.id }) }}">
                                         <span class="fa fa-edit"></span>
                                     </a>
-                                         <a title="Borrar" href="{{ path('proyectos_delete', { 'id': proyecto.id }) }}">
+                                    <a title="Borrar" href="{{ path('proyectos_delete', { 'id': proyecto.id }) }}">
                                         <span class="fa fa-trash-o"></span>
                                     </a>
+                                    <a title="Ingresar Pagos" href="{{ path('proyectos_pagos', { 'id': proyecto.id }) }}">
+                                        <span class="fa fa-money"></span>
+                                    </a>
+
                                 </td>
                             </tr>
                         {% endfor %}

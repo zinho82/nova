@@ -1,0 +1,38 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block content %}
+    {{dump(app.user)}}
+    
+    
+    <div class="col-lg-12">
+        {% for pagina in pagination %}
+        <div class=" box-proyecto col-lg-3">
+            <div class="proyecto-header">
+                {{pagina.nombre}}
+                 - 
+                {{pagina.codigo}}
+            </div>
+            <div class="proyecto-body">
+                 <div class="proyecto-img ">
+                    <img src="{{asset("assets/images/edif_default.jpg")}}">
+                </div>
+                <div class="proyecto-txt ">
+                Direccion: {{pagina.direccion}}
+                <br>
+                Valor UF: {{pagina.uf}}
+                <br>
+                Acciones a Vender: {{pagina.acciones}}
+                <br>
+                Acciones Disponibles: {{pagina.acciones-pagina.vendidas}}
+                <br>
+                Acciones Vendidas: {{pagina.vendidas}}
+                <br>
+                <a id="button-ficha" href="{{path('proyectos_ficha',{'id':pagina.id})}}" data-id="{{pagina.id}}"  class=" btn btn-success"> Mas Informacion </a>
+                </div>
+               
+            </div>
+                <div class="clearfix"></div>
+        </div>
+            {% endfor %}
+    
+    
+{% endblock %}
