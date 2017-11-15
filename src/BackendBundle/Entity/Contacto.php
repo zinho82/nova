@@ -139,4 +139,3 @@ class Contacto
         return $this->comentario;
     }
 }
-

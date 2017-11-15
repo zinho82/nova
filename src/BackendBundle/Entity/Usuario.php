@@ -433,4 +433,3 @@ class Usuario implements UserInterface, \Serializable
         
     }
 }
-

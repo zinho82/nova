@@ -14,6 +14,9 @@ BackendBundle\Entity\Movimientos:
         fk_movimientos_usrdestino_idx:
             columns:
                 - usrdestino
+        estado:
+            columns:
+                - estado
     id:
         id:
             type: integer
@@ -21,6 +24,8 @@ BackendBundle\Entity\Movimientos:
             options:
                 unsigned: false
             id: true
+            generator:
+                strategy: IDENTITY
     fields:
         readed:
             type: string
@@ -34,7 +39,19 @@ BackendBundle\Entity\Movimientos:
             length: 45
             options:
                 fixed: false
-    oneToOne:
+        precio:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        estado:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+                default: '0'
+    manyToOne:
         proyectos:
             targetEntity: Proyectos
             cascade: {  }
@@ -55,7 +72,6 @@ BackendBundle\Entity\Movimientos:
                 usuario_idusuario:
                     referencedColumnName: idusuario
             orphanRemoval: false
-    manyToOne:
         tipoaccion:
             targetEntity: Config
             cascade: {  }

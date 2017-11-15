@@ -1,13 +1,13 @@
-BackendBundle\Entity\Ctacte:
+BackendBundle\Entity\Notificacion:
     type: entity
-    table: ctacte
+    table: notificacion
     indexes:
-        fk_ctacte_usuario1_idx:
+        FK_usrorigen:
             columns:
-                - usuario_idusuario
-        fk_ctacte_moviiento_idx:
+                - usuarioorigen
+        FK_usrdestino:
             columns:
-                - estado
+                - usuariodestino
     id:
         id:
             type: integer
@@ -18,49 +18,36 @@ BackendBundle\Entity\Ctacte:
             generator:
                 strategy: IDENTITY
     fields:
-        movimiento:
-            type: string
-            nullable: true
-            length: 45
-            options:
-                fixed: false
-        monto:
-            type: integer
-            nullable: true
-            options:
-                unsigned: false
-        fechaingreso:
-            type: datetime
-            nullable: true
-        fechavalidacion:
-            type: datetime
-            nullable: true
-        codigocomprobante:
+        texto:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-            column: codigoComprobante
+        readed:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
     manyToOne:
-        estado:
-            targetEntity: Config
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                estado:
-                    referencedColumnName: id
-            orphanRemoval: false
-        usuariousuario:
+        usuariodestino:
             targetEntity: Usuario
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                usuario_idusuario:
+                usuariodestino:
+                    referencedColumnName: idusuario
+            orphanRemoval: false
+        usuarioorigen:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuarioorigen:
                     referencedColumnName: idusuario
             orphanRemoval: false
     lifecycleCallbacks: {  }

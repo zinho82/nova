@@ -210,5 +210,62 @@ class Movimientos
     {
         return $this->usrdestino;
     }
-}
+    /**
+     * @var integer
+     */
+    private $precio;
 
+    /**
+     * @var string
+     */
+    private $estado = '0';
+
+
+    /**
+     * Set precio
+     *
+     * @param integer $precio
+     *
+     * @return Movimientos
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get precio
+     *
+     * @return integer
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param string $estado
+     *
+     * @return Movimientos
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return string
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+}
