@@ -142,10 +142,8 @@ class UserController extends Controller {
                     //UPLOAD FILE
                     $file = $form['image']->getData();
                     if (!empty($file) && $file != null) {
-                        $status = "dentro not null ";
                         $ext = $file->guessExtension();
                         if ($ext == 'jpg' || $ext == 'png' || $ext == 'gif' || $ext == 'jpeg') {
-                            $status .= " img valida  ";
                             $file_name = $user->getIdusuario() . time() . "." . $ext;
                             $file->move("uploads/users", $file_name);
                             $user->setImage($file_name);

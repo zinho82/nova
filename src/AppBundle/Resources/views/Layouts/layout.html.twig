@@ -91,7 +91,9 @@
                                 </li>
                             {% endif%}
                         </ul>
-                        {% if app.user.role=='ROLE_ADMIN' %}
+                        
+                        {% if app.user !=null %}
+                            {% if app.user.role=='ROLE_ADMIN' %}
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a href="{{'proyectos-admin'}}">
@@ -101,7 +103,6 @@
                                 </li>
                             </ul>
                         {% endif %}
-                        {% if app.user !=null %}
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
