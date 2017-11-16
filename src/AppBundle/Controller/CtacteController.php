@@ -20,10 +20,11 @@ class CtacteController extends Controller {
 
     public function CuentaCorrienteAction(Request $request) {
         $user= $this->getUser();
+        $ids=$user->getIdusuario();
                 
         $em= $this->getDoctrine()->getManager();
         $query=$em->createQuery(
-                "select  c.movimiento ,sum(c.monto) as monto,IDENTITY(c.estado)  as estado from BackendBundle:Ctacte c where c.usuariousuario='$user'
+                "select  c.movimiento ,sum(c.monto) as monto,IDENTITY(c.estado)  as estado from BackendBundle:Ctacte c where c.usuariousuario=$ids
  group by c.movimiento,c.estado")->getResult();
 $inversiones=$em->getRepository("BackendBundle:Movimientos")
             ->findBy(array('usuariousuario' => $user));

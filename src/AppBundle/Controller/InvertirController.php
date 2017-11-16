@@ -56,8 +56,8 @@ class InvertirController extends Controller {
                             $noti = new Notificacion();
                             $noti->setReaded(0);
                             $noti->setTexto("Ha realizado la compra de " . $compra->getAcciones() . " Acciones del proyecto: " . $proyectos->getCodigo());
-                            $noti->setUsuarioorigen($user->getIdusuario());
-                            $noti->setUsuariodestino($user->getIdusuario());
+                            $noti->setUsuarioorigen($user);
+                            $noti->setUsuariodestino($user);
                             $em->persist($noti);
                             $em->flush($noti);
                             //FIN NOTIFICACION

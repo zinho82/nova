@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 {% endif %}
-                {% if(cta.movimiento=='retencion') %}
+                {% if(cta.estado==21) %}
                     <div class="col-lg-2">
                         <div class="panel panel-info">
                             <div class="panel-heading">
@@ -125,12 +125,13 @@
                                 <th>Utilidades Pagadas</th>
                                 <th>Accion</th>
                                 <th>Documentos</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for inv in inversiones%}
                                 <tr>
-                                    <td>{{inv.proyectos}}</td>
+                                    <td>{{inv.proyectos.codigo}}</td>
                                     <td>{{inv.acciones}}</td>
                                     <td>{{inv.precio}}</td>
                                     <td></td>
@@ -139,6 +140,9 @@
                                     <td>
                                        <!-- <a href="" title="Contrato Arrendamiento"><i class="fa fa-file-pdf-o"></i></a>
                                         <a href="" title="Certificado Acciones"><i class="fa fa-bookmark-o"></i></a>-->
+                                    </td>
+                                    <td>
+                                        <a href="#" title="Vender"><i class="fa fa-credit-card"></i></a>
                                     </td>
                                     
                                 </tr>
