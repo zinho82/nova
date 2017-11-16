@@ -140,7 +140,7 @@ class UserController extends Controller {
 
                 if (($user->getEmail() == $user_isset[0]->getEmail() ) || count($user_isset) == 0) {
                     //UPLOAD FILE
-                    $file = $form['image']->getData();
+                    $file = $form['image']->getData(); 
                     if (!empty($file) && $file != null) {
                         $ext = $file->guessExtension();
                         if ($ext == 'jpg' || $ext == 'png' || $ext == 'gif' || $ext == 'jpeg') {
