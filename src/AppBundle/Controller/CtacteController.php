@@ -28,9 +28,14 @@ class CtacteController extends Controller {
  group by c.movimiento,c.estado")->getResult();
 $inversiones=$em->getRepository("BackendBundle:Movimientos")
             ->findBy(array('usuariousuario' => $user));
+ $dispo=$em->createQuery(
+                "select sum(c.monto) as disponible from BackendBundle:Ctacte c where c.usuariousuario=$ids")->getResult();
+
+
         return $this->render('AppBundle:Ctacte:index.html.twig',array(
             'cuenta'        =>  $query,
-            'inversiones'   =>  $inversiones
+            'inversiones'   =>  $inversiones,
+            'disponible'    =>  $dispo
         ));
     }
     public function DepositoAction(Request $request) {

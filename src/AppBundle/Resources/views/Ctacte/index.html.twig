@@ -12,12 +12,7 @@
 
                             </div>
                             <div class="panel-body">
-                                <div class="monto">
-
-                                    ${{cta.monto|number_format}}
-
-
-                                </div>
+                                ${{cta.monto|number_format(0,',','.')}}
                             </div>
                         </div>
                     </div>
@@ -28,14 +23,11 @@
                             <div class="panel-heading">
                                 <i class="fa fa-money fa-2x"></i>
                                 Mis Depositos Pendientes
-
                             </div>
                             <div class="panel-body">
-                                <div class="monto">
+                                <div >
 
-                                    ${{cta.monto|number_format}}
-
-
+                                    ${{cta.monto|number_format(0,',','.')}}
                                 </div>
                             </div>
                         </div>
@@ -49,9 +41,7 @@
                                 En Inversión 
                             </div>
                             <div class="panel-body">
-                                <div class="monto">
-                                    ${{(cta.monto*-1)|number_format}}
-                                </div>
+                                ${{(cta.monto*-1)|number_format(0,',','.')}}
                             </div>
                         </div>
                     </div>
@@ -64,9 +54,7 @@
                                 Mis Ganancias 
                             </div>
                             <div class="panel-body"> 
-                                <div class="monto">
-                                    ${{cta.monto|number_format}}
-                                </div>
+                                ${{cta.monto|number_format(0,',','.')}}
                             </div>
                         </div>
                     </div>
@@ -79,7 +67,6 @@
                                 Mis Retiros 
                             </div>
                             <div class="panel-body">
-
                             </div>
                         </div>
                     </div>
@@ -92,7 +79,6 @@
                                 Mis Retenciones 
                             </div>
                             <div class="panel-body">
-
                             </div>
                         </div>
                     </div>
@@ -111,45 +97,61 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            <div class="col-lg-2">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <i class="fa fa-money fa-2x"></i>
+                                Mi Dinero Disponible
+
+                            </div>
+                            <div class="panel-body">
+                                ${{disponible|number_format(0,',','.')}}
+                            </div>
+                        </div>
+                    </div>
         </div>
         <div class="panel panel-default    ">
-                <div class="panel-heading">Mis Inversiones</div>
-                <div class="panel-body">
-                    <a href="{{path('ctacte_deposito')}}" class="btn btn-info  btn-block">Depositar</a>
-                    <table class="table table-hover">
-                        <thead>
+            <div class="panel-heading">Mis Inversiones</div>
+            <div class="panel-body">
+                <a href="{{path('ctacte_deposito')}}" class="btn btn-info  btn-block">Depositar</a>
+                <table class="table table-hover " >
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Codigo Proyecto</th>
+                            <th>Acciones </th>
+                            <th>Valor Accion</th>
+                            <th>Utilidades Pagadas</th>
+                            <th>Accion</th>
+                            <th>Documentos</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set myVal = 0 %}
+                        {% for inv in inversiones%}
+                            {%set myVal= myVal+1 %}
                             <tr>
-                                <th>Codigo Proyecto</th>
-                                <th>Acciones </th>
-                                <th>Valor Accion</th>
-                                <th>Utilidades Pagadas</th>
-                                <th>Accion</th>
-                                <th>Documentos</th>
-                                <th></th>
+                                <td>{{  myVal }}</td>
+                                <td><strong>{{inv.proyectos.codigo}}</strong></td>
+                                <td>{{inv.acciones}}</td>
+                                <td>{{inv.precio|number_format(0,',','.')}}</td>
+                                <td></td>
+                                <td>{{inv.tipoaccion}}</td>
+
+                                <td>
+                                    <!-- <a href="" title="Contrato Arrendamiento"><i class="fa fa-file-pdf-o"></i></a>
+                                     <a href="" title="Certificado Acciones"><i class="fa fa-bookmark-o"></i></a>-->
+                                </td>
+                                <td>
+                                    <!--<a href="#" title="Vender"><i class="fa fa-credit-card"></i></a>-->
+                                </td>
+
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for inv in inversiones%}
-                                <tr>
-                                    <td>{{inv.proyectos.codigo}}</td>
-                                    <td>{{inv.acciones}}</td>
-                                    <td>{{inv.precio}}</td>
-                                    <td></td>
-                                    <td>{{inv.tipoaccion}}</td>
-                                    
-                                    <td>
-                                       <!-- <a href="" title="Contrato Arrendamiento"><i class="fa fa-file-pdf-o"></i></a>
-                                        <a href="" title="Certificado Acciones"><i class="fa fa-bookmark-o"></i></a>-->
-                                    </td>
-                                    <td>
-                                        <a href="#" title="Vender"><i class="fa fa-credit-card"></i></a>
-                                    </td>
-                                    
-                                </tr>
-                            {% endfor %}
-                            
-                        </tbody>
-                    </table>
-                </div>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
             </div>
+        </div>
     {% endblock %}
