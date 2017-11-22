@@ -16,7 +16,7 @@
                                 <p class="tituloTimeline">Proyecto Publicado:  {{proy.nombre}}</p>
                             </div>
                             <div >
-                                <p>Valor Accion: <strong>{{proy.valor|number_format}}</strong></p>                
+                                <p>Valor Accion: <strong>{{proy.valor|number_format(0,',','.')}}</strong></p>                
                                 <p>Acciones Disponibles: {{proy.acciones}}</p>
                                 <p>Fecha estimada de compra: {{proy.fechaCompraEst|  date('d-m-Y')}}</p>
                                 <a id="button-ficha" href="{{path('proyectos_ficha',{'id':proy.id})}}" data-id="{{proy.id}}"  class=" btn btn-success btn-block"> Mas Informacion </a>
