@@ -11,9 +11,12 @@
                 <div class="panel-heading">Ultimos Proyectos Publicados</div>
                 <div class="panel-body">
                     {% for proy in proyectos %}
-                        <div class="box-default">
+                        <div class="box-proyecto col-lg-4">
                             <div class="proyecto-header">
-                                <p class="tituloTimeline">Proyecto Publicado:  {{proy.nombre}}</p>
+                                <div class="image">
+                                    <img src="{{asset('assets/images/edif_default.jpg')}}">
+                                    <h2> <span class="tituloTimeline">Proyecto Publicado:  {{proy.nombre}}<span class="spacer"></span></span></h2>
+                                </div>
                             </div>
                             <div >
                                 <p>Valor Accion: <strong>{{proy.valor|number_format(0,',','.')}}</strong></p>                
@@ -26,8 +29,8 @@
 
                     {% endfor %}
                     <div class="navigation">
-                    {{ knp_pagination_render(proyectos) }}
-                </div>
+                        {{ knp_pagination_render(proyectos) }}
+                    </div>
                 </div>
             </div>
         </div>
