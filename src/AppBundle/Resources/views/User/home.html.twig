@@ -8,23 +8,26 @@
         {%include "AppBundle:User:paneluser.html.twig"%}
         <div class="col-lg-8 box-default pull-right">
             <div class="panel panel-primary">
+                
                 <div class="panel-heading">Ultimos Proyectos Publicados</div>
                 <div class="panel-body">
+                    
                     {% for proy in proyectos %}
-                        <div class="box-proyecto col-lg-4">
-                            <div class="proyecto-header">
-                                <div class="image">
-                                    <img src="{{asset('assets/images/edif_default.jpg')}}">
+                        
+                        <div class="box-proyecto">
+                           <img src="{{asset("assets/images/edif_default.jpg")}}">
+                        </div>
+                        <!--<div class="box-proyecto col-lg-3">
+                                    <img class="foto" src="{{asset('assets/images/edif_default.jpg')}}">
                                     <h2> <span class="tituloTimeline">Proyecto Publicado:  {{proy.nombre}}<span class="spacer"></span></span></h2>
-                                </div>
-                            </div>
-                            <div >
+                                    <h1 class="ribbon">
+                                        <strong class="ribbon-content">Everybody loves ribbons</strong>
+                                    </h1>
                                 <p>Valor Accion: <strong>{{proy.valor|number_format(0,',','.')}}</strong></p>                
                                 <p>Acciones Disponibles: {{proy.acciones}}</p>
                                 <p>Fecha estimada de compra: {{proy.fechaCompraEst|  date('d-m-Y')}}</p>
                                 <a id="button-ficha" href="{{path('proyectos_ficha',{'id':proy.id})}}" data-id="{{proy.id}}"  class=" btn btn-success btn-block"> Mas Informacion </a>
-                            </div>
-                        </div>
+                        </div>-->
                         <hr/>
 
                     {% endfor %}
