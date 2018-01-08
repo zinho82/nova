@@ -151,7 +151,7 @@ body{
 .like{
     font-size: 25px;
     margin-top: -45px;
-    
+
 }
 .like .btn-like:hover{
     color: #ff0039 !important;
@@ -173,7 +173,7 @@ footer{
 
 .card-body p{
     text-align: justify;
-    
+
 }
 .monto{
     text-align: right;
@@ -196,49 +196,103 @@ footer{
 .non-semantic-protector { position: relative; z-index: 1; }
 
 .ribbon {
- font-size: 16px !important;
- /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+    font-size: 16px !important;
+    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
 
- width: 30%;
-    
- position: relative;
- background: #ba89b6;
- color: #fff;
- text-align: center;
- padding: 1em 2em; /* Adjust to suit */
- margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    width: 30%;
+
+    position: relative;
+    background: #ba89b6;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em; /* Adjust to suit */
+    margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 }
 .ribbon:before, .ribbon:after {
- content: "";
- position: absolute;
- display: block;
- bottom: -1em;
- border: 1.5em solid #986794;
- z-index: 10000;
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.5em solid #986794;
+    z-index: 10000;
 }
 .ribbon:before {
- left: -2em;
- border-right-width: 1.5em;
- border-left-color: transparent;
+    left: -2em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
 }
 .ribbon:after {
- right: -2em;
- border-left-width: 1.5em;
- border-right-color: transparent;
+    right: -2em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
 }
 .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
- content: "";
- position: absolute;
- display: block;
- border-style: solid;
- border-color: #804f7c transparent transparent transparent;
- bottom: -1em;
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #804f7c transparent transparent transparent;
+    bottom: -1em;
 }
 .ribbon .ribbon-content:before {
- left: 0;
- border-width: 1em 0 0 1em;
+    left: 0;
+    border-width: 1em 0 0 1em;
 }
 .ribbon .ribbon-content:after {
- right: 0;
- border-width: 1em 1em 0 0;
+    right: 0;
+    border-width: 1em 1em 0 0;
+}
+.box-panel{
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #bbb;
+    width: 290px;
+    height: auto;
+    box-shadow: 3px 5px 15px #000;
+}
+.box-panel-head{
+    padding: 7px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #aaa;
+    font-size: 20px;
+    width: 290px;
+    align-content: center;
+    text-align: center;
+
+}
+.box-panel-img{
+    margin: 0  auto;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 290px;
+}
+.box-panel-head-azul{
+    width: 290px;
+    margin: 0px auto;
+    background-color: #0000F0;
+    width: 100%;
+    align-content: center;
+    color: #fff;
+    font-size: 20px;
+
+}
+.box-panel-codigo{
+    font-size: 14px;
+}
+.box-panel-body{
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #aaa;
+    font-size: 20px;
+}
+.box-panel-pie{
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #aaa;
+    font-size: 14px;
 }

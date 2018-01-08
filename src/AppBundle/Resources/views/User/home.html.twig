@@ -6,38 +6,38 @@
 {% block content %}
     <div class=" container">
         {%include "AppBundle:User:paneluser.html.twig"%}
-        <div class="col-lg-8 box-default pull-right">
-            <div class="panel panel-primary">
-                
-                <div class="panel-heading">Ultimos Proyectos Publicados</div>
-                <div class="panel-body">
-                    
-                    {% for proy in proyectos %}
-                        
-                        <div class="box-proyecto">
-                           <img src="{{asset("assets/images/edif_default.jpg")}}">
-                        </div>
-                        <!--<div class="box-proyecto col-lg-3">
-                                    <img class="foto" src="{{asset('assets/images/edif_default.jpg')}}">
-                                    <h2> <span class="tituloTimeline">Proyecto Publicado:  {{proy.nombre}}<span class="spacer"></span></span></h2>
-                                    <h1 class="ribbon">
-                                        <strong class="ribbon-content">Everybody loves ribbons</strong>
-                                    </h1>
-                                <p>Valor Accion: <strong>{{proy.valor|number_format(0,',','.')}}</strong></p>                
-                                <p>Acciones Disponibles: {{proy.acciones}}</p>
-                                <p>Fecha estimada de compra: {{proy.fechaCompraEst|  date('d-m-Y')}}</p>
-                                <a id="button-ficha" href="{{path('proyectos_ficha',{'id':proy.id})}}" data-id="{{proy.id}}"  class=" btn btn-success btn-block"> Mas Informacion </a>
-                        </div>-->
-                        <hr/>
-
-                    {% endfor %}
-                    <div class="navigation">
-                        {{ knp_pagination_render(proyectos) }}
+        {% for proy in proyectos %}
+            <div class="box-panel">
+         <img class="box-panel-img" src="{{asset("assets/images/edif_default.jpg")}}">
+                <div class="box-panel-head">  {{proy.nombre}}</div>
+                <div class="box-panel-body"> 
+                    <p class="box-panel-codigo"> Codigo: {{proy.codigo}}</p>
+                    <p>{{proy.descripcion}}</p>
+                </div>
+                <div class="box-panel-pie">
+                    <p>Financiado:</p>
+                    <div class="progress">
+                        {% set avance=(proy.vendidas*100/proy.acciones) %}
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:{{avance}}%">
+  </div>
+  
                     </div>
+  <a href="{{path('proyectos_ficha',{id:proy.id})}}" class="btn btn-block btn-success">Más Información</a>
                 </div>
             </div>
+        {% endfor %}
+
+
+
+
+
+        <div class="navigation">
+            {{ knp_pagination_render(proyectos) }}
         </div>
     </div>
+</div>
+</div>-->
+</div>
 
 
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
 {% block content %}
     
-        <div class="box-proyecto col-lg-12">
+        <div class=" col-lg-12">
             <div class="proyecto-header">
                 {{ficha.nombre}}
                  - 
@@ -14,7 +14,7 @@
                 <div class="proyecto-txt ">
                 Direccion: {{ficha.direccion}}
                 <br>
-                Valor UF: {{ficha.uf}}
+                Valor UF: {{ficha.uf|number_format(0,',','.')}}
                 <br>
                 Acciones Disponibles: {{(ficha.acciones-ficha.vendidas|number_format(0,',','.'))}}
                  <br>
@@ -23,7 +23,7 @@
                
                 <p class="proyecto-proyeccion"><strong><span class="glyphicon glyphicon-stats"> </span> Proyeccion:</strong> {{ficha.proyeccion}}</p>
                 Fecha Aproximada de Compra: 
-                <a href="{{path('invertir',{'id':ficha.id})}}" data-id="{{ficha.id}}"  class=" btn btn-success"> Invertir </a>
+                <p><a href="{{path('invertir',{'id':ficha.id})}}" data-id="{{ficha.id}}"  class=" btn btn-success btn-block"> Invertir </a></p>
                 </div>
                
             </div>
