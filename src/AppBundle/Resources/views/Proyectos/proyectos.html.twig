@@ -3,35 +3,29 @@
     
     
     <div class="col-lg-12">
-        {% for pagina in pagination %}
+        {% for proy in pagination %}
         <div class=" box-proyecto col-lg-3">
-            <div class="proyecto-header">
-                {{pagina.nombre}}
-                 - 
-                {{pagina.codigo}}
-            </div>
-            <div class="proyecto-body">
-                 <div class="proyecto-img ">
-                    <img src="{{asset("assets/images/edif_default.jpg")}}">
+           <div class="box-panel">
+         <img class="box-panel-img" src="{{asset("assets/images/edif_default.jpg")}}">
+                <div class="box-panel-head">  {{proy.nombre}}</div>
+                <div class="box-panel-body"> 
+                    <p class="box-panel-codigo"> Codigo: {{proy.codigo}}</p>
+                    <p>{{proy.descripcion}}</p>
                 </div>
-                <div class="proyecto-txt ">
-                Direccion: {{pagina.direccion}}
-                <br>
-                Valor UF: {{pagina.uf}}
-                <br>
-                Acciones a Vender: {{pagina.acciones}}
-                <br>
-                Acciones Disponibles: {{pagina.acciones-pagina.vendidas}}
-                <br>
-                Acciones Vendidas: {{pagina.vendidas}}
-                <br>
-                <a id="button-ficha" href="{{path('proyectos_ficha',{'id':pagina.id})}}" data-id="{{pagina.id}}"  class=" btn btn-success"> Mas Informacion </a>
+                <div class="box-panel-pie">
+                    <p>Financiado:</p>
+                    <div class="progress">
+                        {% set avance=(proy.vendidas*100/proy.acciones) %}
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:{{avance}}%">
+  </div>
+  
+                    </div>
+  <a href="{{path('proyectos_ficha',{id:proy.id})}}" class="btn btn-block btn-success">Más Información</a>
                 </div>
-               
             </div>
-                <div class="clearfix"></div>
+                
         </div>
             {% endfor %}
-    
+    <div class="clearfix"></div>
     
 {% endblock %}
