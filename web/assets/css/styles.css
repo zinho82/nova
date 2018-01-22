@@ -101,7 +101,32 @@ body{
     
    
 }
-.estadoscuenta a ,a:hover{
+.estadoscuenta  a:hover {
+    float: left;
+    border: #aaa 1px solid;
+    margin-top: 5px;
+    text-align: center;
+    width: 50%;
+    padding: 15px;
+    font-size: 13px;
+    font-family: arial, "arial black", widdings;
+    color: #6b9311;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.pagination{
+    border: 1px solid #0000F0;
+    padding: 10px;
+}
+.first .previous .page {
+    font-size: 18px;
+    padding: 10px;
+}
+.current{
+    font-size: 20px;
+    padding: 5px;
+}
+.estadoscuenta  a{
     float: left;
     border: #aaa 1px solid;
     margin-top: 5px;

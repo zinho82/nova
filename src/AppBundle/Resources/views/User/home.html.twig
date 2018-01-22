@@ -8,7 +8,7 @@
         {%include "AppBundle:User:paneluser.html.twig"%}
         {% for proy in proyectos %}
             <div class="box-panel">
-         <img class="box-panel-img" src="{{asset("assets/images/edif_default.jpg")}}">
+                <img class="box-panel-img" src="{{asset("assets/images/edif_default.jpg")}}">
                 <div class="box-panel-head">  {{proy.nombre}}</div>
                 <div class="box-panel-body"> 
                     <p class="box-panel-codigo"> Codigo: {{proy.codigo}}</p>
@@ -18,11 +18,11 @@
                     <p>Financiado:</p>
                     <div class="progress">
                         {% set avance=(proy.vendidas*100/proy.acciones) %}
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:{{avance}}%">
-  </div>
-  
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:{{avance}}%">
+                        </div>
+
                     </div>
-  <a href="{{path('proyectos_ficha',{id:proy.id})}}" class="btn btn-block btn-success">Más Información</a>
+                    <a href="{{path('proyectos_ficha',{id:proy.id})}}" class="btn btn-block btn-success">Más Información</a>
                 </div>
             </div>
         {% endfor %}
@@ -36,7 +36,7 @@
         </div>
     </div>
 </div>
-</div>-->
+</div>
 </div>
 
 
