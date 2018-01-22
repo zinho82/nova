@@ -1,47 +1,48 @@
 <div class="col-lg-4 box-default pull-right " id="user-card">
-            <div class="avatar">
-                {%if app.user.image==null %} 
-                    <img src="{{asset('assets/images/default.png')}}"/>
-                {%else%}
-                    <img src="{{asset('uploads/users/'~app.user.image)}}"/>
-                {%endif%}
-            </div>
-            <div class="name-surname">
-                <a href="#">{{app.user.nombre}} {{app.user.app}}</a>
-                <div class="clearfix"></div>
-                <span class="nickname">
-                    {{app.user.username}} 
-                    <br/>
-                    {% if app.user.role=="ROLE_ADMIN" %}
-                        Administrador
-                    {% endif %}
-                     {% if app.user.role=="ROLE_EJECUTIVO" %}
-                        Ejecutivo
-                    {% endif %}
+    <div class="avatar">
+        {%if app.user.image==null %} 
+            <img src="{{asset('assets/images/default.png')}}"/>
+        {%else%}
+            <img src="{{asset('uploads/users/'~app.user.image)}}"/>
+        {%endif%}
+    </div>
+    <div class="name-surname">
+        <a href="#">{{app.user.nombre}} {{app.user.app}}</a>
+        <div class="clearfix"></div>
+        <span class="nickname">
+            {{app.user.username}} 
+            <br/>
+            {% if app.user.role=="ROLE_ADMIN" %}
+                Administrador
+            {% endif %}
+            {% if app.user.role=="ROLE_SOCIO" %}
+                Socio
+            {% endif %}
+        </span>
+    </div>
+    <div class="clearfix"></div>
+    {% set cuenta_stats= app.user|cuenta_stats %}
+    <div class="col-lg-4 box-default pull-right">
+        <div class="estadoscuenta">
+            <a href="#">
+                <span class="label-stat">
+                    Invertido
                 </span>
-            </div>
-            <div class="clearfix"></div>
-             {% set cuenta_stats= app.user|cuenta_stats %}
-            <div class=" box-default">
-                <div class="following-data">
-                <a href="#">
-                    <span class="label-stat">
-                        Invertido
-                    </span>
-                     <span class="number-stat">
-                         {{ (-1*cuenta_stats.inversion)|number_format(0,',','.')}}
-                    </span>
-                </a>
-            </div>
-                    <div class="following-data">
-                <a href="#">
-                    <span class="label-stat">
-                        Utilidad
-                    </span>
-                     <span class="number-stat">
-                         {{ cuenta_stats.utilidad|number_format(0,',','.')}}
-                    </span>
-                </a>
-            </div>
-            </div>
+                <span class="number-stat2" >
+                    {{ (-1*cuenta_stats.inversion)|number_format(0,',','.')}}
+                </span>
+            </a>
         </div>
+        <div class="estadoscuenta">
+            <a href="#">
+                <span class="label-stat">
+                    Utilidad
+                </span>
+                <span class="number-stat2">
+                    {{ cuenta_stats.utilidad|number_format(0,',','.')}}
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+    

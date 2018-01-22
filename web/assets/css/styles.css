@@ -88,8 +88,33 @@ body{
 }
 #user-card .following-data .number-stat{
     display: block;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
+    padding: 5px;
+}
+.number-stat2 {
+    font-size: 10px;
+    font-weight: bold;
+    color: #122b40;
+    padding: 10px;
+    margin-top: 5px;
+    
+   
+}
+.estadoscuenta a ,a:hover{
+    float: left;
+    border: #aaa 1px solid;
+    margin-top: 5px;
+    text-align: center;
+    width: 50%;
+    padding: 15px;
+    font-size: 13px;
+    font-family: arial, "arial black", widdings;
+    color: #6b9311;
+    text-decoration: none;
+    border-radius: 5px;
+    
+    
 }
 #user-card .avatar{
     background: #eee;
