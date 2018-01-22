@@ -1,34 +1,35 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
 {% block content %}
-    
-        <div class=" col-lg-12 ">
-            <div class="proyecto-header">
+
+    <div class=" col-lg-12 ">
+        <div class="box-panel  ">
+            <div class="panel-header">
                 {{ficha.nombre}}
-                 - 
+                - 
                 {{ficha.codigo}}
             </div>
-            <div class="proyecto-body">
-                 <div class="proyecto-img ">
+            <div class="">
+                <div class="">
                     <img src="{{asset("assets/images/edif_default.jpg")}}">
                 </div>
                 <div class="proyecto-txt ">
-                Direccion: {{ficha.direccion}}
-                <br>
-                Valor UF: {{ficha.uf|number_format(0,',','.')}}
-                <br>
-                Acciones Disponibles: {{(ficha.acciones-ficha.vendidas|number_format(0,',','.'))}}
-                 <br>
-                Acciones Vendidas: {{ficha.vendidas}}
-                <p class="proyecto-proyeccion"><strong> Descripcion:</strong> {{ficha.descripcion}}</p>
-               
-                <p class="proyecto-proyeccion"><strong><span class="glyphicon glyphicon-stats"> </span> Proyeccion:</strong> {{ficha.proyeccion}}</p>
-                Fecha Aproximada de Compra: 
-                <p><a href="{{path('invertir',{'id':ficha.id})}}" data-id="{{ficha.id}}"  class=" btn btn-success btn-block"> Invertir </a></p>
+                    Direccion: {{ficha.direccion}}
+                    <br>
+                    Valor UF: {{ficha.uf|number_format(0,',','.')}}
+                    <br>
+                    Acciones Disponibles: {{(ficha.acciones-ficha.vendidas|number_format(0,',','.'))}}
+                    <br>
+                    Acciones Vendidas: {{ficha.vendidas}}
+                    <p class="proyecto-proyeccion"><strong> Descripcion:</strong> {{ficha.descripcion}}</p>
+
+                    <p class="proyecto-proyeccion"><strong><span class="glyphicon glyphicon-stats"> </span> Proyeccion:</strong> {{ficha.proyeccion}}</p>
+                    Fecha Aproximada de Compra: 
+                    <p><a href="{{path('invertir',{'id':ficha.id})}}" data-id="{{ficha.id}}"  class=" btn btn-success btn-block"> Invertir </a></p>
                 </div>
-               
+
             </div>
-                <div class="clearfix"></div>
+            <div class="clearfix"></div>
         </div>
-    
-    
+    </div>
+
 {% endblock %}
