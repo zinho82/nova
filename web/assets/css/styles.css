@@ -117,6 +117,8 @@ body{
 .pagination{
     border: 1px solid #0000F0;
     padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 .first .previous .page {
     font-size: 18px;
