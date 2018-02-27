@@ -9,7 +9,9 @@ app_calidad:
 app_general:
     resource: "@AppBundle/Resources/config/routing/general.yml"
     prefix: /
+app_condicion:
+    resource: "@AppBundle/Resources/config/routing/condicion.yml"
+    prefix: /
 app_homepage: 
         path: /
-        defaults: { _controller: AppBundle:Calidad:index } 
-#    E
+        defaults: { _controller: AppBundle:General:index } 

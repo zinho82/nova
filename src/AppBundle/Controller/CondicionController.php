@@ -9,30 +9,30 @@ use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
 
-use BackendBundle\Entity\General;
+use BackendBundle\Entity\Condicion;
 
 /**
- * General controller.
+ * Condicion controller.
  *
  */
-class GeneralController extends Controller
+class CondicionController extends Controller
 {
     /**
-     * Lists all General entities.
+     * Lists all Condicion entities.
      *
      */
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $queryBuilder = $em->getRepository('BackendBundle:General')->createQueryBuilder('e');
+        $queryBuilder = $em->getRepository('BackendBundle:Condicion')->createQueryBuilder('e');
 
         list($filterForm, $queryBuilder) = $this->filter($queryBuilder, $request);
-        list($generals, $pagerHtml) = $this->paginator($queryBuilder, $request);
+        list($condicions, $pagerHtml) = $this->paginator($queryBuilder, $request);
         
         $totalOfRecordsString = $this->getTotalOfRecordsString($queryBuilder, $request);
 
-        return $this->render('AppBundle:general:index.html.twig', array(
-            'generals' => $generals,
+        return $this->render('AppBundle:condicion:index.html.twig', array(
+            'condicions' => $condicions,
             'pagerHtml' => $pagerHtml,
             'filterForm' => $filterForm->createView(),
             'totalOfRecordsString' => $totalOfRecordsString,
@@ -47,11 +47,11 @@ class GeneralController extends Controller
     protected function filter($queryBuilder, Request $request)
     {
         $session = $request->getSession();
-        $filterForm = $this->createForm('AppBundle\Form\GeneralFilterType');
+        $filterForm = $this->createForm('AppBundle\Form\CondicionFilterType');
 
         // Reset filter
         if ($request->get('filter_action') == 'reset') {
-            $session->remove('GeneralControllerFilter');
+            $session->remove('CondicionControllerFilter');
         }
 
         // Filter action
@@ -64,12 +64,12 @@ class GeneralController extends Controller
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
                 // Save filter to session
                 $filterData = $filterForm->getData();
-                $session->set('GeneralControllerFilter', $filterData);
+                $session->set('CondicionControllerFilter', $filterData);
             }
         } else {
             // Get filter from session
-            if ($session->has('GeneralControllerFilter')) {
-                $filterData = $session->get('GeneralControllerFilter');
+            if ($session->has('CondicionControllerFilter')) {
+                $filterData = $session->get('CondicionControllerFilter');
                 
                 foreach ($filterData as $key => $filter) { //fix for entityFilterType that is loaded from session
                     if (is_object($filter)) {
@@ -77,7 +77,7 @@ class GeneralController extends Controller
                     }
                 }
                 
-                $filterForm = $this->createForm('AppBundle\Form\GeneralFilterType', $filterData);
+                $filterForm = $this->createForm('AppBundle\Form\CondicionFilterType', $filterData);
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
             }
         }
@@ -114,7 +114,7 @@ class GeneralController extends Controller
         {
             $requestParams = $request->query->all();
             $requestParams['pcg_page'] = $page;
-            return $me->generateUrl('general', $requestParams);
+            return $me->generateUrl('condicion', $requestParams);
         };
 
         // Paginator - view
@@ -150,43 +150,43 @@ class GeneralController extends Controller
     
 
     /**
-     * Displays a form to create a new General entity.
+     * Displays a form to create a new Condicion entity.
      *
      */
     public function newAction(Request $request)
     {
     
-        $general = new General();
-        $form   = $this->createForm('AppBundle\Form\GeneralType', $general);
+        $condicion = new Condicion();
+        $form   = $this->createForm('AppBundle\Form\CondicionType', $condicion);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($general);
+            $em->persist($condicion);
             $em->flush();
             
-            $editLink = $this->generateUrl('general_edit', array('id' => $general->getId()));
-            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New general was created successfully.</a>" );
+            $editLink = $this->generateUrl('condicion_edit', array('id' => $condicion->getId()));
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New condicion was created successfully.</a>" );
             
-            $nextAction=  $request->get('submit') == 'save' ? 'general' : 'general_new';
+            $nextAction=  $request->get('submit') == 'save' ? 'condicion' : 'condicion_new';
             return $this->redirectToRoute($nextAction);
         }
-        return $this->render('AppBundle:general:new.html.twig', array(
-            'general' => $general,
+        return $this->render('AppBundle:condicion:new.html.twig', array(
+            'condicion' => $condicion,
             'form'   => $form->createView(),
         ));
     }
     
 
     /**
-     * Finds and displays a General entity.
+     * Finds and displays a Condicion entity.
      *
      */
-    public function showAction(General $general)
+    public function showAction(Condicion $condicion)
     {
-        $deleteForm = $this->createDeleteForm($general);
-        return $this->render('AppBundle:general:show.html.twig', array(
-            'general' => $general,
+        $deleteForm = $this->createDeleteForm($condicion);
+        return $this->render('AppBundle:condicion:show.html.twig', array(
+            'condicion' => $condicion,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -194,25 +194,25 @@ class GeneralController extends Controller
     
 
     /**
-     * Displays a form to edit an existing General entity.
+     * Displays a form to edit an existing Condicion entity.
      *
      */
-    public function editAction(Request $request, General $general)
+    public function editAction(Request $request, Condicion $condicion)
     {
-        $deleteForm = $this->createDeleteForm($general);
-        $editForm = $this->createForm('AppBundle\Form\GeneralType', $general);
+        $deleteForm = $this->createDeleteForm($condicion);
+        $editForm = $this->createForm('AppBundle\Form\CondicionType', $condicion);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($general);
+            $em->persist($condicion);
             $em->flush();
             
             $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
-            return $this->redirectToRoute('general_edit', array('id' => $general->getId()));
+            return $this->redirectToRoute('condicion_edit', array('id' => $condicion->getId()));
         }
-        return $this->render('AppBundle:general:edit.html.twig', array(
-            'general' => $general,
+        return $this->render('AppBundle:condicion:edit.html.twig', array(
+            'condicion' => $condicion,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -221,59 +221,59 @@ class GeneralController extends Controller
     
 
     /**
-     * Deletes a General entity.
+     * Deletes a Condicion entity.
      *
      */
-    public function deleteAction(Request $request, General $general)
+    public function deleteAction(Request $request, Condicion $condicion)
     {
     
-        $form = $this->createDeleteForm($general);
+        $form = $this->createDeleteForm($condicion);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($general);
+            $em->remove($condicion);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The General was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'The Condicion was deleted successfully');
         } else {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the General');
+            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Condicion');
         }
         
-        return $this->redirectToRoute('general');
+        return $this->redirectToRoute('condicion');
     }
     
     /**
-     * Creates a form to delete a General entity.
+     * Creates a form to delete a Condicion entity.
      *
-     * @param General $general The General entity
+     * @param Condicion $condicion The Condicion entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(General $general)
+    private function createDeleteForm(Condicion $condicion)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('general_delete', array('id' => $general->getId())))
+            ->setAction($this->generateUrl('condicion_delete', array('id' => $condicion->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
     }
     
     /**
-     * Delete General by id
+     * Delete Condicion by id
      *
      */
-    public function deleteByIdAction(General $general){
+    public function deleteByIdAction(Condicion $condicion){
         $em = $this->getDoctrine()->getManager();
         
         try {
-            $em->remove($general);
+            $em->remove($condicion);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The General was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'The Condicion was deleted successfully');
         } catch (Exception $ex) {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the General');
+            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Condicion');
         }
 
-        return $this->redirect($this->generateUrl('general'));
+        return $this->redirect($this->generateUrl('condicion'));
 
     }
     
@@ -289,22 +289,22 @@ class GeneralController extends Controller
         if ($action == "delete") {
             try {
                 $em = $this->getDoctrine()->getManager();
-                $repository = $em->getRepository('BackendBundle:General');
+                $repository = $em->getRepository('BackendBundle:Condicion');
 
                 foreach ($ids as $id) {
-                    $general = $repository->find($id);
-                    $em->remove($general);
+                    $condicion = $repository->find($id);
+                    $em->remove($condicion);
                     $em->flush();
                 }
 
-                $this->get('session')->getFlashBag()->add('success', 'generals was deleted successfully!');
+                $this->get('session')->getFlashBag()->add('success', 'condicions was deleted successfully!');
 
             } catch (Exception $ex) {
-                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the generals ');
+                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the condicions ');
             }
         }
 
-        return $this->redirect($this->generateUrl('general'));
+        return $this->redirect($this->generateUrl('condicion'));
     }
     
 

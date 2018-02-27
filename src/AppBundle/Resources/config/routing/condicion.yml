@@ -1,0 +1,42 @@
+condicion:
+    path:  /condicion
+    defaults: { _controller: "AppBundle:Condicion:index" }
+
+condicion_show:
+    path:  /condicion/{id}/show
+    defaults: { _controller: "AppBundle:Condicion:show" }
+
+condicion_new:
+    path:  /condicion/new
+    defaults: { _controller: "AppBundle:Condicion:new" }
+
+condicion_create:
+    path:  /condicion/create
+    defaults: { _controller: "AppBundle:Condicion:create" }
+    requirements: { _method: post }
+
+condicion_edit:
+    path:  /condicion/{id}/edit
+    defaults: { _controller: "AppBundle:Condicion:edit" }
+
+condicion_update:
+    path:  /condicion/{id}/update
+    defaults: { _controller: "AppBundle:Condicion:update" }
+    requirements: { _method: post|put }
+
+condicion_delete:
+    path:  /condicion/{id}/delete
+    defaults: { _controller: "AppBundle:Condicion:delete" }
+    requirements: { _method: post|delete }
+    
+condicion_by_id_delete:
+    path:  /condicion/delete/{id}
+    defaults: { _controller: "AppBundle:Condicion:deleteById" }
+    requirements: { _method: get }
+    
+
+condicion_bulk_action:
+    path:  /condicion/bulk-action
+    defaults: { _controller: "AppBundle:Condicion:bulk" }
+    requirements: { _method: post }
+    
