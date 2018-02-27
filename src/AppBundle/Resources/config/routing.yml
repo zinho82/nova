@@ -2,44 +2,44 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
    
-app_portada:
-    resource: "@AppBundle/Resources/config/routing/portada.yml"
+app_calidad:
+    resource: "@AppBundle/Resources/config/routing/calidad.yml"
     prefix: /
-app_ctacte:
-    resource: "@AppBundle/Resources/config/routing/ctacte.yml"
-    prefix: /
-#    
-#app_publication:
-#    resource: "@AppBundle/Resources/config/routing/publication.yml"
+#app_ctacte:
+#    resource: "@AppBundle/Resources/config/routing/ctacte.yml"
 #    prefix: /
+##    
+##app_publication:
+##    resource: "@AppBundle/Resources/config/routing/publication.yml"
+##    prefix: /
+## 
+#app_invertir:
+#    resource: "@AppBundle/Resources/config/routing/invertir.yml"
+#    prefix: / 
 # 
-app_invertir:
-    resource: "@AppBundle/Resources/config/routing/invertir.yml"
-    prefix: / 
- 
-
-app_proyectos:
-    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
-    prefix: / 
- 
-#app_like:
-#    resource: "@AppBundle/Resources/config/routing/like.yml"
-#    prefix: /
-#     
-#      
+#
+#app_proyectos:
+#    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
+#    prefix: / 
+# 
+##app_like:
+##    resource: "@AppBundle/Resources/config/routing/like.yml"
+##    prefix: /
+##     
+##      
 app_homepage: 
         path: /
-        defaults: { _controller: AppBundle:User:portada } 
+        defaults: { _controller: AppBundle:Calidad:index } 
 #        
-#app_following:
-#    resource: "@AppBundle/Resources/config/routing/following.yml"
+##app_following:
+##    resource: "@AppBundle/Resources/config/routing/following.yml"
+##    prefix: /
+##      
+#app_notifications:
+#    resource: "@AppBundle/Resources/config/routing/notification.yml"
 #    prefix: /
-#      
-app_notifications:
-    resource: "@AppBundle/Resources/config/routing/notification.yml"
-    prefix: /
-    
-app_private_message:
-    resource: "@AppBundle/Resources/config/routing/private_message.yml"
-    prefix: /
- 
+#    
+#app_private_message:
+#    resource: "@AppBundle/Resources/config/routing/private_message.yml"
+#    prefix: /
+# 

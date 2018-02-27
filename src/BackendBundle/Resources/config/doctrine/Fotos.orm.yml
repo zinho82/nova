@@ -2,9 +2,9 @@ BackendBundle\Entity\Fotos:
     type: entity
     table: fotos
     indexes:
-        FK_codproy_fotos:
+        FK_pallet_foto:
             columns:
-                - codigoproy
+                - idpallet
     id:
         id:
             type: integer
@@ -15,21 +15,27 @@ BackendBundle\Entity\Fotos:
             generator:
                 strategy: IDENTITY
     fields:
-        url:
-            type: text
+        foto:
+            type: string
             nullable: true
-            length: 65535
+            length: 300
+            options:
+                fixed: false
+        tipo:
+            type: string
+            nullable: true
+            length: 200
             options:
                 fixed: false
     manyToOne:
-        codigoproy:
-            targetEntity: Proyectos
+        idpallet:
+            targetEntity: General
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                codigoproy:
-                    referencedColumnName: codigo
+                idpallet:
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

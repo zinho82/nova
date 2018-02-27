@@ -1,0 +1,42 @@
+calidad:
+    path:  /
+    defaults: { _controller: "AppBundle:Calidad:index" }
+
+calidad_show:
+    path:  /{id}/show
+    defaults: { _controller: "AppBundle:Calidad:show" }
+
+calidad_new:
+    path:  /new
+    defaults: { _controller: "AppBundle:Calidad:new" }
+
+calidad_create:
+    path:  /create
+    defaults: { _controller: "AppBundle:Calidad:create" }
+    requirements: { _method: post }
+
+calidad_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "AppBundle:Calidad:edit" }
+
+calidad_update:
+    path:  /{id}/update
+    defaults: { _controller: "AppBundle:Calidad:update" }
+    requirements: { _method: post|put }
+
+calidad_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "AppBundle:Calidad:delete" }
+    requirements: { _method: post|delete }
+    
+calidad_by_id_delete:
+    path:  /delete/{id}
+    defaults: { _controller: "AppBundle:Calidad:deleteById" }
+    requirements: { _method: get }
+    
+
+calidad_bulk_action:
+    path:  /bulk-action
+    defaults: { _controller: "AppBundle:Calidad:bulk" }
+    requirements: { _method: post }
+    

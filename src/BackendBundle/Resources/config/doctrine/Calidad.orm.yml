@@ -1,0 +1,179 @@
+BackendBundle\Entity\Calidad:
+    type: entity
+    table: calidad
+    indexes:
+        FKpallet:
+            columns:
+                - idpallet
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        size:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+        variety:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+                default: '0'
+        casesnetweigth:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        samplenumber:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+        barcodeplu:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+        openappearance:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        blankend:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        blistermiteinjure:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        discoloration:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        blush:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        lightblush:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        scaring:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        hardend:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        insectdamage:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        russet:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        limbrubs:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        overripe:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        mealy:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        scab:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        shape:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        stermpunctureskinbreaks:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+        missingcalix:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+    manyToOne:
+        idpallet:
+            targetEntity: General
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idpallet:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

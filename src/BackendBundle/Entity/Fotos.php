@@ -15,12 +15,17 @@ class Fotos
     /**
      * @var string
      */
-    private $url;
+    private $foto;
 
     /**
-     * @var \BackendBundle\Entity\Proyectos
+     * @var string
      */
-    private $codigoproy;
+    private $tipo;
+
+    /**
+     * @var \BackendBundle\Entity\General
+     */
+    private $idpallet;
 
 
     /**
@@ -34,50 +39,75 @@ class Fotos
     }
 
     /**
-     * Set url
+     * Set foto
      *
-     * @param string $url
+     * @param string $foto
      *
      * @return Fotos
      */
-    public function setUrl($url)
+    public function setFoto($foto)
     {
-        $this->url = $url;
+        $this->foto = $foto;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get foto
      *
      * @return string
      */
-    public function getUrl()
+    public function getFoto()
     {
-        return $this->url;
+        return $this->foto;
     }
 
     /**
-     * Set codigoproy
+     * Set tipo
      *
-     * @param \BackendBundle\Entity\Proyectos $codigoproy
+     * @param string $tipo
      *
      * @return Fotos
      */
-    public function setCodigoproy(\BackendBundle\Entity\Proyectos $codigoproy = null)
+    public function setTipo($tipo)
     {
-        $this->codigoproy = $codigoproy;
+        $this->tipo = $tipo;
 
         return $this;
     }
 
     /**
-     * Get codigoproy
+     * Get tipo
      *
-     * @return \BackendBundle\Entity\Proyectos
+     * @return string
      */
-    public function getCodigoproy()
+    public function getTipo()
     {
-        return $this->codigoproy;
+        return $this->tipo;
+    }
+
+    /**
+     * Set idpallet
+     *
+     * @param \BackendBundle\Entity\General $idpallet
+     *
+     * @return Fotos
+     */
+    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
+    {
+        $this->idpallet = $idpallet;
+
+        return $this;
+    }
+
+    /**
+     * Get idpallet
+     *
+     * @return \BackendBundle\Entity\General
+     */
+    public function getIdpallet()
+    {
+        return $this->idpallet;
     }
 }
+

@@ -1,7 +1,0 @@
-ctacte:
-    path: /cuenta-corriente
-    defaults: { _controller: AppBundle:Ctacte:CuentaCorriente}
-ctacte_deposito:
-    path: /deposito-cuenta-corriente
-    defaults: { _controller: AppBundle:Ctacte:Deposito}
-   
