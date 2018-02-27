@@ -9,30 +9,30 @@ use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
 
-use BackendBundle\Entity\Calidad;
+use BackendBundle\Entity\General;
 
 /**
- * Calidad controller.
+ * General controller.
  *
  */
-class CalidadController extends Controller
+class GeneralController extends Controller
 {
     /**
-     * Lists all Calidad entities.
+     * Lists all General entities.
      *
      */
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $queryBuilder = $em->getRepository('BackendBundle:Calidad')->createQueryBuilder('e');
+        $queryBuilder = $em->getRepository('BackendBundle:General')->createQueryBuilder('e');
 
         list($filterForm, $queryBuilder) = $this->filter($queryBuilder, $request);
-        list($calidads, $pagerHtml) = $this->paginator($queryBuilder, $request);
+        list($generals, $pagerHtml) = $this->paginator($queryBuilder, $request);
         
         $totalOfRecordsString = $this->getTotalOfRecordsString($queryBuilder, $request);
 
-        return $this->render('AppBundle:calidad:index.html.twig', array(
-            'calidads' => $calidads,
+        return $this->render('AppBundle:general:index.html.twig', array(
+            'generals' => $generals,
             'pagerHtml' => $pagerHtml,
             'filterForm' => $filterForm->createView(),
             'totalOfRecordsString' => $totalOfRecordsString,
@@ -47,11 +47,11 @@ class CalidadController extends Controller
     protected function filter($queryBuilder, Request $request)
     {
         $session = $request->getSession();
-        $filterForm = $this->createForm('AppBundle\Form\CalidadFilterType');
+        $filterForm = $this->createForm('AppBundle\Form\GeneralFilterType');
 
         // Reset filter
         if ($request->get('filter_action') == 'reset') {
-            $session->remove('CalidadControllerFilter');
+            $session->remove('GeneralControllerFilter');
         }
 
         // Filter action
@@ -64,12 +64,12 @@ class CalidadController extends Controller
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
                 // Save filter to session
                 $filterData = $filterForm->getData();
-                $session->set('CalidadControllerFilter', $filterData);
+                $session->set('GeneralControllerFilter', $filterData);
             }
         } else {
             // Get filter from session
-            if ($session->has('CalidadControllerFilter')) {
-                $filterData = $session->get('CalidadControllerFilter');
+            if ($session->has('GeneralControllerFilter')) {
+                $filterData = $session->get('GeneralControllerFilter');
                 
                 foreach ($filterData as $key => $filter) { //fix for entityFilterType that is loaded from session
                     if (is_object($filter)) {
@@ -77,7 +77,7 @@ class CalidadController extends Controller
                     }
                 }
                 
-                $filterForm = $this->createForm('AppBundle\Form\CalidadFilterType', $filterData);
+                $filterForm = $this->createForm('BackendBundle\Form\GeneralFilterType', $filterData);
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
             }
         }
@@ -114,7 +114,7 @@ class CalidadController extends Controller
         {
             $requestParams = $request->query->all();
             $requestParams['pcg_page'] = $page;
-            return $me->generateUrl('calidad', $requestParams);
+            return $me->generateUrl('general', $requestParams);
         };
 
         // Paginator - view
@@ -150,43 +150,43 @@ class CalidadController extends Controller
     
 
     /**
-     * Displays a form to create a new Calidad entity.
+     * Displays a form to create a new General entity.
      *
      */
     public function newAction(Request $request)
     {
     
-        $calidad = new Calidad();
-        $form   = $this->createForm('AppBundle\Form\CalidadType', $calidad);
+        $general = new General();
+        $form   = $this->createForm('BackendBundle\Form\GeneralType', $general);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($calidad);
+            $em->persist($general);
             $em->flush();
             
-            $editLink = $this->generateUrl('calidad_edit', array('id' => $calidad->getId()));
-            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New calidad was created successfully.</a>" );
+            $editLink = $this->generateUrl('general_edit', array('id' => $general->getId()));
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New general was created successfully.</a>" );
             
-            $nextAction=  $request->get('submit') == 'save' ? 'calidad' : 'calidad_new';
+            $nextAction=  $request->get('submit') == 'save' ? 'general' : 'general_new';
             return $this->redirectToRoute($nextAction);
         }
-        return $this->render('AppBundle:calidad:new.html.twig', array(
-            'calidad' => $calidad,
+        return $this->render('AppBundle:general:new.html.twig', array(
+            'general' => $general,
             'form'   => $form->createView(),
         ));
     }
     
 
     /**
-     * Finds and displays a Calidad entity.
+     * Finds and displays a General entity.
      *
      */
-    public function showAction(Calidad $calidad)
+    public function showAction(General $general)
     {
-        $deleteForm = $this->createDeleteForm($calidad);
-        return $this->render('AppBundle:calidad:show.html.twig', array(
-            'calidad' => $calidad,
+        $deleteForm = $this->createDeleteForm($general);
+        return $this->render('AppBundle:general:show.html.twig', array(
+            'general' => $general,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -194,25 +194,25 @@ class CalidadController extends Controller
     
 
     /**
-     * Displays a form to edit an existing Calidad entity.
+     * Displays a form to edit an existing General entity.
      *
      */
-    public function editAction(Request $request, Calidad $calidad)
+    public function editAction(Request $request, General $general)
     {
-        $deleteForm = $this->createDeleteForm($calidad);
-        $editForm = $this->createForm('AppBundle\Form\CalidadType', $calidad);
+        $deleteForm = $this->createDeleteForm($general);
+        $editForm = $this->createForm('BackendBundle\Form\GeneralType', $general);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($calidad);
+            $em->persist($general);
             $em->flush();
             
             $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
-            return $this->redirectToRoute('calidad_edit', array('id' => $calidad->getId()));
+            return $this->redirectToRoute('general_edit', array('id' => $general->getId()));
         }
-        return $this->render('AppBundle:calidad:edit.html.twig', array(
-            'calidad' => $calidad,
+        return $this->render('AppBundle:general:edit.html.twig', array(
+            'general' => $general,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -221,59 +221,59 @@ class CalidadController extends Controller
     
 
     /**
-     * Deletes a Calidad entity.
+     * Deletes a General entity.
      *
      */
-    public function deleteAction(Request $request, Calidad $calidad)
+    public function deleteAction(Request $request, General $general)
     {
     
-        $form = $this->createDeleteForm($calidad);
+        $form = $this->createDeleteForm($general);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($calidad);
+            $em->remove($general);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The Calidad was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'The General was deleted successfully');
         } else {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Calidad');
+            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the General');
         }
         
-        return $this->redirectToRoute('calidad');
+        return $this->redirectToRoute('general');
     }
     
     /**
-     * Creates a form to delete a Calidad entity.
+     * Creates a form to delete a General entity.
      *
-     * @param Calidad $calidad The Calidad entity
+     * @param General $general The General entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Calidad $calidad)
+    private function createDeleteForm(General $general)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('calidad_delete', array('id' => $calidad->getId())))
+            ->setAction($this->generateUrl('general_delete', array('id' => $general->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
     }
     
     /**
-     * Delete Calidad by id
+     * Delete General by id
      *
      */
-    public function deleteByIdAction(Calidad $calidad){
+    public function deleteByIdAction(General $general){
         $em = $this->getDoctrine()->getManager();
         
         try {
-            $em->remove($calidad);
+            $em->remove($general);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The Calidad was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'The General was deleted successfully');
         } catch (Exception $ex) {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Calidad');
+            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the General');
         }
 
-        return $this->redirect($this->generateUrl('calidad'));
+        return $this->redirect($this->generateUrl('general'));
 
     }
     
@@ -289,22 +289,22 @@ class CalidadController extends Controller
         if ($action == "delete") {
             try {
                 $em = $this->getDoctrine()->getManager();
-                $repository = $em->getRepository('BackendBundle:Calidad');
+                $repository = $em->getRepository('BackendBundle:General');
 
                 foreach ($ids as $id) {
-                    $calidad = $repository->find($id);
-                    $em->remove($calidad);
+                    $general = $repository->find($id);
+                    $em->remove($general);
                     $em->flush();
                 }
 
-                $this->get('session')->getFlashBag()->add('success', 'calidads was deleted successfully!');
+                $this->get('session')->getFlashBag()->add('success', 'generals was deleted successfully!');
 
             } catch (Exception $ex) {
-                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the calidads ');
+                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the generals ');
             }
         }
 
-        return $this->redirect($this->generateUrl('calidad'));
+        return $this->redirect($this->generateUrl('general'));
     }
     
 

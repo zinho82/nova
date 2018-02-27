@@ -4,7 +4,7 @@ calidad:
 
 calidad_show:
     path:  /{id}/show
-    defaults: { _controller: "AppBundle:Calidad:show" }
+    defaults: { _controller: "AppBundle:Calidad:show" } 
 
 calidad_new:
     path:  /new

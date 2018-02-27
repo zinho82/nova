@@ -63,7 +63,7 @@ BackendBundle\Entity\General:
             length: 200
             options:
                 fixed: false
-        caseperpaññet:
+        caseperpallet:
             type: string
             nullable: true
             length: 200

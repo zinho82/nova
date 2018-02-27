@@ -60,7 +60,7 @@ class General
     /**
      * @var string
      */
-    private $caseperpaññet;
+    private $caseperpallet;
 
     /**
      * @var string
@@ -355,27 +355,27 @@ class General
     }
 
     /**
-     * Set caseperpaññet
+     * Set caseperpallet
      *
-     * @param string $caseperpaññet
+     * @param string $caseperpallet
      *
      * @return General
      */
-    public function setCaseperpaññet($caseperpaññet)
+    public function setCaseperpallet($caseperpallet)
     {
-        $this->caseperpaññet = $caseperpaññet;
+        $this->caseperpallet = $caseperpallet;
 
         return $this;
     }
 
     /**
-     * Get caseperpaññet
+     * Get caseperpallet
      *
      * @return string
      */
-    public function getCaseperpaññet()
+    public function getCaseperpallet()
     {
-        return $this->caseperpaññet;
+        return $this->caseperpallet;
     }
 
     /**

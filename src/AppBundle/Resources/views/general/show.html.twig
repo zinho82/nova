@@ -1,0 +1,213 @@
+{% extends 'AppBundle:Layouts:layout.html.twig' %}
+
+{% block title %}
+{{ parent() }} - general
+{% endblock %}
+
+{% block body %}
+
+<div id="top" class="row">
+    <div class="page-header">
+        <h2>View general <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p><strong>Id</strong></p>
+        <p>
+            {{ general.id }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Inspector</strong></p>
+        <p>
+            {{ general.inspector }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Dateinspect</strong></p>
+        <p>
+            {% if general.dateinspect %}{{ general.dateinspect|date('Y-m-d H:i:s') }}{% endif %}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Inspectplan</strong></p>
+        <p>
+            {{ general.inspectplan }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Countryorigin</strong></p>
+        <p>
+            {{ general.countryorigin }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Commodityname</strong></p>
+        <p>
+            {{ general.commodityname }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Variety</strong></p>
+        <p>
+            {{ general.variety }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Productpackstyle</strong></p>
+        <p>
+            {{ general.productpackstyle }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Label</strong></p>
+        <p>
+            {{ general.label }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Casestype</strong></p>
+        <p>
+            {{ general.casestype }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Caseperpallet</strong></p>
+        <p>
+            {{ general.caseperpallet }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Grower</strong></p>
+        <p>
+            {{ general.grower }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Size</strong></p>
+        <p>
+            {{ general.size }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Packingdate</strong></p>
+        <p>
+            {% if general.packingdate %}{{ general.packingdate|date('Y-m-d H:i:s') }}{% endif %}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Casesnetweight</strong></p>
+        <p>
+            {{ general.casesnetweight }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Barcodeplu</strong></p>
+        <p>
+            {{ general.barcodeplu }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Costumer</strong></p>
+        <p>
+            {{ general.costumer }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Shipper</strong></p>
+        <p>
+            {{ general.shipper }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Lot</strong></p>
+        <p>
+            {{ general.lot }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Vasset</strong></p>
+        <p>
+            {{ general.vasset }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Container</strong></p>
+        <p>
+            {{ general.container }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Thier</strong></p>
+        <p>
+            {{ general.thier }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Comments</strong></p>
+        <p>
+            {{ general.comments }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Recommendation</strong></p>
+        <p>
+            {{ general.recommendation }}
+        </p>
+
+    </div></div>
+
+<hr/>
+
+
+<div class="form-group">
+    <a class="btn btn-default" href="{{ path('general') }}">
+        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        Back to list
+    </a>
+    <a class="btn btn-primary" href="{{ path('general_edit', { 'id':  general.id }) }}">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        Edit
+    </a>
+    <a class="btn btn-info" href="{{ path('general_new') }}">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        New
+    </a>
+    <form action="{{ path('general_delete', { 'id': general.id }) }}" method="post" style="display: inline-block">
+        <input type="hidden" name="_method" value="DELETE" />
+        {{ form_widget(delete_form) }}
+        <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure');">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            Delete
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}
+

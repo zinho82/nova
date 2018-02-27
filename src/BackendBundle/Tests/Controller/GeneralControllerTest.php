@@ -4,7 +4,7 @@ namespace BackendBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class CalidadControllerTest extends WebTestCase
+class GeneralControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class CalidadControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/calidad/');
+        $crawler = $client->request('GET', '/general/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET //");
         $crawler = $client->click($crawler->selectLink('New')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Save')->form(array(
-            'calidad[field_name]'  => 'Test',
+            'general[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class CalidadControllerTest extends WebTestCase
         $crawler = $client->click($crawler->filter('a[title="Edit"]')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'calidad[field_name]'  => 'Foo',
+            'general[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 
