@@ -24,7 +24,7 @@ class CalidadType extends AbstractType
                     'class' =>  'form-control'
                 ),
                 'class' => 'BackendBundle\Entity\General',
-                'choice_label' => 'inspector',
+                'choice_label' => 'numpallet',
                 'placeholder' => 'Please choose',
                 'empty_data' => null,
                 'required' => false

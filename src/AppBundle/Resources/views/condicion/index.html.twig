@@ -145,6 +145,7 @@
 
                 {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
                             <th>{{macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('idpallet',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
                             <th>{{macros.th_sortable('size',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
                             <th>{{macros.th_sortable('variety',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
                             <th>{{macros.th_sortable('firmness',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
@@ -166,6 +167,7 @@
                     <tr>
                         <td><input type="checkbox" name="ids[]" onclick='bulkSubmitBtnManage();' class="check-all" value="{{condicion.id}}"/></td>
                         <td><a href="{{ path('condicion_edit', { 'id': condicion.id }) }}">{{ condicion.id }}</a></td>
+                        <td>{{ condicion.idpallet }}</td>
                         <td>{{ condicion.size }}</td>
                         <td>{{ condicion.variety }}</td>
                         <td>{{ condicion.firmness }}</td>
