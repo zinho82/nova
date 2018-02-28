@@ -235,8 +235,8 @@
                                                 <td>{{ general.vasset }}</td>
                                                 <td>{{ general.container }}</td>
                                                 <td>{{ general.thier }}</td>
-                                                <td>{{ general.comments }}</td>
-                                                <td>{{ general.recommendation }}</td>
+                                                <td>{{ general.comments|raw }}</td>
+                                                <td>{{ general.recommendation|raw }}</td>
 
                                                 <td class="actions">
                                                     <a  onclick="return confirm('Are you sure!');" title="Delete" class="btn btn-danger btn-sm" href="{{ path('general_by_id_delete', { 'id': general.id}) }}">
