@@ -17,6 +17,11 @@ BackendBundle\Entity\General:
             length: 100
             options:
                 fixed: false
+        numpallet:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
         dateinspect:
             type: datetime
             nullable: true

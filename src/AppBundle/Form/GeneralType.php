@@ -17,6 +17,13 @@ class GeneralType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+                ->add('numpallet', TextType::class,array(
+                   'attr'  =>  array(
+                    'class' =>  'form-control'
+                ),
+                    'required'  => true,
+                    'label'     =>  'Numero de Pallet',
+                ))
             ->add('inspector', TextType::class,array(
                 'attr'  =>  array(
                     'class' =>  'form-control'
