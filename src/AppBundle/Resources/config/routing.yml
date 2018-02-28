@@ -12,6 +12,9 @@ app_general:
 app_condicion:
     resource: "@AppBundle/Resources/config/routing/condicion.yml"
     prefix: /
+app_fotos:
+    resource: "@AppBundle/Resources/config/routing/fotos.yml"
+    prefix: /
 app_homepage: 
         path: /
         defaults: { _controller: AppBundle:General:index } 
