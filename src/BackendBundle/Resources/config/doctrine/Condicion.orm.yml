@@ -1,0 +1,85 @@
+BackendBundle\Entity\Condicion:
+    type: entity
+    table: condicion
+    indexes:
+        FK_pallet:
+            columns:
+                - idpallet
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        size:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        variety:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        firmness:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        sunburn:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        decay:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        mold:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        freezinginjury:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        pithybrowncore:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        scald:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        shriveling:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        bruising:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+    manyToOne:
+        idpallet:
+            targetEntity: General
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idpallet:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

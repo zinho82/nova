@@ -2,44 +2,16 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
    
-app_portada:
-    resource: "@AppBundle/Resources/config/routing/portada.yml"
-    prefix: /
-app_ctacte:
-    resource: "@AppBundle/Resources/config/routing/ctacte.yml"
-    prefix: /
-#    
-#app_publication:
-#    resource: "@AppBundle/Resources/config/routing/publication.yml"
-#    prefix: /
-# 
-app_invertir:
-    resource: "@AppBundle/Resources/config/routing/invertir.yml"
-    prefix: / 
- 
-
-app_proyectos:
-    resource: "@AppBundle/Resources/config/routing/proyectos.yml"
-    prefix: / 
- 
-#app_like:
-#    resource: "@AppBundle/Resources/config/routing/like.yml"
-#    prefix: /
-#     
-#      
-app_homepage: 
-        path: /
-        defaults: { _controller: AppBundle:User:portada } 
-#        
-#app_following:
-#    resource: "@AppBundle/Resources/config/routing/following.yml"
-#    prefix: /
-#      
-app_notifications:
-    resource: "@AppBundle/Resources/config/routing/notification.yml"
+app_calidad:
+    resource: "@AppBundle/Resources/config/routing/calidad.yml"
     prefix: /
     
-app_private_message:
-    resource: "@AppBundle/Resources/config/routing/private_message.yml"
+app_general:
+    resource: "@AppBundle/Resources/config/routing/general.yml"
     prefix: /
- 
+app_condicion:
+    resource: "@AppBundle/Resources/config/routing/condicion.yml"
+    prefix: /
+app_homepage: 
+        path: /
+        defaults: { _controller: AppBundle:General:index } 

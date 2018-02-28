@@ -1,0 +1,152 @@
+BackendBundle\Entity\General:
+    type: entity
+    table: general
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        inspector:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        numpallet:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        dateinspect:
+            type: datetime
+            nullable: true
+        inspectplan:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        countryorigin:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        commodityname:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        variety:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: Variety
+        productpackstyle:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        label:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        casestype:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        caseperpallet:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        grower:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        size:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        packingdate:
+            type: datetime
+            nullable: true
+        casesnetweight:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        barcodeplu:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        costumer:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        shipper:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        lot:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        vasset:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        container:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        thier:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        comments:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        recommendation:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

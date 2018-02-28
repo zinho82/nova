@@ -1,0 +1,42 @@
+general:
+    path:  /
+    defaults: { _controller: "AppBundle:General:index" }
+
+general_show:
+    path:  /general/{id}/show
+    defaults: { _controller: "AppBundle:General:show" } 
+
+general_new:
+    path:  /general/new
+    defaults: { _controller: "AppBundle:General:new" }
+
+general_create:
+    path:  /general/create
+    defaults: { _controller: "AppBundle:General:create" }
+    requirements: { _method: post }
+
+general_edit:
+    path:  /general/{id}/edit
+    defaults: { _controller: "AppBundle:General:edit" }
+
+general_update:
+    path:  /general/{id}/update
+    defaults: { _controller: "AppBundle:General:update" }
+    requirements: { _method: post|put }
+
+general_delete:
+    path:  /general/{id}/delete
+    defaults: { _controller: "AppBundle:General:delete" }
+    requirements: { _method: post|delete }
+    
+general_by_id_delete:
+    path:  /general/delete/{id}
+    defaults: { _controller: "AppBundle:General:deleteById" }
+    requirements: { _method: get }
+    
+
+general_bulk_action:
+    path:  /general/bulk-action
+    defaults: { _controller: "AppBundle:General:bulk" }
+    requirements: { _method: post }
+    

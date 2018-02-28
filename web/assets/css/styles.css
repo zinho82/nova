@@ -1,7 +1,7 @@
 /*GENERALES*/
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
 body{
-    background: #ccc;
+    background: #fff;
 }
 /*HEADER*/
 .navbar-collapse .avatar{
@@ -347,4 +347,7 @@ footer{
     border-radius: 10px;
     border-color: #aaa;
     font-size: 14px;
+}
+.col-lg-12 col-md-12{
+    margin: 0 auto;
 }
