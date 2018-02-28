@@ -2,7 +2,7 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
    
-app_calidad:
+app_calidad: 
     resource: "@AppBundle/Resources/config/routing/calidad.yml"
     prefix: /
     
