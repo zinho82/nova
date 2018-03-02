@@ -1,42 +1,42 @@
 fotos:
     path:  /fotos
-    defaults: { _controller: "BackendBundle:Fotos:index" }
+    defaults: { _controller: "AppBundle:Fotos:index" }
 
 fotos_show:
     path:  /fotos/{id}/show
-    defaults: { _controller: "BackendBundle:Fotos:show" }
+    defaults: { _controller: "AppBundle:Fotos:show" }
 
 fotos_new:
     path:  /fotos/new
-    defaults: { _controller: "BackendBundle:Fotos:new" }
+    defaults: { _controller: "AppBundle:Fotos:new" }
 
 fotos_create:
     path:  /fotos/create
-    defaults: { _controller: "BackendBundle:Fotos:create" }
+    defaults: { _controller: "AppBundle:Fotos:create" }
     requirements: { _method: post }
 
 fotos_edit:
     path:  /fotos/{id}/edit
-    defaults: { _controller: "BackendBundle:Fotos:edit" }
+    defaults: { _controller: "AppBundle:Fotos:edit" }
 
 fotos_update:
     path:  /fotos/{id}/update
-    defaults: { _controller: "BackendBundle:Fotos:update" }
+    defaults: { _controller: "AppBundle:Fotos:update" }
     requirements: { _method: post|put }
 
 fotos_delete:
     path:  /fotos/{id}/delete
-    defaults: { _controller: "BackendBundle:Fotos:delete" }
+    defaults: { _controller: "AppBundle:Fotos:delete" }
     requirements: { _method: post|delete }
     
 fotos_by_id_delete:
     path:  /fotos/delete/{id}
-    defaults: { _controller: "BackendBundle:Fotos:deleteById" }
+    defaults: { _controller: "AppBundle:Fotos:deleteById" }
     requirements: { _method: get }
     
 
 fotos_bulk_action:
     path:  /fotos/bulk-action
-    defaults: { _controller: "BackendBundle:Fotos:bulk" }
+    defaults: { _controller: "AppBundle:Fotos:bulk" }
     requirements: { _method: post }
     

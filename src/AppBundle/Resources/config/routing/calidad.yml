@@ -7,8 +7,9 @@ calidad_show:
     defaults: { _controller: "AppBundle:Calidad:show" } 
 
 calidad_new:
-    path:  /calidad/new
-    defaults: { _controller: "AppBundle:Calidad:new" }
+    path:  /calidad/new/{id}
+    defaults: { _controller: "AppBundle:Calidad:new" ,id:null}
+    methods: [post|get]
 
 calidad_create:
     path:  /calidad/create

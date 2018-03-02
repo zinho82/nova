@@ -11,39 +11,45 @@ BackendBundle\Entity\General:
             generator:
                 strategy: IDENTITY
     fields:
-        inspector:
+        inspectorName:
             type: string
             nullable: true
             length: 100
             options:
                 fixed: false
-        numpallet:
+            column: inspector_name
+        numberPallet:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        dateinspect:
+            column: number_pallet
+        dateInspection:
             type: datetime
             nullable: true
-        inspectplan:
+            column: date_inspection
+        inspectorPlanName:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        countryorigin:
+            column: inspector_plan_name
+        countryOrigin:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        commodityname:
+            column: country_origin
+        commodityName:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
+            column: commodity_name
         variety:
             type: string
             nullable: true
@@ -51,30 +57,33 @@ BackendBundle\Entity\General:
             options:
                 fixed: false
             column: Variety
-        productpackstyle:
+        productPackStyle:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
+            column: product_pack_style
         label:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        casestype:
+        casesType:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        caseperpallet:
+            column: cases_type
+        casesPerPallet:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
+            column: cases_per_pallet
         grower:
             type: string
             nullable: true
@@ -87,21 +96,24 @@ BackendBundle\Entity\General:
             length: 200
             options:
                 fixed: false
-        packingdate:
+        packingDate:
             type: datetime
             nullable: true
-        casesnetweight:
+            column: packing_date
+        casesNetWeight:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        barcodeplu:
+            column: cases_net_weight
+        barCodePlu:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
+            column: bar_code_plu
         costumer:
             type: string
             nullable: true

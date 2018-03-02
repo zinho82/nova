@@ -1,14 +1,15 @@
 {% extends 'AppBundle:Layouts:layout.html.twig' %}
 
 {% block title %}
-{{ parent() }} - calidad
+{{ parent() }} - calidad index
 {% endblock %}
 
 {% block content %}
+    <div class="col-lg-12 col-sm-12 col-md-12">
 
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12 ">
         <div class="page-header">
             <h2><a href="{{ path('calidad') }}">Calidad</a></h2>
         </div>
@@ -30,22 +31,22 @@
                     <div class="col-md-6">{{ form_row(filterForm.variety) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.casesnetweigth) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.casesNetWeigth) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.samplenumber) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.sampleNumber) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.barcodeplu) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.barCodePlu) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.openappearance) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.openAppearance) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.blankend) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.blankEnd) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.blistermiteinjure) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.blisterMiteInjure) }}</div>
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.discoloration) }}</div>
@@ -54,22 +55,22 @@
                     <div class="col-md-6">{{ form_row(filterForm.blush) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.lightblush) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.lightBlush) }}</div>
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.scaring) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.hardend) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.hardEnd) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.insectdamage) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.insectDamage) }}</div>
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.russet) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.limbrubs) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.limbRubs) }}</div>
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.overripe) }}</div>
@@ -84,10 +85,10 @@
                     <div class="col-md-6">{{ form_row(filterForm.shape) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.stermpunctureskinbreaks) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.stermPunctureSkinBreaks) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.missingcalix) }}</div>
+                    <div class="col-md-6">{{ form_row(filterForm.missingCalix) }}</div>
 
                                 <div class="col-md-6">
                     {{ form_rest(filterForm) }}
@@ -128,9 +129,9 @@
 
 <div class="col-md-3">
 
-            <a class="btn btn-primary h3 pull-right" href="{{ path('calidad_new') }}" style="margin-bottom:10px">
+          <!--  <a class="btn btn-primary h3 pull-right" href="{{ path('calidad_new') }}" style="margin-bottom:10px">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New
-        </a>
+        </a>-->
         <a class="btn dropdown-toggle pull-right h3" data-toggle="collapse" data-target="#filters">
         Filter
         <span class="caret"></span>
@@ -169,7 +170,7 @@
 
 <div class="row">
 
-        <div class="table-responsive col-md-12">
+        <div class="table-responsive col-md-12 col-sm-12">
         <form method="POST" id="bulk_form" action="{{ path('calidad_bulk_action') }} ">
             <table class="table table-striped table-hover table-bordered" cellspacing="0" cellpadding="0">
                 <thead>
@@ -178,29 +179,30 @@
 
                 {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
                             <th>{{macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('idpallet',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                             <th>{{macros.th_sortable('idpallet',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('size',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('variety',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('casesnetweigth',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('samplenumber',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('barcodeplu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('openappearance',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('blankend',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('blistermiteinjure',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('casesNetWeigth',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('sampleNumber',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('barCodePlu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('openAppearance',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('blankEnd',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('blisterMiteInjure',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('discoloration',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('blush',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('lightblush',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('lightBlush',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('scaring',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('hardend',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('insectdamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('hardEnd',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('insectDamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('russet',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('limbrubs',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('limbRubs',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('overripe',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('mealy',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('scab',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('shape',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('stermpunctureskinbreaks',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>{{macros.th_sortable('missingcalix',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('stermPunctureSkinBreaks',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('missingCalix',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>Sum of Quality Defects</th>
     
                        
                         <th width = "130px">List</th>
@@ -214,27 +216,48 @@
                         <td>{{ calidad.idpallet }}</td>
                         <td>{{ calidad.size }}</td>
                         <td>{{ calidad.variety }}</td>
-                        <td>{{ calidad.casesnetweigth }}</td>
-                        <td>{{ calidad.samplenumber }}</td>
-                        <td>{{ calidad.barcodeplu }}</td>
-                        <td>{{ calidad.openappearance }}</td>
-                        <td>{{ calidad.blankend }}</td>
-                        <td>{{ calidad.blistermiteinjure }}</td>
-                        <td>{{ calidad.discoloration }}</td>
-                        <td>{{ calidad.blush }}</td>
-                        <td>{{ calidad.lightblush }}</td>
-                        <td>{{ calidad.scaring }}</td>
-                        <td>{{ calidad.hardend }}</td>
-                        <td>{{ calidad.insectdamage }}</td>
-                        <td>{{ calidad.russet }}</td>
-                        <td>{{ calidad.limbrubs }}</td>
-                        <td>{{ calidad.overripe }}</td>
-                        <td>{{ calidad.mealy }}</td>
-                        <td>{{ calidad.scab }}</td>
-                        <td>{{ calidad.shape }}</td>
-                        <td>{{ calidad.stermpunctureskinbreaks }}</td>
-                        <td>{{ calidad.missingcalix }}</td>
-    
+                        <td>{{ calidad.casesNetWeigth }}</td>
+                        <td>{{ calidad.sampleNumber }}</td>
+                        <td>{{ calidad.barCodePlu }}</td>
+                        <td>{{ calidad.openAppearance }}</td>
+                        <td>{{ calidad.blankEnd }}%</td>
+                        <td>{{ calidad.blisterMiteInjure }}%</td>
+                        <td>{{ calidad.discoloration }}%</td>
+                        <td>{{ calidad.blush }}%</td>
+                        <td>{{ calidad.lightBlush }}%</td>
+                        <td>{{ calidad.scaring }}%</td>
+                        <td>{{ calidad.hardEnd }}%</td>
+                        <td>{{ calidad.insectDamage }}%</td>
+                        <td>{{ calidad.russet }}%</td>
+                        <td>{{ calidad.limbRubs }}%</td>
+                        <td>{{ calidad.overripe }}%</td>
+                        <td>{{ calidad.mealy }}%</td>
+                        <td>{{ calidad.scab }}%</td>
+                        <td>{{ calidad.shape }}%</td>
+                        <td>{{ calidad.stermPunctureSkinBreaks }}%</td>
+                        <td>{{ calidad.missingCalix }}%</td>
+                        <td>
+                           {{ 
+                        + calidad.blankEnd 
+                        + calidad.blisterMiteInjure 
+                        + calidad.discoloration 
+                        + calidad.blush 
+                        + calidad.lightBlush 
+                        + calidad.scaring 
+                        + calidad.hardEnd 
+                        + calidad.insectDamage 
+                        + calidad.russet 
+                        + calidad.limbRubs 
+                        + calidad.overripe 
+                        + calidad.mealy 
+                        + calidad.scab 
+                        + calidad.shape 
+                        + calidad.stermPunctureSkinBreaks 
+                        + calidad.missingCalix 
+                            
+                          }}  %
+                            
+                        </td>
                         <td class="actions">
                             <a  onclick="return confirm('Are you sure!');" title="Delete" class="btn btn-danger btn-sm" href="{{ path('calidad_by_id_delete', { 'id': calidad.id}) }}">
                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
@@ -251,6 +274,8 @@
                     </tr>
                     {% endfor %}
                 </tbody>
+                <tfoot><th>FALTA SUM VERTICAL</th></tfoot>
+                
             </table>
         </form>
 
@@ -281,6 +306,6 @@
 </div> <!-- /#bottom -->
 
 
-
+        </div>
 {% endblock %}
 

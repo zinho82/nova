@@ -15,32 +15,32 @@ class General
     /**
      * @var string
      */
-    private $inspector;
+    private $inspectorName;
 
     /**
-     * @var integer
+     * @var string
      */
-    private $numpallet;
+    private $numberPallet;
 
     /**
      * @var \DateTime
      */
-    private $dateinspect;
+    private $dateInspection;
 
     /**
      * @var string
      */
-    private $inspectplan;
+    private $inspectorPlanName;
 
     /**
      * @var string
      */
-    private $countryorigin;
+    private $countryOrigin;
 
     /**
      * @var string
      */
-    private $commodityname;
+    private $commodityName;
 
     /**
      * @var string
@@ -50,7 +50,7 @@ class General
     /**
      * @var string
      */
-    private $productpackstyle;
+    private $productPackStyle;
 
     /**
      * @var string
@@ -60,12 +60,12 @@ class General
     /**
      * @var string
      */
-    private $casestype;
+    private $casesType;
 
     /**
      * @var string
      */
-    private $caseperpallet;
+    private $casesPerPallet;
 
     /**
      * @var string
@@ -80,17 +80,17 @@ class General
     /**
      * @var \DateTime
      */
-    private $packingdate;
+    private $packingDate;
 
     /**
      * @var string
      */
-    private $casesnetweight;
+    private $casesNetWeight;
 
     /**
      * @var string
      */
-    private $barcodeplu;
+    private $barCodePlu;
 
     /**
      * @var string
@@ -144,147 +144,147 @@ class General
     }
 
     /**
-     * Set inspector
+     * Set inspectorName
      *
-     * @param string $inspector
+     * @param string $inspectorName
      *
      * @return General
      */
-    public function setInspector($inspector)
+    public function setInspectorName($inspectorName)
     {
-        $this->inspector = $inspector;
+        $this->inspectorName = $inspectorName;
 
         return $this;
     }
 
     /**
-     * Get inspector
+     * Get inspectorName
      *
      * @return string
      */
-    public function getInspector()
+    public function getInspectorName()
     {
-        return $this->inspector;
+        return $this->inspectorName;
     }
 
     /**
-     * Set numpallet
+     * Set numberPallet
      *
-     * @param integer $numpallet
+     * @param string $numberPallet
      *
      * @return General
      */
-    public function setNumpallet($numpallet)
+    public function setNumberPallet($numberPallet)
     {
-        $this->numpallet = $numpallet;
+        $this->numberPallet = $numberPallet;
 
         return $this;
     }
 
     /**
-     * Get numpallet
+     * Get numberPallet
      *
-     * @return integer
+     * @return string
      */
-    public function getNumpallet()
+    public function getNumberPallet()
     {
-        return $this->numpallet;
+        return $this->numberPallet;
     }
 
     /**
-     * Set dateinspect
+     * Set dateInspection
      *
-     * @param \DateTime $dateinspect
+     * @param \DateTime $dateInspection
      *
      * @return General
      */
-    public function setDateinspect($dateinspect)
+    public function setDateInspection($dateInspection)
     {
-        $this->dateinspect = $dateinspect;
+        $this->dateInspection = $dateInspection;
 
         return $this;
     }
 
     /**
-     * Get dateinspect
+     * Get dateInspection
      *
      * @return \DateTime
      */
-    public function getDateinspect()
+    public function getDateInspection()
     {
-        return $this->dateinspect;
+        return $this->dateInspection;
     }
 
     /**
-     * Set inspectplan
+     * Set inspectorPlanName
      *
-     * @param string $inspectplan
+     * @param string $inspectorPlanName
      *
      * @return General
      */
-    public function setInspectplan($inspectplan)
+    public function setInspectorPlanName($inspectorPlanName)
     {
-        $this->inspectplan = $inspectplan;
+        $this->inspectorPlanName = $inspectorPlanName;
 
         return $this;
     }
 
     /**
-     * Get inspectplan
+     * Get inspectorPlanName
      *
      * @return string
      */
-    public function getInspectplan()
+    public function getInspectorPlanName()
     {
-        return $this->inspectplan;
+        return $this->inspectorPlanName;
     }
 
     /**
-     * Set countryorigin
+     * Set countryOrigin
      *
-     * @param string $countryorigin
+     * @param string $countryOrigin
      *
      * @return General
      */
-    public function setCountryorigin($countryorigin)
+    public function setCountryOrigin($countryOrigin)
     {
-        $this->countryorigin = $countryorigin;
+        $this->countryOrigin = $countryOrigin;
 
         return $this;
     }
 
     /**
-     * Get countryorigin
+     * Get countryOrigin
      *
      * @return string
      */
-    public function getCountryorigin()
+    public function getCountryOrigin()
     {
-        return $this->countryorigin;
+        return $this->countryOrigin;
     }
 
     /**
-     * Set commodityname
+     * Set commodityName
      *
-     * @param string $commodityname
+     * @param string $commodityName
      *
      * @return General
      */
-    public function setCommodityname($commodityname)
+    public function setCommodityName($commodityName)
     {
-        $this->commodityname = $commodityname;
+        $this->commodityName = $commodityName;
 
         return $this;
     }
 
     /**
-     * Get commodityname
+     * Get commodityName
      *
      * @return string
      */
-    public function getCommodityname()
+    public function getCommodityName()
     {
-        return $this->commodityname;
+        return $this->commodityName;
     }
 
     /**
@@ -312,27 +312,27 @@ class General
     }
 
     /**
-     * Set productpackstyle
+     * Set productPackStyle
      *
-     * @param string $productpackstyle
+     * @param string $productPackStyle
      *
      * @return General
      */
-    public function setProductpackstyle($productpackstyle)
+    public function setProductPackStyle($productPackStyle)
     {
-        $this->productpackstyle = $productpackstyle;
+        $this->productPackStyle = $productPackStyle;
 
         return $this;
     }
 
     /**
-     * Get productpackstyle
+     * Get productPackStyle
      *
      * @return string
      */
-    public function getProductpackstyle()
+    public function getProductPackStyle()
     {
-        return $this->productpackstyle;
+        return $this->productPackStyle;
     }
 
     /**
@@ -360,51 +360,51 @@ class General
     }
 
     /**
-     * Set casestype
+     * Set casesType
      *
-     * @param string $casestype
+     * @param string $casesType
      *
      * @return General
      */
-    public function setCasestype($casestype)
+    public function setCasesType($casesType)
     {
-        $this->casestype = $casestype;
+        $this->casesType = $casesType;
 
         return $this;
     }
 
     /**
-     * Get casestype
+     * Get casesType
      *
      * @return string
      */
-    public function getCasestype()
+    public function getCasesType()
     {
-        return $this->casestype;
+        return $this->casesType;
     }
 
     /**
-     * Set caseperpallet
+     * Set casesPerPallet
      *
-     * @param string $caseperpallet
+     * @param string $casesPerPallet
      *
      * @return General
      */
-    public function setCaseperpallet($caseperpallet)
+    public function setCasesPerPallet($casesPerPallet)
     {
-        $this->caseperpallet = $caseperpallet;
+        $this->casesPerPallet = $casesPerPallet;
 
         return $this;
     }
 
     /**
-     * Get caseperpallet
+     * Get casesPerPallet
      *
      * @return string
      */
-    public function getCaseperpallet()
+    public function getCasesPerPallet()
     {
-        return $this->caseperpallet;
+        return $this->casesPerPallet;
     }
 
     /**
@@ -456,75 +456,75 @@ class General
     }
 
     /**
-     * Set packingdate
+     * Set packingDate
      *
-     * @param \DateTime $packingdate
+     * @param \DateTime $packingDate
      *
      * @return General
      */
-    public function setPackingdate($packingdate)
+    public function setPackingDate($packingDate)
     {
-        $this->packingdate = $packingdate;
+        $this->packingDate = $packingDate;
 
         return $this;
     }
 
     /**
-     * Get packingdate
+     * Get packingDate
      *
      * @return \DateTime
      */
-    public function getPackingdate()
+    public function getPackingDate()
     {
-        return $this->packingdate;
+        return $this->packingDate;
     }
 
     /**
-     * Set casesnetweight
+     * Set casesNetWeight
      *
-     * @param string $casesnetweight
+     * @param string $casesNetWeight
      *
      * @return General
      */
-    public function setCasesnetweight($casesnetweight)
+    public function setCasesNetWeight($casesNetWeight)
     {
-        $this->casesnetweight = $casesnetweight;
+        $this->casesNetWeight = $casesNetWeight;
 
         return $this;
     }
 
     /**
-     * Get casesnetweight
+     * Get casesNetWeight
      *
      * @return string
      */
-    public function getCasesnetweight()
+    public function getCasesNetWeight()
     {
-        return $this->casesnetweight;
+        return $this->casesNetWeight;
     }
 
     /**
-     * Set barcodeplu
+     * Set barCodePlu
      *
-     * @param string $barcodeplu
+     * @param string $barCodePlu
      *
      * @return General
      */
-    public function setBarcodeplu($barcodeplu)
+    public function setBarCodePlu($barCodePlu)
     {
-        $this->barcodeplu = $barcodeplu;
+        $this->barCodePlu = $barCodePlu;
 
         return $this;
     }
 
     /**
-     * Get barcodeplu
+     * Get barCodePlu
      *
      * @return string
      */
-    public function getBarcodeplu()
+    public function getBarCodePlu()
     {
-        return $this->barcodeplu;
+        return $this->barCodePlu;
     }
 
     /**
@@ -719,7 +719,7 @@ class General
         return $this->recommendation;
     }
     public function __toString() {
-      return  (string) $this->numpallet;
+        return (string) $this->numberPallet;
         
     }
 }

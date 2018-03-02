@@ -28,45 +28,51 @@ BackendBundle\Entity\Calidad:
             options:
                 fixed: false
                 default: '0'
-        casesnetweigth:
+        casesNetWeigth:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        samplenumber:
+            column: cases_net_weigth
+        sampleNumber:
             type: integer
             nullable: false
             options:
                 unsigned: false
                 default: '0'
-        barcodeplu:
+            column: sample_number
+        barCodePlu:
             type: integer
             nullable: false
             options:
                 unsigned: false
                 default: '0'
-        openappearance:
+            column: bar_code_plu
+        openAppearance:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        blankend:
+            column: open_appearance
+        blankEnd:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        blistermiteinjure:
+            column: blank_end
+        blisterMiteInjure:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: blister_mite_injure
         discoloration:
             type: float
             nullable: false
@@ -81,13 +87,14 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        lightblush:
+        lightBlush:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: light_blush
         scaring:
             type: float
             nullable: false
@@ -95,20 +102,22 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        hardend:
+        hardEnd:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        insectdamage:
+            column: hard_end
+        insectDamage:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: insect_damage
         russet:
             type: float
             nullable: false
@@ -116,13 +125,14 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        limbrubs:
+        limbRubs:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: limb_rubs
         overripe:
             type: float
             nullable: false
@@ -151,20 +161,22 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        stermpunctureskinbreaks:
+        stermPunctureSkinBreaks:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        missingcalix:
+            column: sterm_puncture_skin_breaks
+        missingCalix:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: missing_calix
     manyToOne:
         idpallet:
             targetEntity: General

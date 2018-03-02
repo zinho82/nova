@@ -17,30 +17,30 @@ class CalidadFilterType extends AbstractType
             ->add('id', Filters\NumberFilterType::class)
             ->add('size', Filters\NumberFilterType::class)
             ->add('variety', Filters\TextFilterType::class)
-            ->add('casesnetweigth', Filters\NumberFilterType::class)
-            ->add('samplenumber', Filters\NumberFilterType::class)
-            ->add('barcodeplu', Filters\NumberFilterType::class)
-            ->add('openappearance', Filters\TextFilterType::class)
-            ->add('blankend', Filters\NumberFilterType::class)
-            ->add('blistermiteinjure', Filters\NumberFilterType::class)
+            ->add('casesNetWeigth', Filters\NumberFilterType::class)
+            ->add('sampleNumber', Filters\NumberFilterType::class)
+            ->add('barCodePlu', Filters\NumberFilterType::class)
+            ->add('openAppearance', Filters\TextFilterType::class)
+            ->add('blankEnd', Filters\NumberFilterType::class)
+            ->add('blisterMiteInjure', Filters\NumberFilterType::class)
             ->add('discoloration', Filters\NumberFilterType::class)
             ->add('blush', Filters\NumberFilterType::class)
-            ->add('lightblush', Filters\NumberFilterType::class)
+            ->add('lightBlush', Filters\NumberFilterType::class)
             ->add('scaring', Filters\NumberFilterType::class)
-            ->add('hardend', Filters\NumberFilterType::class)
-            ->add('insectdamage', Filters\NumberFilterType::class)
+            ->add('hardEnd', Filters\NumberFilterType::class)
+            ->add('insectDamage', Filters\NumberFilterType::class)
             ->add('russet', Filters\NumberFilterType::class)
-            ->add('limbrubs', Filters\NumberFilterType::class)
+            ->add('limbRubs', Filters\NumberFilterType::class)
             ->add('overripe', Filters\NumberFilterType::class)
             ->add('mealy', Filters\NumberFilterType::class)
             ->add('scab', Filters\NumberFilterType::class)
             ->add('shape', Filters\NumberFilterType::class)
-            ->add('stermpunctureskinbreaks', Filters\NumberFilterType::class)
-            ->add('missingcalix', Filters\NumberFilterType::class)
+            ->add('stermPunctureSkinBreaks', Filters\NumberFilterType::class)
+            ->add('missingCalix', Filters\NumberFilterType::class)
         
             ->add('idpallet', Filters\EntityFilterType::class, array(
                     'class' => 'BackendBundle\Entity\General',
-                    'choice_label' => 'inspector',
+                    'choice_label' => 'inspectorName',
             )) 
         ;
         $builder->setMethod("GET");

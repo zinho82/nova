@@ -25,32 +25,32 @@ class Calidad
     /**
      * @var float
      */
-    private $casesnetweigth = '0';
+    private $casesNetWeigth = '0';
 
     /**
      * @var integer
      */
-    private $samplenumber = '0';
+    private $sampleNumber = '0';
 
     /**
      * @var integer
      */
-    private $barcodeplu = '0';
+    private $barCodePlu = '0';
 
     /**
      * @var string
      */
-    private $openappearance;
+    private $openAppearance;
 
     /**
      * @var float
      */
-    private $blankend = '0';
+    private $blankEnd = '0';
 
     /**
      * @var float
      */
-    private $blistermiteinjure = '0';
+    private $blisterMiteInjure = '0';
 
     /**
      * @var float
@@ -65,7 +65,7 @@ class Calidad
     /**
      * @var float
      */
-    private $lightblush = '0';
+    private $lightBlush = '0';
 
     /**
      * @var float
@@ -75,12 +75,12 @@ class Calidad
     /**
      * @var float
      */
-    private $hardend = '0';
+    private $hardEnd = '0';
 
     /**
      * @var float
      */
-    private $insectdamage = '0';
+    private $insectDamage = '0';
 
     /**
      * @var float
@@ -90,7 +90,7 @@ class Calidad
     /**
      * @var float
      */
-    private $limbrubs = '0';
+    private $limbRubs = '0';
 
     /**
      * @var float
@@ -115,12 +115,12 @@ class Calidad
     /**
      * @var float
      */
-    private $stermpunctureskinbreaks = '0';
+    private $stermPunctureSkinBreaks = '0';
 
     /**
      * @var float
      */
-    private $missingcalix = '0';
+    private $missingCalix = '0';
 
     /**
      * @var \BackendBundle\Entity\General
@@ -187,147 +187,147 @@ class Calidad
     }
 
     /**
-     * Set casesnetweigth
+     * Set casesNetWeigth
      *
-     * @param float $casesnetweigth
+     * @param float $casesNetWeigth
      *
      * @return Calidad
      */
-    public function setCasesnetweigth($casesnetweigth)
+    public function setCasesNetWeigth($casesNetWeigth)
     {
-        $this->casesnetweigth = $casesnetweigth;
+        $this->casesNetWeigth = $casesNetWeigth;
 
         return $this;
     }
 
     /**
-     * Get casesnetweigth
+     * Get casesNetWeigth
      *
      * @return float
      */
-    public function getCasesnetweigth()
+    public function getCasesNetWeigth()
     {
-        return $this->casesnetweigth;
+        return $this->casesNetWeigth;
     }
 
     /**
-     * Set samplenumber
+     * Set sampleNumber
      *
-     * @param integer $samplenumber
+     * @param integer $sampleNumber
      *
      * @return Calidad
      */
-    public function setSamplenumber($samplenumber)
+    public function setSampleNumber($sampleNumber)
     {
-        $this->samplenumber = $samplenumber;
+        $this->sampleNumber = $sampleNumber;
 
         return $this;
     }
 
     /**
-     * Get samplenumber
+     * Get sampleNumber
      *
      * @return integer
      */
-    public function getSamplenumber()
+    public function getSampleNumber()
     {
-        return $this->samplenumber;
+        return $this->sampleNumber;
     }
 
     /**
-     * Set barcodeplu
+     * Set barCodePlu
      *
-     * @param integer $barcodeplu
+     * @param integer $barCodePlu
      *
      * @return Calidad
      */
-    public function setBarcodeplu($barcodeplu)
+    public function setBarCodePlu($barCodePlu)
     {
-        $this->barcodeplu = $barcodeplu;
+        $this->barCodePlu = $barCodePlu;
 
         return $this;
     }
 
     /**
-     * Get barcodeplu
+     * Get barCodePlu
      *
      * @return integer
      */
-    public function getBarcodeplu()
+    public function getBarCodePlu()
     {
-        return $this->barcodeplu;
+        return $this->barCodePlu;
     }
 
     /**
-     * Set openappearance
+     * Set openAppearance
      *
-     * @param string $openappearance
+     * @param string $openAppearance
      *
      * @return Calidad
      */
-    public function setOpenappearance($openappearance)
+    public function setOpenAppearance($openAppearance)
     {
-        $this->openappearance = $openappearance;
+        $this->openAppearance = $openAppearance;
 
         return $this;
     }
 
     /**
-     * Get openappearance
+     * Get openAppearance
      *
      * @return string
      */
-    public function getOpenappearance()
+    public function getOpenAppearance()
     {
-        return $this->openappearance;
+        return $this->openAppearance;
     }
 
     /**
-     * Set blankend
+     * Set blankEnd
      *
-     * @param float $blankend
+     * @param float $blankEnd
      *
      * @return Calidad
      */
-    public function setBlankend($blankend)
+    public function setBlankEnd($blankEnd)
     {
-        $this->blankend = $blankend;
+        $this->blankEnd = $blankEnd;
 
         return $this;
     }
 
     /**
-     * Get blankend
+     * Get blankEnd
      *
      * @return float
      */
-    public function getBlankend()
+    public function getBlankEnd()
     {
-        return $this->blankend;
+        return $this->blankEnd;
     }
 
     /**
-     * Set blistermiteinjure
+     * Set blisterMiteInjure
      *
-     * @param float $blistermiteinjure
+     * @param float $blisterMiteInjure
      *
      * @return Calidad
      */
-    public function setBlistermiteinjure($blistermiteinjure)
+    public function setBlisterMiteInjure($blisterMiteInjure)
     {
-        $this->blistermiteinjure = $blistermiteinjure;
+        $this->blisterMiteInjure = $blisterMiteInjure;
 
         return $this;
     }
 
     /**
-     * Get blistermiteinjure
+     * Get blisterMiteInjure
      *
      * @return float
      */
-    public function getBlistermiteinjure()
+    public function getBlisterMiteInjure()
     {
-        return $this->blistermiteinjure;
+        return $this->blisterMiteInjure;
     }
 
     /**
@@ -379,27 +379,27 @@ class Calidad
     }
 
     /**
-     * Set lightblush
+     * Set lightBlush
      *
-     * @param float $lightblush
+     * @param float $lightBlush
      *
      * @return Calidad
      */
-    public function setLightblush($lightblush)
+    public function setLightBlush($lightBlush)
     {
-        $this->lightblush = $lightblush;
+        $this->lightBlush = $lightBlush;
 
         return $this;
     }
 
     /**
-     * Get lightblush
+     * Get lightBlush
      *
      * @return float
      */
-    public function getLightblush()
+    public function getLightBlush()
     {
-        return $this->lightblush;
+        return $this->lightBlush;
     }
 
     /**
@@ -427,51 +427,51 @@ class Calidad
     }
 
     /**
-     * Set hardend
+     * Set hardEnd
      *
-     * @param float $hardend
+     * @param float $hardEnd
      *
      * @return Calidad
      */
-    public function setHardend($hardend)
+    public function setHardEnd($hardEnd)
     {
-        $this->hardend = $hardend;
+        $this->hardEnd = $hardEnd;
 
         return $this;
     }
 
     /**
-     * Get hardend
+     * Get hardEnd
      *
      * @return float
      */
-    public function getHardend()
+    public function getHardEnd()
     {
-        return $this->hardend;
+        return $this->hardEnd;
     }
 
     /**
-     * Set insectdamage
+     * Set insectDamage
      *
-     * @param float $insectdamage
+     * @param float $insectDamage
      *
      * @return Calidad
      */
-    public function setInsectdamage($insectdamage)
+    public function setInsectDamage($insectDamage)
     {
-        $this->insectdamage = $insectdamage;
+        $this->insectDamage = $insectDamage;
 
         return $this;
     }
 
     /**
-     * Get insectdamage
+     * Get insectDamage
      *
      * @return float
      */
-    public function getInsectdamage()
+    public function getInsectDamage()
     {
-        return $this->insectdamage;
+        return $this->insectDamage;
     }
 
     /**
@@ -499,27 +499,27 @@ class Calidad
     }
 
     /**
-     * Set limbrubs
+     * Set limbRubs
      *
-     * @param float $limbrubs
+     * @param float $limbRubs
      *
      * @return Calidad
      */
-    public function setLimbrubs($limbrubs)
+    public function setLimbRubs($limbRubs)
     {
-        $this->limbrubs = $limbrubs;
+        $this->limbRubs = $limbRubs;
 
         return $this;
     }
 
     /**
-     * Get limbrubs
+     * Get limbRubs
      *
      * @return float
      */
-    public function getLimbrubs()
+    public function getLimbRubs()
     {
-        return $this->limbrubs;
+        return $this->limbRubs;
     }
 
     /**
@@ -619,51 +619,51 @@ class Calidad
     }
 
     /**
-     * Set stermpunctureskinbreaks
+     * Set stermPunctureSkinBreaks
      *
-     * @param float $stermpunctureskinbreaks
+     * @param float $stermPunctureSkinBreaks
      *
      * @return Calidad
      */
-    public function setStermpunctureskinbreaks($stermpunctureskinbreaks)
+    public function setStermPunctureSkinBreaks($stermPunctureSkinBreaks)
     {
-        $this->stermpunctureskinbreaks = $stermpunctureskinbreaks;
+        $this->stermPunctureSkinBreaks = $stermPunctureSkinBreaks;
 
         return $this;
     }
 
     /**
-     * Get stermpunctureskinbreaks
+     * Get stermPunctureSkinBreaks
      *
      * @return float
      */
-    public function getStermpunctureskinbreaks()
+    public function getStermPunctureSkinBreaks()
     {
-        return $this->stermpunctureskinbreaks;
+        return $this->stermPunctureSkinBreaks;
     }
 
     /**
-     * Set missingcalix
+     * Set missingCalix
      *
-     * @param float $missingcalix
+     * @param float $missingCalix
      *
      * @return Calidad
      */
-    public function setMissingcalix($missingcalix)
+    public function setMissingCalix($missingCalix)
     {
-        $this->missingcalix = $missingcalix;
+        $this->missingCalix = $missingCalix;
 
         return $this;
     }
 
     /**
-     * Get missingcalix
+     * Get missingCalix
      *
      * @return float
      */
-    public function getMissingcalix()
+    public function getMissingCalix()
     {
-        return $this->missingcalix;
+        return $this->missingCalix;
     }
 
     /**

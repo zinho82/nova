@@ -153,7 +153,7 @@ class CalidadController extends Controller
      * Displays a form to create a new Calidad entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request,$id)
     {
     
         $calidad = new Calidad();
@@ -162,6 +162,10 @@ class CalidadController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            if($id!=null){
+                $gral=$em->getRepository("BackendBundle:General")->find($id);
+                $calidad->setIdpallet($gral);
+            }
             $em->persist($calidad);
             $em->flush();
             

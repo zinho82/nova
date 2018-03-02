@@ -30,7 +30,7 @@ class Condicion
     /**
      * @var float
      */
-    private $sunburn;
+    private $sunBurn;
 
     /**
      * @var float
@@ -45,12 +45,12 @@ class Condicion
     /**
      * @var float
      */
-    private $freezinginjury;
+    private $freezingInjury;
 
     /**
      * @var float
      */
-    private $pithybrowncore;
+    private $pithyBrownCore;
 
     /**
      * @var float
@@ -70,7 +70,7 @@ class Condicion
     /**
      * @var \BackendBundle\Entity\General
      */
-    private $idpallet;
+    private $palletNumber;
 
 
     /**
@@ -156,27 +156,27 @@ class Condicion
     }
 
     /**
-     * Set sunburn
+     * Set sunBurn
      *
-     * @param float $sunburn
+     * @param float $sunBurn
      *
      * @return Condicion
      */
-    public function setSunburn($sunburn)
+    public function setSunBurn($sunBurn)
     {
-        $this->sunburn = $sunburn;
+        $this->sunBurn = $sunBurn;
 
         return $this;
     }
 
     /**
-     * Get sunburn
+     * Get sunBurn
      *
      * @return float
      */
-    public function getSunburn()
+    public function getSunBurn()
     {
-        return $this->sunburn;
+        return $this->sunBurn;
     }
 
     /**
@@ -228,51 +228,51 @@ class Condicion
     }
 
     /**
-     * Set freezinginjury
+     * Set freezingInjury
      *
-     * @param float $freezinginjury
+     * @param float $freezingInjury
      *
      * @return Condicion
      */
-    public function setFreezinginjury($freezinginjury)
+    public function setFreezingInjury($freezingInjury)
     {
-        $this->freezinginjury = $freezinginjury;
+        $this->freezingInjury = $freezingInjury;
 
         return $this;
     }
 
     /**
-     * Get freezinginjury
+     * Get freezingInjury
      *
      * @return float
      */
-    public function getFreezinginjury()
+    public function getFreezingInjury()
     {
-        return $this->freezinginjury;
+        return $this->freezingInjury;
     }
 
     /**
-     * Set pithybrowncore
+     * Set pithyBrownCore
      *
-     * @param float $pithybrowncore
+     * @param float $pithyBrownCore
      *
      * @return Condicion
      */
-    public function setPithybrowncore($pithybrowncore)
+    public function setPithyBrownCore($pithyBrownCore)
     {
-        $this->pithybrowncore = $pithybrowncore;
+        $this->pithyBrownCore = $pithyBrownCore;
 
         return $this;
     }
 
     /**
-     * Get pithybrowncore
+     * Get pithyBrownCore
      *
      * @return float
      */
-    public function getPithybrowncore()
+    public function getPithyBrownCore()
     {
-        return $this->pithybrowncore;
+        return $this->pithyBrownCore;
     }
 
     /**
@@ -348,26 +348,26 @@ class Condicion
     }
 
     /**
-     * Set idpallet
+     * Set palletNumber
      *
-     * @param \BackendBundle\Entity\General $idpallet
+     * @param \BackendBundle\Entity\General $palletNumber
      *
      * @return Condicion
      */
-    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
+    public function setPalletNumber(\BackendBundle\Entity\General $palletNumber = null)
     {
-        $this->idpallet = $idpallet;
+        $this->palletNumber = $palletNumber;
 
         return $this;
     }
 
     /**
-     * Get idpallet
+     * Get palletNumber
      *
      * @return \BackendBundle\Entity\General
      */
-    public function getIdpallet()
+    public function getPalletNumber()
     {
-        return $this->idpallet;
+        return $this->palletNumber;
     }
 }
