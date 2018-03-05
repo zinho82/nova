@@ -722,4 +722,207 @@ class General
         return (string) $this->numberPallet;
         
     }
+    /**
+     * @var string
+     */
+    private $fumigation;
+
+    /**
+     * @var string
+     */
+    private $fumigationSo2;
+
+    /**
+     * @var string
+     */
+    private $organic;
+
+    /**
+     * @var string
+     */
+    private $palletType;
+
+    /**
+     * @var string
+     */
+    private $clamshellPerCases;
+
+    /**
+     * @var string
+     */
+    private $grade;
+
+    /**
+     * @var float
+     */
+    private $temperature;
+
+
+    /**
+     * Set fumigation
+     *
+     * @param string $fumigation
+     *
+     * @return General
+     */
+    public function setFumigation($fumigation)
+    {
+        $this->fumigation = $fumigation;
+
+        return $this;
+    }
+
+    /**
+     * Get fumigation
+     *
+     * @return string
+     */
+    public function getFumigation()
+    {
+        return $this->fumigation;
+    }
+
+    /**
+     * Set fumigationSo2
+     *
+     * @param string $fumigationSo2
+     *
+     * @return General
+     */
+    public function setFumigationSo2($fumigationSo2)
+    {
+        $this->fumigationSo2 = $fumigationSo2;
+
+        return $this;
+    }
+
+    /**
+     * Get fumigationSo2
+     *
+     * @return string
+     */
+    public function getFumigationSo2()
+    {
+        return $this->fumigationSo2;
+    }
+
+    /**
+     * Set organic
+     *
+     * @param string $organic
+     *
+     * @return General
+     */
+    public function setOrganic($organic)
+    {
+        $this->organic = $organic;
+
+        return $this;
+    }
+
+    /**
+     * Get organic
+     *
+     * @return string
+     */
+    public function getOrganic()
+    {
+        return $this->organic;
+    }
+
+    /**
+     * Set palletType
+     *
+     * @param string $palletType
+     *
+     * @return General
+     */
+    public function setPalletType($palletType)
+    {
+        $this->palletType = $palletType;
+
+        return $this;
+    }
+
+    /**
+     * Get palletType
+     *
+     * @return string
+     */
+    public function getPalletType()
+    {
+        return $this->palletType;
+    }
+
+    /**
+     * Set clamshellPerCases
+     *
+     * @param string $clamshellPerCases
+     *
+     * @return General
+     */
+    public function setClamshellPerCases($clamshellPerCases)
+    {
+        $this->clamshellPerCases = $clamshellPerCases;
+
+        return $this;
+    }
+
+    /**
+     * Get clamshellPerCases
+     *
+     * @return string
+     */
+    public function getClamshellPerCases()
+    {
+        return $this->clamshellPerCases;
+    }
+
+    /**
+     * Set grade
+     *
+     * @param string $grade
+     *
+     * @return General
+     */
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
+
+        return $this;
+    }
+
+    /**
+     * Get grade
+     *
+     * @return string
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Set temperature
+     *
+     * @param float $temperature
+     *
+     * @return General
+     */
+    public function setTemperature($temperature)
+    {
+        $this->temperature = $temperature;
+
+        return $this;
+    }
+
+    /**
+     * Get temperature
+     *
+     * @return float
+     */
+    public function getTemperature()
+    {
+        return $this->temperature;
+    }
 }

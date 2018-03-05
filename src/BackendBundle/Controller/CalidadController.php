@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace BackendBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -31,7 +31,7 @@ class CalidadController extends Controller
         
         $totalOfRecordsString = $this->getTotalOfRecordsString($queryBuilder, $request);
 
-        return $this->render('AppBundle:calidad:index.html.twig', array(
+        return $this->render('calidad/index.html.twig', array(
             'calidads' => $calidads,
             'pagerHtml' => $pagerHtml,
             'filterForm' => $filterForm->createView(),
@@ -47,7 +47,7 @@ class CalidadController extends Controller
     protected function filter($queryBuilder, Request $request)
     {
         $session = $request->getSession();
-        $filterForm = $this->createForm('AppBundle\Form\CalidadFilterType');
+        $filterForm = $this->createForm('BackendBundle\Form\CalidadFilterType');
 
         // Reset filter
         if ($request->get('filter_action') == 'reset') {
@@ -77,7 +77,7 @@ class CalidadController extends Controller
                     }
                 }
                 
-                $filterForm = $this->createForm('AppBundle\Form\CalidadFilterType', $filterData);
+                $filterForm = $this->createForm('BackendBundle\Form\CalidadFilterType', $filterData);
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
             }
         }
@@ -153,15 +153,11 @@ class CalidadController extends Controller
      * Displays a form to create a new Calidad entity.
      *
      */
-    public function newAction(Request $request,$fruta=null)
+    public function newAction(Request $request)
     {
     
         $calidad = new Calidad();
-        switch($fruta){
-        case "apple":$form   = $this->createForm('AppBundle\Form\CalidadManzanaType', $calidad);    
-            case "pear":$form   = $this->createForm('AppBundle\Form\CalidadPeraType', $calidad);    
-        }
-        
+        $form   = $this->createForm('BackendBundle\Form\CalidadType', $calidad);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -175,10 +171,9 @@ class CalidadController extends Controller
             $nextAction=  $request->get('submit') == 'save' ? 'calidad' : 'calidad_new';
             return $this->redirectToRoute($nextAction);
         }
-        return $this->render('AppBundle:calidad:new.html.twig', array(
-            'calidad'   =>  $calidad,
-            'form'      =>  $form->createView(),
-            'fruta'     =>  $fruta 
+        return $this->render('calidad/new.html.twig', array(
+            'calidad' => $calidad,
+            'form'   => $form->createView(),
         ));
     }
     
@@ -190,7 +185,7 @@ class CalidadController extends Controller
     public function showAction(Calidad $calidad)
     {
         $deleteForm = $this->createDeleteForm($calidad);
-        return $this->render('AppBundle:calidad:show.html.twig', array(
+        return $this->render('calidad/show.html.twig', array(
             'calidad' => $calidad,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -205,7 +200,7 @@ class CalidadController extends Controller
     public function editAction(Request $request, Calidad $calidad)
     {
         $deleteForm = $this->createDeleteForm($calidad);
-        $editForm = $this->createForm('AppBundle\Form\CalidadType', $calidad);
+        $editForm = $this->createForm('BackendBundle\Form\CalidadType', $calidad);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -216,7 +211,7 @@ class CalidadController extends Controller
             $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
             return $this->redirectToRoute('calidad_edit', array('id' => $calidad->getId()));
         }
-        return $this->render('AppBundle:calidad:edit.html.twig', array(
+        return $this->render('calidad/edit.html.twig', array(
             'calidad' => $calidad,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

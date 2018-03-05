@@ -370,4 +370,62 @@ class Condicion
     {
         return $this->palletNumber;
     }
+    /**
+     * @var \DateTime
+     */
+    private $initInspect;
+
+    /**
+     * @var \DateTime
+     */
+    private $endInspect;
+
+
+    /**
+     * Set initInspect
+     *
+     * @param \DateTime $initInspect
+     *
+     * @return Condicion
+     */
+    public function setInitInspect($initInspect)
+    {
+        $this->initInspect = $initInspect;
+
+        return $this;
+    }
+
+    /**
+     * Get initInspect
+     *
+     * @return \DateTime
+     */
+    public function getInitInspect()
+    {
+        return $this->initInspect;
+    }
+
+    /**
+     * Set endInspect
+     *
+     * @param \DateTime $endInspect
+     *
+     * @return Condicion
+     */
+    public function setEndInspect($endInspect)
+    {
+        $this->endInspect = $endInspect;
+
+        return $this;
+    }
+
+    /**
+     * Get endInspect
+     *
+     * @return \DateTime
+     */
+    public function getEndInspect()
+    {
+        return $this->endInspect;
+    }
 }

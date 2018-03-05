@@ -5,11 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="col-lg-12 col-sm-12 col-md-12">
 
 
 <div class="row">
-    <div class="col-md-12 col-sm-12 ">
+    <div class="col-md-12">
         <div class="page-header">
             <h2><a href="{{ path('calidad') }}">Calidad</a></h2>
         </div>
@@ -90,6 +89,145 @@
                  
                     <div class="col-md-6">{{ form_row(filterForm.missingCalix) }}</div>
 
+                 
+
+                 
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.brix) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.greenStem) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.brownStem) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.dryStem) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.sunkenStemEnd) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.translucent) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.grapeColor) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.amber) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.split) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.waterBerry) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.shotBerry) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.shalter) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.softBerries) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.so2Damage) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.dehydratedBerries) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.bruising) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.stemPuncture) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.crush) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.shiriveling) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.slipSkin) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.lackOfDegreening) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.colorPale) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.fruitWithSeeds) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.calixBrownBlack) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.skinDefectSevere) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.skinDefectModerate) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.misshapenFruit) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.wellFormed) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.undersize) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.brokenSkin) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.wormDamage) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.hailDamage) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.mechanicalDamage) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.stemEndDamage) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.misshapen) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.sprayBurn) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.spots) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.scald) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.splitPit) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.qualityScore) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.bloom) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.lackOfColor) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.insectPresence) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.flowerRemains) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.contamination) }}</div>
+
                                 <div class="col-md-6">
                     {{ form_rest(filterForm) }}
                 </div>
@@ -129,9 +267,9 @@
 
 <div class="col-md-3">
 
-          <!--  <a class="btn btn-primary h3 pull-right" href="{{ path('calidad_new') }}" style="margin-bottom:10px">
+            <a class="btn btn-primary h3 pull-right" href="{{ path('calidad_new') }}" style="margin-bottom:10px">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New
-        </a>-->
+        </a>
         <a class="btn dropdown-toggle pull-right h3" data-toggle="collapse" data-target="#filters">
         Filter
         <span class="caret"></span>
@@ -170,7 +308,7 @@
 
 <div class="row">
 
-        <div class="table-responsive col-md-12 col-sm-12">
+        <div class="table-responsive col-md-12">
         <form method="POST" id="bulk_form" action="{{ path('calidad_bulk_action') }} ">
             <table class="table table-striped table-hover table-bordered" cellspacing="0" cellpadding="0">
                 <thead>
@@ -179,7 +317,7 @@
 
                 {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
                             <th>{{macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                             <th>{{macros.th_sortable('idpallet',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('idpallet',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('size',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('variety',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('casesNetWeigth',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
@@ -202,18 +340,69 @@
                             <th>{{macros.th_sortable('shape',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('stermPunctureSkinBreaks',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
                             <th>{{macros.th_sortable('missingCalix',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
-                            <th>Sum of Quality Defects</th>
+                            <th>{{macros.th_sortable('initInspect',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('endInspect',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('brix',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('greenStem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('brownStem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('dryStem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('sunkenStemEnd',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('translucent',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('grapeColor',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('amber',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('split',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('waterBerry',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('shotBerry',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('shalter',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('softBerries',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('so2Damage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('dehydratedBerries',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('bruising',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('stemPuncture',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('crush',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('shiriveling',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('slipSkin',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('lackOfDegreening',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('colorPale',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('fruitWithSeeds',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('calixBrownBlack',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('skinDefectSevere',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('skinDefectModerate',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('misshapenFruit',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('wellFormed',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('undersize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('brokenSkin',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('wormDamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('hailDamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('mechanicalDamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('stemEndDamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('misshapen',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('sprayBurn',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('spots',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('scald',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('splitPit',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('qualityScore',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('bloom',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('lackOfColor',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('insectPresence',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('flowerRemains',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>{{macros.th_sortable('contamination',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'calidad')}}</th>
+                            <th>Sum of Quality</th>
     
                        
                         <th width = "130px">List</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for calidad in calidads %}
+                    {% set   tblankend=0 %}
+                    {% set tblisterMiteInjure=0 %}
+                                      {% for calidad in calidads %}
+                        {% set   tblankend= tblankend+calidad.blankEnd %}
+                        {% set   tblisterMiteInjure= tblisterMiteInjure+calidad.blisterMiteInjure %}
                     <tr>
                         <td><input type="checkbox" name="ids[]" onclick='bulkSubmitBtnManage();' class="check-all" value="{{calidad.id}}"/></td>
                         <td><a href="{{ path('calidad_edit', { 'id': calidad.id }) }}">{{ calidad.id }}</a></td>
-                        <td>{{ calidad.idpallet }}</td>
+                        <td>{{calidad.idpallet}}</td>
                         <td>{{ calidad.size }}</td>
                         <td>{{ calidad.variety }}</td>
                         <td>{{ calidad.casesNetWeigth }}</td>
@@ -236,9 +425,56 @@
                         <td>{{ calidad.shape }}%</td>
                         <td>{{ calidad.stermPunctureSkinBreaks }}%</td>
                         <td>{{ calidad.missingCalix }}%</td>
+                        <td>{%- if calidad.initInspect %}{{ calidad.initInspect|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{%- if calidad.endInspect %}{{ calidad.endInspect|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ calidad.brix }}%</td>
+                        <td>{{ calidad.greenStem }}%</td>
+                        <td>{{ calidad.brownStem }}%</td>
+                        <td>{{ calidad.dryStem }}%</td>
+                        <td>{{ calidad.sunkenStemEnd }}%</td>
+                        <td>{{ calidad.translucent }}%</td>
+                        <td>{{ calidad.grapeColor }}%</td>
+                        <td>{{ calidad.amber }}%</td>
+                        <td>{{ calidad.split }}%</td>
+                        <td>{{ calidad.waterBerry }}%</td>
+                        <td>{{ calidad.shotBerry }}%</td>
+                        <td>{{ calidad.shalter }}%</td>
+                        <td>{{ calidad.softBerries }}%</td>
+                        <td>{{ calidad.so2Damage }}%</td>
+                        <td>{{ calidad.dehydratedBerries }}%</td>
+                        <td>{{ calidad.bruising }}%</td>
+                        <td>{{ calidad.stemPuncture }}%</td>
+                        <td>{{ calidad.crush }}%</td>
+                        <td>{{ calidad.shiriveling }}%</td>
+                        <td>{{ calidad.slipSkin }}%</td>
+                        <td>{{ calidad.lackOfDegreening }}%</td>
+                        <td>{{ calidad.colorPale }}%</td>
+                        <td>{{ calidad.fruitWithSeeds }}%</td>
+                        <td>{{ calidad.calixBrownBlack }}%</td>
+                        <td>{{ calidad.skinDefectSevere }}%</td>
+                        <td>{{ calidad.skinDefectModerate }}%</td>
+                        <td>{{ calidad.misshapenFruit }}%</td>
+                        <td>{{ calidad.wellFormed }}%</td>
+                        <td>{{ calidad.undersize }}%</td>
+                        <td>{{ calidad.brokenSkin }}%</td>
+                        <td>{{ calidad.wormDamage }}%</td>
+                        <td>{{ calidad.hailDamage }}%</td>
+                        <td>{{ calidad.mechanicalDamage }}%</td>
+                        <td>{{ calidad.stemEndDamage }}%</td>
+                        <td>{{ calidad.misshapen }}%</td>
+                        <td>{{ calidad.sprayBurn }}%</td>
+                        <td>{{ calidad.spots }}%</td>
+                        <td>{{ calidad.scald }}%</td>
+                        <td>{{ calidad.splitPit }}%</td>
+                        <td>{{ calidad.qualityScore }}%</td>
+                        <td>{{ calidad.bloom }}%</td>
+                        <td>{{ calidad.lackOfColor }}%</td>
+                        <td>{{ calidad.insectPresence }}%</td>
+                        <td>{{ calidad.flowerRemains }}%</td>
+                        <td>{{ calidad.contamination }}%</td>
                         <td>
-                           {{ 
-                        + calidad.blankEnd 
+                            
+                         {{ calidad.blankEnd 
                         + calidad.blisterMiteInjure 
                         + calidad.discoloration 
                         + calidad.blush 
@@ -254,10 +490,54 @@
                         + calidad.shape 
                         + calidad.stermPunctureSkinBreaks 
                         + calidad.missingCalix 
-                            
-                          }}  %
-                            
+                        + calidad.brix 
+                        + calidad.greenStem 
+                        + calidad.brownStem 
+                        + calidad.dryStem 
+                        + calidad.sunkenStemEnd 
+                        + calidad.translucent 
+                        + calidad.grapeColor 
+                        + calidad.amber 
+                        + calidad.split 
+                        + calidad.waterBerry 
+                        + calidad.shotBerry 
+                        + calidad.shalter 
+                        + calidad.softBerries 
+                        + calidad.so2Damage 
+                        + calidad.dehydratedBerries 
+                        + calidad.bruising 
+                        + calidad.stemPuncture 
+                        + calidad.crush 
+                        + calidad.shiriveling 
+                        + calidad.slipSkin 
+                        + calidad.lackOfDegreening 
+                        + calidad.colorPale 
+                        + calidad.fruitWithSeeds 
+                        + calidad.calixBrownBlack 
+                        + calidad.skinDefectSevere 
+                        + calidad.skinDefectModerate 
+                        + calidad.misshapenFruit 
+                        + calidad.wellFormed 
+                        + calidad.undersize 
+                        + calidad.brokenSkin
+                        + calidad.wormDamage
+                        + calidad.hailDamage 
+                        + calidad.mechanicalDamage 
+                        + calidad.stemEndDamage 
+                        + calidad.misshapen 
+                        + calidad.sprayBurn 
+                        + calidad.spots 
+                        + calidad.scald 
+                        + calidad.splitPit 
+                        + calidad.qualityScore
+                        + calidad.bloom 
+                        + calidad.lackOfColor
+                        + calidad.insectPresence
+                        + calidad.flowerRemains 
+                        + calidad.contamination 
+                            }}%
                         </td>
+    
                         <td class="actions">
                             <a  onclick="return confirm('Are you sure!');" title="Delete" class="btn btn-danger btn-sm" href="{{ path('calidad_by_id_delete', { 'id': calidad.id}) }}">
                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
@@ -274,14 +554,17 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot><th>FALTA SUM VERTICAL</th></tfoot>
-                
+                <tfoot>
+                <th colspan="9"></th>
+                <th>{{ tblankend }}%</th>
+                <th>{{tblisterMiteInjure}}%</th>
+                </tfoot>
             </table>
         </form>
 
 
         </div>
-</div> <!-- /#list -->
+</div> 
 
 
 
@@ -306,6 +589,6 @@
 </div> <!-- /#bottom -->
 
 
-        </div>
+
 {% endblock %}
 

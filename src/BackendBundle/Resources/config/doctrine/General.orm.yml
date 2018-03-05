@@ -162,4 +162,48 @@ BackendBundle\Entity\General:
             length: 65535
             options:
                 fixed: false
+        fumigation:
+            type: string
+            nullable: true
+            length: 450
+            options:
+                fixed: false
+        fumigationSo2:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: fumigation_so2
+        organic:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        palletType:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: pallet_type
+        clamshellPerCases:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: clamshell_per_cases
+        grade:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        temperature:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
     lifecycleCallbacks: {  }

@@ -74,6 +74,14 @@ BackendBundle\Entity\Condicion:
             nullable: true
             precision: 10
             scale: 0
+        initInspect:
+            type: datetime
+            nullable: true
+            column: init_inspect
+        endInspect:
+            type: datetime
+            nullable: true
+            column: end_inspect
     manyToOne:
         palletNumber:
             targetEntity: General
