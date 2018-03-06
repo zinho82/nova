@@ -153,11 +153,15 @@ class CalidadController extends Controller
      * Displays a form to create a new Calidad entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request,$fruta=null)
     {
     
         $calidad = new Calidad();
-        $form   = $this->createForm('AppBundle\Form\CalidadType', $calidad);
+        switch($fruta){
+        case "apple":$form   = $this->createForm('AppBundle\Form\CalidadManzanaType', $calidad);    
+            case "pear":$form   = $this->createForm('AppBundle\Form\CalidadPeraType', $calidad);    
+        }
+        
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -172,8 +176,9 @@ class CalidadController extends Controller
             return $this->redirectToRoute($nextAction);
         }
         return $this->render('AppBundle:calidad:new.html.twig', array(
-            'calidad' => $calidad,
-            'form'   => $form->createView(),
+            'calidad'   =>  $calidad,
+            'form'      =>  $form->createView(),
+            'fruta'     =>  $fruta 
         ));
     }
     

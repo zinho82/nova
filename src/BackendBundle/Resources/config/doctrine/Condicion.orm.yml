@@ -4,7 +4,7 @@ BackendBundle\Entity\Condicion:
     indexes:
         FK_pallet:
             columns:
-                - idpallet
+                - pallet_number
     id:
         id:
             type: integer
@@ -31,11 +31,12 @@ BackendBundle\Entity\Condicion:
             nullable: true
             precision: 10
             scale: 0
-        sunburn:
+        sunBurn:
             type: float
             nullable: true
             precision: 10
             scale: 0
+            column: sun_burn
         decay:
             type: float
             nullable: true
@@ -46,16 +47,18 @@ BackendBundle\Entity\Condicion:
             nullable: true
             precision: 10
             scale: 0
-        freezinginjury:
+        freezingInjury:
             type: float
             nullable: true
             precision: 10
             scale: 0
-        pithybrowncore:
+            column: freezing_injury
+        pithyBrownCore:
             type: float
             nullable: true
             precision: 10
             scale: 0
+            column: pithy_brown_core
         scald:
             type: float
             nullable: true
@@ -71,15 +74,23 @@ BackendBundle\Entity\Condicion:
             nullable: true
             precision: 10
             scale: 0
+        initInspect:
+            type: datetime
+            nullable: true
+            column: init_inspect
+        endInspect:
+            type: datetime
+            nullable: true
+            column: end_inspect
     manyToOne:
-        idpallet:
+        palletNumber:
             targetEntity: General
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                idpallet:
+                pallet_number:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

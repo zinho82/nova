@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace BackendBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -9,30 +9,30 @@ use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
 
-use BackendBundle\Entity\Condicion;
+use BackendBundle\Entity\Calidad;
 
 /**
- * Condicion controller.
+ * Calidad controller.
  *
  */
-class CondicionController extends Controller
+class CalidadController extends Controller
 {
     /**
-     * Lists all Condicion entities.
+     * Lists all Calidad entities.
      *
      */
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $queryBuilder = $em->getRepository('BackendBundle:Condicion')->createQueryBuilder('e');
+        $queryBuilder = $em->getRepository('BackendBundle:Calidad')->createQueryBuilder('e');
 
         list($filterForm, $queryBuilder) = $this->filter($queryBuilder, $request);
-        list($condicions, $pagerHtml) = $this->paginator($queryBuilder, $request);
+        list($calidads, $pagerHtml) = $this->paginator($queryBuilder, $request);
         
         $totalOfRecordsString = $this->getTotalOfRecordsString($queryBuilder, $request);
 
-        return $this->render('AppBundle:condicion:index.html.twig', array(
-            'condicions' => $condicions,
+        return $this->render('calidad/index.html.twig', array(
+            'calidads' => $calidads,
             'pagerHtml' => $pagerHtml,
             'filterForm' => $filterForm->createView(),
             'totalOfRecordsString' => $totalOfRecordsString,
@@ -47,11 +47,11 @@ class CondicionController extends Controller
     protected function filter($queryBuilder, Request $request)
     {
         $session = $request->getSession();
-        $filterForm = $this->createForm('AppBundle\Form\CondicionFilterType');
+        $filterForm = $this->createForm('BackendBundle\Form\CalidadFilterType');
 
         // Reset filter
         if ($request->get('filter_action') == 'reset') {
-            $session->remove('CondicionControllerFilter');
+            $session->remove('CalidadControllerFilter');
         }
 
         // Filter action
@@ -64,12 +64,12 @@ class CondicionController extends Controller
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
                 // Save filter to session
                 $filterData = $filterForm->getData();
-                $session->set('CondicionControllerFilter', $filterData);
+                $session->set('CalidadControllerFilter', $filterData);
             }
         } else {
             // Get filter from session
-            if ($session->has('CondicionControllerFilter')) {
-                $filterData = $session->get('CondicionControllerFilter');
+            if ($session->has('CalidadControllerFilter')) {
+                $filterData = $session->get('CalidadControllerFilter');
                 
                 foreach ($filterData as $key => $filter) { //fix for entityFilterType that is loaded from session
                     if (is_object($filter)) {
@@ -77,7 +77,7 @@ class CondicionController extends Controller
                     }
                 }
                 
-                $filterForm = $this->createForm('AppBundle\Form\CondicionFilterType', $filterData);
+                $filterForm = $this->createForm('BackendBundle\Form\CalidadFilterType', $filterData);
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
             }
         }
@@ -114,7 +114,7 @@ class CondicionController extends Controller
         {
             $requestParams = $request->query->all();
             $requestParams['pcg_page'] = $page;
-            return $me->generateUrl('condicion', $requestParams);
+            return $me->generateUrl('calidad', $requestParams);
         };
 
         // Paginator - view
@@ -150,43 +150,43 @@ class CondicionController extends Controller
     
 
     /**
-     * Displays a form to create a new Condicion entity.
+     * Displays a form to create a new Calidad entity.
      *
      */
     public function newAction(Request $request)
     {
     
-        $condicion = new Condicion();
-        $form   = $this->createForm('AppBundle\Form\CondicionType', $condicion);
+        $calidad = new Calidad();
+        $form   = $this->createForm('BackendBundle\Form\CalidadType', $calidad);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($condicion);
+            $em->persist($calidad);
             $em->flush();
             
-            $editLink = $this->generateUrl('condicion_edit', array('id' => $condicion->getId()));
-            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New condicion was created successfully.</a>" );
+            $editLink = $this->generateUrl('calidad_edit', array('id' => $calidad->getId()));
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New calidad was created successfully.</a>" );
             
-            $nextAction=  $request->get('submit') == 'save' ? 'condicion' : 'condicion_new';
+            $nextAction=  $request->get('submit') == 'save' ? 'calidad' : 'calidad_new';
             return $this->redirectToRoute($nextAction);
         }
-        return $this->render('AppBundle:condicion:new.html.twig', array(
-            'condicion' => $condicion,
+        return $this->render('calidad/new.html.twig', array(
+            'calidad' => $calidad,
             'form'   => $form->createView(),
         ));
     }
     
 
     /**
-     * Finds and displays a Condicion entity.
+     * Finds and displays a Calidad entity.
      *
      */
-    public function showAction(Condicion $condicion)
+    public function showAction(Calidad $calidad)
     {
-        $deleteForm = $this->createDeleteForm($condicion);
-        return $this->render('AppBundle:condicion:show.html.twig', array(
-            'condicion' => $condicion,
+        $deleteForm = $this->createDeleteForm($calidad);
+        return $this->render('calidad/show.html.twig', array(
+            'calidad' => $calidad,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -194,25 +194,25 @@ class CondicionController extends Controller
     
 
     /**
-     * Displays a form to edit an existing Condicion entity.
+     * Displays a form to edit an existing Calidad entity.
      *
      */
-    public function editAction(Request $request, Condicion $condicion)
+    public function editAction(Request $request, Calidad $calidad)
     {
-        $deleteForm = $this->createDeleteForm($condicion);
-        $editForm = $this->createForm('AppBundle\Form\CondicionType', $condicion);
+        $deleteForm = $this->createDeleteForm($calidad);
+        $editForm = $this->createForm('BackendBundle\Form\CalidadType', $calidad);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($condicion);
+            $em->persist($calidad);
             $em->flush();
             
             $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
-            return $this->redirectToRoute('condicion_edit', array('id' => $condicion->getId()));
+            return $this->redirectToRoute('calidad_edit', array('id' => $calidad->getId()));
         }
-        return $this->render('AppBundle:condicion:edit.html.twig', array(
-            'condicion' => $condicion,
+        return $this->render('calidad/edit.html.twig', array(
+            'calidad' => $calidad,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -221,59 +221,59 @@ class CondicionController extends Controller
     
 
     /**
-     * Deletes a Condicion entity.
+     * Deletes a Calidad entity.
      *
      */
-    public function deleteAction(Request $request, Condicion $condicion)
+    public function deleteAction(Request $request, Calidad $calidad)
     {
     
-        $form = $this->createDeleteForm($condicion);
+        $form = $this->createDeleteForm($calidad);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($condicion);
+            $em->remove($calidad);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The Condicion was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'The Calidad was deleted successfully');
         } else {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Condicion');
+            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Calidad');
         }
         
-        return $this->redirectToRoute('condicion');
+        return $this->redirectToRoute('calidad');
     }
     
     /**
-     * Creates a form to delete a Condicion entity.
+     * Creates a form to delete a Calidad entity.
      *
-     * @param Condicion $condicion The Condicion entity
+     * @param Calidad $calidad The Calidad entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Condicion $condicion)
+    private function createDeleteForm(Calidad $calidad)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('condicion_delete', array('id' => $condicion->getId())))
+            ->setAction($this->generateUrl('calidad_delete', array('id' => $calidad->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
     }
     
     /**
-     * Delete Condicion by id
+     * Delete Calidad by id
      *
      */
-    public function deleteByIdAction(Condicion $condicion){
+    public function deleteByIdAction(Calidad $calidad){
         $em = $this->getDoctrine()->getManager();
         
         try {
-            $em->remove($condicion);
+            $em->remove($calidad);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The Condicion was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'The Calidad was deleted successfully');
         } catch (Exception $ex) {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Condicion');
+            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Calidad');
         }
 
-        return $this->redirect($this->generateUrl('condicion'));
+        return $this->redirect($this->generateUrl('calidad'));
 
     }
     
@@ -289,22 +289,22 @@ class CondicionController extends Controller
         if ($action == "delete") {
             try {
                 $em = $this->getDoctrine()->getManager();
-                $repository = $em->getRepository('BackendBundle:Condicion');
+                $repository = $em->getRepository('BackendBundle:Calidad');
 
                 foreach ($ids as $id) {
-                    $condicion = $repository->find($id);
-                    $em->remove($condicion);
+                    $calidad = $repository->find($id);
+                    $em->remove($calidad);
                     $em->flush();
                 }
 
-                $this->get('session')->getFlashBag()->add('success', 'condicions was deleted successfully!');
+                $this->get('session')->getFlashBag()->add('success', 'calidads was deleted successfully!');
 
             } catch (Exception $ex) {
-                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the condicions ');
+                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the calidads ');
             }
         }
 
-        return $this->redirect($this->generateUrl('condicion'));
+        return $this->redirect($this->generateUrl('calidad'));
     }
     
 

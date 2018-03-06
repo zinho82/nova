@@ -28,45 +28,51 @@ BackendBundle\Entity\Calidad:
             options:
                 fixed: false
                 default: '0'
-        casesnetweigth:
+        casesNetWeigth:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        samplenumber:
+            column: cases_net_weigth
+        sampleNumber:
             type: integer
             nullable: false
             options:
                 unsigned: false
                 default: '0'
-        barcodeplu:
+            column: sample_number
+        barCodePlu:
             type: integer
             nullable: false
             options:
                 unsigned: false
                 default: '0'
-        openappearance:
+            column: bar_code_plu
+        openAppearance:
             type: string
             nullable: true
             length: 200
             options:
                 fixed: false
-        blankend:
+            column: open_appearance
+        blankEnd:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        blistermiteinjure:
+            column: blank_end
+        blisterMiteInjure:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: blister_mite_injure
         discoloration:
             type: float
             nullable: false
@@ -81,13 +87,14 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        lightblush:
+        lightBlush:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: light_blush
         scaring:
             type: float
             nullable: false
@@ -95,20 +102,22 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        hardend:
+        hardEnd:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        insectdamage:
+            column: hard_end
+        insectDamage:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: insect_damage
         russet:
             type: float
             nullable: false
@@ -116,13 +125,14 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        limbrubs:
+        limbRubs:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: limb_rubs
         overripe:
             type: float
             nullable: false
@@ -151,20 +161,295 @@ BackendBundle\Entity\Calidad:
             scale: 0
             options:
                 default: '0'
-        stermpunctureskinbreaks:
+        stermPunctureSkinBreaks:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
-        missingcalix:
+            column: sterm_puncture_skin_breaks
+        stonyPit:
             type: float
             nullable: false
             precision: 10
             scale: 0
             options:
                 default: '0'
+            column: stony_pit
+        missingCalix:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+            column: missing_calix
+        initInspect:
+            type: datetime
+            nullable: true
+            column: init_inspect
+        endInspect:
+            type: datetime
+            nullable: true
+            column: end_inspect
+        brix:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        greenStem:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: green_stem
+        brownStem:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: brown_Stem
+        dryStem:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: dry_stem
+        sunkenStemEnd:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: sunken_stem_end
+        translucent:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        grapeColor:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: grape_color
+        amber:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        split:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        waterBerry:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: water_berry
+        shotBerry:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: shot_berry
+        shalter:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        softBerries:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: soft_berries
+        so2Damage:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: so2_damage
+        dehydratedBerries:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: dehydrated_berries
+        bruising:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        stemPuncture:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: stem_puncture
+        crush:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        shiriveling:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        slipSkin:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: slip_skin
+        lackOfDegreening:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: lack_of_degreening
+        colorPale:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: color_pale
+        fruitWithSeeds:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: fruit_with_seeds
+        calixBrownBlack:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: calix_brown_black
+        skinDefectSevere:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: skin_defect_severe
+        skinDefectModerate:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: skin_defect_moderate
+        misshapenFruit:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: misshapen_fruit
+        wellFormed:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: well_formed
+        undersize:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        brokenSkin:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: broken_skin
+        wormDamage:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: worm_damage
+        hailDamage:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: hail_damage
+        mechanicalDamage:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: mechanical_damage
+        stemEndDamage:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: stem_end_damage
+        misshapen:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        sprayBurn:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: spray_burn
+        spots:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        scald:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        splitPit:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: split_pit
+        qualityScore:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: quality_score
+        bloom:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        lackOfColor:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: lack_of_color
+        insectPresence:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: insect_presence
+        flowerRemains:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: flower_remains
+        contamination:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
     manyToOne:
         idpallet:
             targetEntity: General

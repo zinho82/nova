@@ -1,13 +1,13 @@
 <?php
 
 namespace AppBundle\Form;
-
+ 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
-
+ 
 
 class GeneralFilterType extends AbstractType
 {
@@ -15,21 +15,22 @@ class GeneralFilterType extends AbstractType
     {
         $builder
             ->add('id', Filters\NumberFilterType::class)
-            ->add('inspector', Filters\TextFilterType::class)
-            ->add('dateinspect', Filters\DateTimeFilterType::class)
-            ->add('inspectplan', Filters\TextFilterType::class)
-            ->add('countryorigin', Filters\TextFilterType::class)
-            ->add('commodityname', Filters\TextFilterType::class)
+            ->add('inspectorName', Filters\TextFilterType::class)
+            ->add('numberPallet', Filters\TextFilterType::class)
+            ->add('dateInspection', Filters\DateTimeFilterType::class)
+            ->add('inspectorPlanName', Filters\TextFilterType::class)
+            ->add('countryOrigin', Filters\TextFilterType::class)
+            ->add('commodityName', Filters\TextFilterType::class)
             ->add('variety', Filters\TextFilterType::class)
-            ->add('productpackstyle', Filters\TextFilterType::class)
+            ->add('productPackStyle', Filters\TextFilterType::class)
             ->add('label', Filters\TextFilterType::class)
-            ->add('casestype', Filters\TextFilterType::class)
-            ->add('caseperpallet', Filters\TextFilterType::class)
+            ->add('casesType', Filters\TextFilterType::class)
+            ->add('casesPerPallet', Filters\TextFilterType::class)
             ->add('grower', Filters\TextFilterType::class)
             ->add('size', Filters\TextFilterType::class)
-            ->add('packingdate', Filters\DateTimeFilterType::class)
-            ->add('casesnetweight', Filters\TextFilterType::class)
-            ->add('barcodeplu', Filters\TextFilterType::class)
+            ->add('packingDate', Filters\DateTimeFilterType::class)
+            ->add('casesNetWeight', Filters\TextFilterType::class)
+            ->add('barCodePlu', Filters\TextFilterType::class)
             ->add('costumer', Filters\TextFilterType::class)
             ->add('shipper', Filters\TextFilterType::class)
             ->add('lot', Filters\TextFilterType::class)
