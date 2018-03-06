@@ -68,6 +68,16 @@ class Condicion
     private $bruising;
 
     /**
+     * @var \DateTime
+     */
+    private $initInspect;
+
+    /**
+     * @var \DateTime
+     */
+    private $endInspect;
+
+    /**
      * @var \BackendBundle\Entity\General
      */
     private $palletNumber;
@@ -348,40 +358,6 @@ class Condicion
     }
 
     /**
-     * Set palletNumber
-     *
-     * @param \BackendBundle\Entity\General $palletNumber
-     *
-     * @return Condicion
-     */
-    public function setPalletNumber(\BackendBundle\Entity\General $palletNumber = null)
-    {
-        $this->palletNumber = $palletNumber;
-
-        return $this;
-    }
-
-    /**
-     * Get palletNumber
-     *
-     * @return \BackendBundle\Entity\General
-     */
-    public function getPalletNumber()
-    {
-        return $this->palletNumber;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $initInspect;
-
-    /**
-     * @var \DateTime
-     */
-    private $endInspect;
-
-
-    /**
      * Set initInspect
      *
      * @param \DateTime $initInspect
@@ -428,4 +404,29 @@ class Condicion
     {
         return $this->endInspect;
     }
+
+    /**
+     * Set palletNumber
+     *
+     * @param \BackendBundle\Entity\General $palletNumber
+     *
+     * @return Condicion
+     */
+    public function setPalletNumber(\BackendBundle\Entity\General $palletNumber = null)
+    {
+        $this->palletNumber = $palletNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get palletNumber
+     *
+     * @return \BackendBundle\Entity\General
+     */
+    public function getPalletNumber()
+    {
+        return $this->palletNumber;
+    }
 }
+

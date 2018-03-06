@@ -33,11 +33,11 @@ class CalidadController extends Controller
 
         return $this->render('AppBundle:calidad:index.html.twig', array(
             'calidads' => $calidads,
-            'pagerHtml' => $pagerHtml,
+            'pagerHtml' => $pagerHtml, 
             'filterForm' => $filterForm->createView(),
             'totalOfRecordsString' => $totalOfRecordsString,
 
-        ));
+        )); 
     }
 
     /**

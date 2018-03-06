@@ -120,7 +120,247 @@ class Calidad
     /**
      * @var float
      */
+    private $stonyPit = '0';
+
+    /**
+     * @var float
+     */
     private $missingCalix = '0';
+
+    /**
+     * @var \DateTime
+     */
+    private $initInspect;
+
+    /**
+     * @var \DateTime
+     */
+    private $endInspect;
+
+    /**
+     * @var float
+     */
+    private $brix;
+
+    /**
+     * @var float
+     */
+    private $greenStem;
+
+    /**
+     * @var float
+     */
+    private $brownStem;
+
+    /**
+     * @var float
+     */
+    private $dryStem;
+
+    /**
+     * @var float
+     */
+    private $sunkenStemEnd;
+
+    /**
+     * @var float
+     */
+    private $translucent;
+
+    /**
+     * @var float
+     */
+    private $grapeColor;
+
+    /**
+     * @var float
+     */
+    private $amber;
+
+    /**
+     * @var float
+     */
+    private $split;
+
+    /**
+     * @var float
+     */
+    private $waterBerry;
+
+    /**
+     * @var float
+     */
+    private $shotBerry;
+
+    /**
+     * @var float
+     */
+    private $shalter;
+
+    /**
+     * @var float
+     */
+    private $softBerries;
+
+    /**
+     * @var float
+     */
+    private $so2Damage;
+
+    /**
+     * @var float
+     */
+    private $dehydratedBerries;
+
+    /**
+     * @var float
+     */
+    private $bruising;
+
+    /**
+     * @var float
+     */
+    private $stemPuncture;
+
+    /**
+     * @var float
+     */
+    private $crush;
+
+    /**
+     * @var float
+     */
+    private $shiriveling;
+
+    /**
+     * @var float
+     */
+    private $slipSkin;
+
+    /**
+     * @var float
+     */
+    private $lackOfDegreening;
+
+    /**
+     * @var float
+     */
+    private $colorPale;
+
+    /**
+     * @var float
+     */
+    private $fruitWithSeeds;
+
+    /**
+     * @var float
+     */
+    private $calixBrownBlack;
+
+    /**
+     * @var float
+     */
+    private $skinDefectSevere;
+
+    /**
+     * @var float
+     */
+    private $skinDefectModerate;
+
+    /**
+     * @var float
+     */
+    private $misshapenFruit;
+
+    /**
+     * @var float
+     */
+    private $wellFormed;
+
+    /**
+     * @var float
+     */
+    private $undersize;
+
+    /**
+     * @var float
+     */
+    private $brokenSkin;
+
+    /**
+     * @var float
+     */
+    private $wormDamage;
+
+    /**
+     * @var float
+     */
+    private $hailDamage;
+
+    /**
+     * @var float
+     */
+    private $mechanicalDamage;
+
+    /**
+     * @var float
+     */
+    private $stemEndDamage;
+
+    /**
+     * @var float
+     */
+    private $misshapen;
+
+    /**
+     * @var float
+     */
+    private $sprayBurn;
+
+    /**
+     * @var float
+     */
+    private $spots;
+
+    /**
+     * @var float
+     */
+    private $scald;
+
+    /**
+     * @var float
+     */
+    private $splitPit;
+
+    /**
+     * @var string
+     */
+    private $qualityScore;
+
+    /**
+     * @var float
+     */
+    private $bloom;
+
+    /**
+     * @var float
+     */
+    private $lackOfColor;
+
+    /**
+     * @var float
+     */
+    private $insectPresence;
+
+    /**
+     * @var float
+     */
+    private $flowerRemains;
+
+    /**
+     * @var float
+     */
+    private $contamination;
 
     /**
      * @var \BackendBundle\Entity\General
@@ -643,6 +883,30 @@ class Calidad
     }
 
     /**
+     * Set stonyPit
+     *
+     * @param float $stonyPit
+     *
+     * @return Calidad
+     */
+    public function setStonyPit($stonyPit)
+    {
+        $this->stonyPit = $stonyPit;
+
+        return $this;
+    }
+
+    /**
+     * Get stonyPit
+     *
+     * @return float
+     */
+    public function getStonyPit()
+    {
+        return $this->stonyPit;
+    }
+
+    /**
      * Set missingCalix
      *
      * @param float $missingCalix
@@ -665,265 +929,6 @@ class Calidad
     {
         return $this->missingCalix;
     }
-
-    /**
-     * Set idpallet
-     *
-     * @param \BackendBundle\Entity\General $idpallet
-     *
-     * @return Calidad
-     */
-    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
-    {
-        $this->idpallet = $idpallet;
-
-        return $this;
-    }
-
-    /**
-     * Get idpallet
-     *
-     * @return \BackendBundle\Entity\General
-     */
-    public function getIdpallet()
-    {
-        return $this->idpallet;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $initInspect;
-
-    /**
-     * @var \DateTime
-     */
-    private $endInspect;
-
-    /**
-     * @var float
-     */
-    private $brix;
-
-    /**
-     * @var float
-     */
-    private $greenStem;
-
-    /**
-     * @var float
-     */
-    private $brownStem;
-
-    /**
-     * @var float
-     */
-    private $dryStem;
-
-    /**
-     * @var float
-     */
-    private $sunkenStemEnd;
-
-    /**
-     * @var float
-     */
-    private $translucent;
-
-    /**
-     * @var float
-     */
-    private $grapeColor;
-
-    /**
-     * @var float
-     */
-    private $amber;
-
-    /**
-     * @var float
-     */
-    private $split;
-
-    /**
-     * @var float
-     */
-    private $waterBerry;
-
-    /**
-     * @var float
-     */
-    private $shotBerry;
-
-    /**
-     * @var float
-     */
-    private $shalter;
-
-    /**
-     * @var float
-     */
-    private $softBerries;
-
-    /**
-     * @var float
-     */
-    private $so2Damage;
-
-    /**
-     * @var float
-     */
-    private $dehydratedBerries;
-
-    /**
-     * @var float
-     */
-    private $bruising;
-
-    /**
-     * @var float
-     */
-    private $stemPuncture;
-
-    /**
-     * @var float
-     */
-    private $crush;
-
-    /**
-     * @var float
-     */
-    private $shiriveling;
-
-    /**
-     * @var float
-     */
-    private $slipSkin;
-
-    /**
-     * @var float
-     */
-    private $lackOfDegreening;
-
-    /**
-     * @var float
-     */
-    private $colorPale;
-
-    /**
-     * @var float
-     */
-    private $fruitWithSeeds;
-
-    /**
-     * @var float
-     */
-    private $calixBrownBlack;
-
-    /**
-     * @var float
-     */
-    private $skinDefectSevere;
-
-    /**
-     * @var float
-     */
-    private $skinDefectModerate;
-
-    /**
-     * @var float
-     */
-    private $misshapenFruit;
-
-    /**
-     * @var float
-     */
-    private $wellFormed;
-
-    /**
-     * @var float
-     */
-    private $undersize;
-
-    /**
-     * @var float
-     */
-    private $brokenSkin;
-
-    /**
-     * @var float
-     */
-    private $wormDamage;
-
-    /**
-     * @var float
-     */
-    private $hailDamage;
-
-    /**
-     * @var float
-     */
-    private $mechanicalDamage;
-
-    /**
-     * @var float
-     */
-    private $stemEndDamage;
-
-    /**
-     * @var float
-     */
-    private $misshapen;
-
-    /**
-     * @var float
-     */
-    private $sprayBurn;
-
-    /**
-     * @var float
-     */
-    private $spots;
-
-    /**
-     * @var float
-     */
-    private $scald;
-
-    /**
-     * @var float
-     */
-    private $splitPit;
-
-    /**
-     * @var string
-     */
-    private $qualityScore;
-
-    /**
-     * @var float
-     */
-    private $bloom;
-
-    /**
-     * @var float
-     */
-    private $lackOfColor;
-
-    /**
-     * @var float
-     */
-    private $insectPresence;
-
-    /**
-     * @var float
-     */
-    private $flowerRemains;
-
-    /**
-     * @var float
-     */
-    private $contamination;
-
 
     /**
      * Set initInspect
@@ -2052,33 +2057,29 @@ class Calidad
     {
         return $this->contamination;
     }
-    /**
-     * @var float
-     */
-    private $stonyPit = '0';
-
 
     /**
-     * Set stonyPit
+     * Set idpallet
      *
-     * @param float $stonyPit
+     * @param \BackendBundle\Entity\General $idpallet
      *
      * @return Calidad
      */
-    public function setStonyPit($stonyPit)
+    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
     {
-        $this->stonyPit = $stonyPit;
+        $this->idpallet = $idpallet;
 
         return $this;
     }
 
     /**
-     * Get stonyPit
+     * Get idpallet
      *
-     * @return float
+     * @return \BackendBundle\Entity\General
      */
-    public function getStonyPit()
+    public function getIdpallet()
     {
-        return $this->stonyPit;
+        return $this->idpallet;
     }
 }
+

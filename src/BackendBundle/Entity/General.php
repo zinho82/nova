@@ -132,6 +132,41 @@ class General
      */
     private $recommendation;
 
+    /**
+     * @var string
+     */
+    private $fumigation;
+
+    /**
+     * @var string
+     */
+    private $fumigationSo2;
+
+    /**
+     * @var string
+     */
+    private $organic;
+
+    /**
+     * @var string
+     */
+    private $palletType;
+
+    /**
+     * @var string
+     */
+    private $clamshellPerCases;
+
+    /**
+     * @var string
+     */
+    private $grade;
+
+    /**
+     * @var float
+     */
+    private $temperature;
+
 
     /**
      * Get id
@@ -718,45 +753,6 @@ class General
     {
         return $this->recommendation;
     }
-    public function __toString() {
-        return (string) $this->numberPallet;
-        
-    }
-    /**
-     * @var string
-     */
-    private $fumigation;
-
-    /**
-     * @var string
-     */
-    private $fumigationSo2;
-
-    /**
-     * @var string
-     */
-    private $organic;
-
-    /**
-     * @var string
-     */
-    private $palletType;
-
-    /**
-     * @var string
-     */
-    private $clamshellPerCases;
-
-    /**
-     * @var string
-     */
-    private $grade;
-
-    /**
-     * @var float
-     */
-    private $temperature;
-
 
     /**
      * Set fumigation
@@ -926,3 +922,4 @@ class General
         return $this->temperature;
     }
 }
+

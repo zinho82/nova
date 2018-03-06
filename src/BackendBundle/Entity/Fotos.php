@@ -110,3 +110,4 @@ class Fotos
         return $this->idpallet;
     }
 }
+
