@@ -78,7 +78,7 @@ class General
     private $size;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $packingDate;
 
@@ -493,7 +493,7 @@ class General
     /**
      * Set packingDate
      *
-     * @param \DateTime $packingDate
+     * @param string $packingDate
      *
      * @return General
      */
@@ -507,7 +507,7 @@ class General
     /**
      * Get packingDate
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPackingDate()
     {

@@ -21,7 +21,6 @@
         <form class="well" action="{{ path('general') }}" method="get" >
             <div class="row">
                  
-                    <div class="col-md-6">{{ form_row(filterForm.id) }}</div>
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.inspectorName) }}</div>
@@ -90,10 +89,6 @@
                     <div class="col-md-6">{{ form_row(filterForm.thier) }}</div>
 
                  
-                    <div class="col-md-6">{{ form_row(filterForm.comments) }}</div>
-
-                 
-                    <div class="col-md-6">{{ form_row(filterForm.recommendation) }}</div>
 
                                 <div class="col-md-6">
                     {{ form_rest(filterForm) }}

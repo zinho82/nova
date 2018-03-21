@@ -162,6 +162,8 @@ class GeneralController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $general->setInspectorName('Erick Leal'); 
+            $general->setDateInspection('0000-00-00 00:00:00');
             $em->persist($general);
             $em->flush();
             

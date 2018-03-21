@@ -14,31 +14,88 @@ class GeneralFilterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', Filters\NumberFilterType::class)
-            ->add('inspectorName', Filters\TextFilterType::class)
-            ->add('numberPallet', Filters\TextFilterType::class)
+            ->add('inspectorName', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('numberPallet', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
             ->add('dateInspection', Filters\DateTimeFilterType::class)
-            ->add('inspectorPlanName', Filters\TextFilterType::class)
-            ->add('countryOrigin', Filters\TextFilterType::class)
-            ->add('commodityName', Filters\TextFilterType::class)
-            ->add('variety', Filters\TextFilterType::class)
-            ->add('productPackStyle', Filters\TextFilterType::class)
-            ->add('label', Filters\TextFilterType::class)
-            ->add('casesType', Filters\TextFilterType::class)
-            ->add('casesPerPallet', Filters\TextFilterType::class)
-            ->add('grower', Filters\TextFilterType::class)
-            ->add('size', Filters\TextFilterType::class)
-            ->add('packingDate', Filters\DateTimeFilterType::class)
-            ->add('casesNetWeight', Filters\TextFilterType::class)
-            ->add('barCodePlu', Filters\TextFilterType::class)
-            ->add('costumer', Filters\TextFilterType::class)
-            ->add('shipper', Filters\TextFilterType::class)
-            ->add('lot', Filters\TextFilterType::class)
-            ->add('vasset', Filters\TextFilterType::class)
-            ->add('container', Filters\TextFilterType::class)
-            ->add('thier', Filters\TextFilterType::class)
-            ->add('comments', Filters\TextFilterType::class)
-            ->add('recommendation', Filters\TextFilterType::class)
+            ->add('inspectorPlanName', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('countryOrigin', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('commodityName', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('variety', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('productPackStyle', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('label', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('casesType', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('casesPerPallet', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('grower', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('size', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('packingDate', Filters\TextFilterType::class)
+            ->add('casesNetWeight', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('barCodePlu', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('costumer', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('shipper', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('lot', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('vasset', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('container', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
+            ->add('thier', Filters\TextFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control')
+            ))
         
         ;
         $builder->setMethod("GET");

@@ -10,12 +10,15 @@ use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 
 
 class CalidadFilterType extends AbstractType
-{
+{ 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', Filters\NumberFilterType::class)
-            ->add('size', Filters\NumberFilterType::class)
+            ->add('size', Filters\NumberFilterType::class,array(
+                'attr'  =>  array(
+                    'class' => 'form-control'
+                )
+            ))
             ->add('variety', Filters\TextFilterType::class)
             ->add('casesNetWeigth', Filters\NumberFilterType::class)
             ->add('sampleNumber', Filters\NumberFilterType::class)
