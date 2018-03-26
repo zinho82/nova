@@ -97,26 +97,16 @@ class UserController extends Controller {
     }
 
     public function homeAction(Request $request) {
-//        $proyecto = new ProyectosController();
-//        $banco=$this->getBanco($request,$user->getIdusuario());
-//        $proyectos=$proyecto->getProyectos($request);
-        $proyecto = $this->get('app.proyectos_service');
-        $proyectos=$proyecto->getProyectos();
-          $paginator = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-                $proyectos, $request->query->getInt('page', 1), 2
-        );
         return $this->render("AppBundle:User:home.html.twig", array(
                     'user_stats' => array('deposito' => 0),
-                    'proyectos' => $pagination
         ));
     }
 
     public function nickTestAction(Request $request) {
         $nick = $request->get('nick');
         $em = $this->getDoctrine()->getManager();
-        $user_repo = $em->getRepository("BackendBundle:User");
-        $user_isser = $user_repo->findOneBy(array("nick" => $nick));
+        $user_repo = $em->getRepository("BackendBundle:Usuario");
+        $user_isser = $user_repo->findOneBy(array("username" => $nick));
         $result = "used";
         if (count($user_isser >= 1 && is_object($user_isser))) {
             $result = "used";
@@ -237,11 +227,6 @@ class UserController extends Controller {
         ));
     }
 
-    public function getBanco(Request $request, $uer = null) {
-        $em = $this->getDoctrine()->getManager();
-        $dql = "select sum(deposito) as depo,sum(utilidad) as util,sum(salida) as inver, sum(reservado) as reser from BackendBundle:Ctacte c  where idusuario=$user";
-        $estados = $em->createQuery($dql);
-        return $estados;
-    }
+    
 
 }

@@ -2082,4 +2082,3 @@ class Calidad
         return $this->idpallet;
     }
 }
-

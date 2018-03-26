@@ -97,8 +97,11 @@ BackendBundle\Entity\General:
             options:
                 fixed: false
         packingDate:
-            type: datetime
+            type: string
             nullable: true
+            length: 200
+            options:
+                fixed: false
             column: packing_date
         casesNetWeight:
             type: string

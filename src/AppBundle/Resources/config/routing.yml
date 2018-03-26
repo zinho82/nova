@@ -14,8 +14,10 @@ app_condicion:
     prefix: /
 app_fotos:
     resource: "@AppBundle/Resources/config/routing/fotos.yml"
-    
     prefix: /
 app_homepage: 
         path: /
-        defaults: { _controller: AppBundle:General:index } 
+        defaults: { _controller: AppBundle:User:login } 
+app_usuario:
+    resource: "@AppBundle/Resources/config/routing/usuario.yml"
+    prefix: /
