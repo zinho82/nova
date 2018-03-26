@@ -21,7 +21,6 @@
         </span>
     </div>
     <div class="clearfix"></div>
-    {% set cuenta_stats= app.user|cuenta_stats %}
     <div class="col-lg-4 box-default pull-right">
         <div class="estadoscuenta">
             <a href="#">
@@ -29,7 +28,6 @@
                     Invertido
                 </span>
                 <span class="number-stat2" >
-                    {{ (-1*cuenta_stats.inversion)|number_format(0,',','.')}}
                 </span>
             </a>
         </div>
@@ -39,7 +37,6 @@
                     Utilidad
                 </span>
                 <span class="number-stat2">
-                    {{ cuenta_stats.utilidad|number_format(0,',','.')}}
                 </span>
             </a>
         </div>

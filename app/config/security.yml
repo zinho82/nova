@@ -11,7 +11,7 @@ security:
        user_db_provider:
            entity:
                class: BackendBundle:Usuario
-               property: email
+               property: username
                
 
     firewalls:

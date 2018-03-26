@@ -429,4 +429,3 @@ class Condicion
         return $this->palletNumber;
     }
 }
-

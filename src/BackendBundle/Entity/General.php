@@ -922,4 +922,3 @@ class General
         return $this->temperature;
     }
 }
-

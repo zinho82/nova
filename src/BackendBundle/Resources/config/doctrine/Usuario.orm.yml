@@ -10,4 +10,47 @@ BackendBundle\Entity\Usuario:
             id: true
             generator:
                 strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        nombre:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        app:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        apm:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        role:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        correo:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
     lifecycleCallbacks: {  }
