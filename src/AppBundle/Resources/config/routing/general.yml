@@ -1,5 +1,5 @@
 general:
-    path:  /
+    path:  /general
     defaults: { _controller: "AppBundle:General:index" }
 
 general_show:

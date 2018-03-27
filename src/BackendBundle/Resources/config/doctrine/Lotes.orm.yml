@@ -1,0 +1,155 @@
+BackendBundle\Entity\Lotes:
+    type: entity
+    table: lotes
+    indexes:
+        fk_lotes_usuario1_idx:
+            columns:
+                - ejecutivo
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        container:
+            type: string
+            nullable: true
+            length: 70
+            options:
+                fixed: false
+        numberPallets:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: number_Pallets
+        templateNumber:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: template_number
+        packingDate:
+            type: date
+            nullable: true
+            column: Packing_Date
+        label:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        comoditty:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        variety:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        pack:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        plu:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        quality:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        score:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        numBoxes:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: num_boxes
+        growerCode:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: grower_code
+        growersName:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: growers_name
+        exportador:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        consignne:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        vessel:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        pol:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        etd:
+            type: date
+            nullable: true
+        pod:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        eta:
+            type: date
+            nullable: true
+        fechaCarga:
+            type: datetime
+            nullable: true
+            column: fecha_carga
+    manyToOne:
+        ejecutivo:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ejecutivo:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

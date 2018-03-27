@@ -93,7 +93,7 @@ BackendBundle\Entity\General:
         size:
             type: string
             nullable: true
-            length: 200 
+            length: 200
             options:
                 fixed: false
         packingDate:

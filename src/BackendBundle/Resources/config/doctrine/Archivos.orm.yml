@@ -1,10 +1,10 @@
-BackendBundle\Entity\Fotos:
+BackendBundle\Entity\Archivos:
     type: entity
-    table: fotos
+    table: archivos
     indexes:
-        FK_pallet_foto:
+        fk_table1_usuario1:
             columns:
-                - idpallet
+                - usuario
     id:
         id:
             type: integer
@@ -15,27 +15,31 @@ BackendBundle\Entity\Fotos:
             generator:
                 strategy: IDENTITY
     fields:
-        foto:
+        archivo:
             type: string
             nullable: true
-            length: 300
+            length: 450
             options:
                 fixed: false
+        fechaCarga:
+            type: datetime
+            nullable: true
+            column: fecha_carga
         tipo:
             type: string
             nullable: true
-            length: 200
+            length: 45
             options:
                 fixed: false
     manyToOne:
-        idpallet:
-            targetEntity: General
+        usuario:
+            targetEntity: Usuario
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                idpallet:
+                usuario:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

@@ -98,7 +98,6 @@ class UserController extends Controller {
 
     public function homeAction(Request $request) {
         return $this->render("AppBundle:User:home.html.twig", array(
-                    'user_stats' => array('deposito' => 0),
         ));
     }
 

@@ -1,0 +1,45 @@
+lotes:
+    path:  /lotes
+    defaults: { _controller: "AppBundle:Lotes:index" }
+
+lotes_show:
+    path:  /lotes/{id}/show
+    defaults: { _controller: "AppBundle:Lotes:show" }
+lotes_carga:
+    path:  /lotes/cargar
+    defaults: { _controller: "AppBundle:Lotes:carga" }
+
+lotes_new:
+    path:  /lotes/new
+    defaults: { _controller: "AppBundle:Lotes:new" }
+
+lotes_create:
+    path:  /lotes/create
+    defaults: { _controller: "AppBundle:Lotes:create" }
+    requirements: { _method: post }
+
+lotes_edit:
+    path:  /lotes/{id}/edit
+    defaults: { _controller: "AppBundle:Lotes:edit" }
+
+lotes_update:
+    path:  /lotes/{id}/update
+    defaults: { _controller: "AppBundle:Lotes:update" }
+    requirements: { _method: post|put }
+
+lotes_delete:
+    path:  /lotes/{id}/delete
+    defaults: { _controller: "AppBundle:Lotes:delete" }
+    requirements: { _method: post|delete }
+    
+lotes_by_id_delete:
+    path:  /lotes/delete/{id}
+    defaults: { _controller: "AppBundle:Lotes:deleteById" }
+    requirements: { _method: get }
+    
+
+lotes_bulk_action:
+    path:  /lotes/bulk-action
+    defaults: { _controller: "AppBundle:Lotes:bulk" }
+    requirements: { _method: post }
+    

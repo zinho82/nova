@@ -21,3 +21,6 @@ app_homepage:
 app_usuario:
     resource: "@AppBundle/Resources/config/routing/usuario.yml"
     prefix: /
+app_lotes:
+    resource: "@AppBundle/Resources/config/routing/lotes.yml"
+    prefix: /
