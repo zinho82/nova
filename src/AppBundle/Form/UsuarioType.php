@@ -5,6 +5,10 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class UsuarioType extends AbstractType
 {
@@ -15,13 +19,55 @@ class UsuarioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username')
-            ->add('password')
-            ->add('nombre')
-            ->add('app')
-            ->add('apm')
-            ->add('role')
-            ->add('correo')
+                ->add('nombre', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  true,
+                ))
+            ->add('app', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  true,
+                ))
+            ->add('apm', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  false,
+                ))
+            ->add('username', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  true,
+            ))
+            ->add('password', PasswordType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  true,
+                ))
+            
+            ->add('role', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  true,
+                ))
+            ->add('correo', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  false,
+                ))
+            ->add('image', TextType::class,array(
+                'attr'  =>  array(
+                    'class' =>  'formcontrol',
+                ),
+                'required'  =>  false,
+                ))
         ;
     }
     

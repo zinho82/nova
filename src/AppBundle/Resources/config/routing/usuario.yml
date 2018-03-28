@@ -36,7 +36,7 @@ usuario_by_id_delete:
     
 
 usuario_bulk_action:
-    path:  /usuario/bulk-action
+    path:  /bulk-action
     defaults: { _controller: "AppBundle:Usuario:bulk" }
     requirements: { _method: post }
     

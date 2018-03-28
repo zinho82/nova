@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-lg-12 col-md-12 col-sm-12">
+<div class="col-lg-12 col-sm-12 col-md-12">
 <div id="top" class="row">
     <div class="page-header">
         <h2>View usuario <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </h2>
@@ -68,6 +68,13 @@
             {{ usuario.correo }}
         </p>
 
+    </div>
+    <div class="col-md-6">
+        <p><strong>Image</strong></p>
+        <p>
+            {{ usuario.image }}
+        </p>
+
     </div></div>
 
 <hr/>
@@ -96,6 +103,6 @@
     </form>
 </div>
 </div>
-
+<
 {% endblock %}
 

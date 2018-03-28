@@ -22,6 +22,7 @@ class UsuarioFilterType extends AbstractType
             ->add('apm', Filters\TextFilterType::class)
             ->add('role', Filters\TextFilterType::class)
             ->add('correo', Filters\TextFilterType::class)
+            ->add('image', Filters\TextFilterType::class)
         
         ;
         $builder->setMethod("GET");
