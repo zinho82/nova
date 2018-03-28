@@ -31,6 +31,12 @@ BackendBundle\Entity\Archivos:
             length: 45
             options:
                 fixed: false
+        nombrearchivo:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
     manyToOne:
         usuario:
             targetEntity: Usuario

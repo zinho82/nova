@@ -287,6 +287,7 @@ class LotesController extends Controller {
     /*     * *******CARGAR LOTES********** */
 
     function cargaAction(request $request) {
+        $em= $this->getDoctrine()->getManager();
         $archivo=new Archivos();
 
 $form = $this->createForm('AppBundle\Form\ArchivosType', $archivo);
@@ -295,7 +296,7 @@ $form = $this->createForm('AppBundle\Form\ArchivosType', $archivo);
         if ($form->isSubmitted() && $form->isValid()) {
         // Recogemos el fichero
         $file = $form['archivo']->getData();
-
+        
 // Sacamos la extensión del fichero
         $ext = $file->guessExtension();
 
@@ -303,11 +304,17 @@ $form = $this->createForm('AppBundle\Form\ArchivosType', $archivo);
         $file_name = time() . "." . $ext;
 
 // Guardamos el fichero en el directorio uploads que estará en el directorio /web del framework
-        $file->move("uploads", $file_name);
-
+        $file->move("uploads/lotes", $file_name);
 // Establecemos el nombre de fichero en el atributo de la entidad
-        $miEntidad->setImage($file_name);
+        $archivo->setArchivo($file_name);
+        $archivo->setFechaCarga(new \DateTime);
+        $archivo->setUsuario($this->getUser());
+        $archivo->setNombrearchivo($file->getClientOriginalName());
+        $archivo->setTipo("Carga Lotes");
+        $em->persist($archivo);
+        $em->flush($archivo);
         
+        $this->indexAction($request);
         }
         return $this->render('AppBundle:lotes:carga.html.twig', array(
             'form'  =>$form->createView(),

@@ -138,5 +138,33 @@ class Archivos
     {
         return $this->usuario;
     }
-}
+    /**
+     * @var string
+     */
+    private $nombrearchivo;
 
+
+    /**
+     * Set nombrearchivo
+     *
+     * @param string $nombrearchivo
+     *
+     * @return Archivos
+     */
+    public function setNombrearchivo($nombrearchivo)
+    {
+        $this->nombrearchivo = $nombrearchivo;
+
+        return $this;
+    }
+
+    /**
+     * Get nombrearchivo
+     *
+     * @return string
+     */
+    public function getNombrearchivo()
+    {
+        return $this->nombrearchivo;
+    }
+}
