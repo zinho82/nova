@@ -290,7 +290,7 @@ class LotesController extends Controller {
         $em= $this->getDoctrine()->getManager();
         $archivo=new Archivos();
 
-$form = $this->createForm('AppBundle\Form\ArchivosType', $archivo);
+$form = $this->createForm('AppBundle\Form\ArchivosUploadType', $archivo);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

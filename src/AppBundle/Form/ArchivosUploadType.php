@@ -7,9 +7,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-class ArchivosType extends AbstractType
+class ArchivosUploadType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -18,13 +20,19 @@ class ArchivosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('archivo', TextType::class,array(
+            ->add('archivo', FileType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'form-control'
+                    'class' =>  'form-control',
+                     'require'   =>  TRUE,
                 ),
-                'require'   =>  false,
-                ))
-        ;
+            ))
+        ->add('Cargar', SubmitType::class,array(
+            'attr'  =>  array(
+                'class' =>  'btn btn-success btn-block',
+                'required'  => TRUE,
+            ),
+        )) 
+                ;
     }
     
     /**
