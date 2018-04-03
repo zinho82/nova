@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
+use Symfony\Component\HttpFoundation\Response;
 
 use BackendBundle\Entity\Archivos;
 
@@ -327,6 +328,14 @@ if ($form->isSubmitted() && $form->isValid()) {
         }
 
         return $this->redirect($this->generateUrl('archivos'));
+    }
+    public function uploadAction(Request $request,$id=null) {
+        $em= $this->getDoctrine()->getManager();
+        $archivo=$em->getRepository("BackendBundle:Archivos")->find($id);
+        var_dump($archivo);
+        echo $archivo->getarchivo();
+        
+        return new Response();
     }
     
 

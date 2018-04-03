@@ -40,3 +40,9 @@ archivos_bulk_action:
     defaults: { _controller: "AppBundle:Archivos:bulk" }
     requirements: { _method: post }
     
+archivos_upload:
+    path:  /archivos/upload/{id}
+    defaults: { _controller: "AppBundle:Archivos:upload" ,id:null}
+    requirements: { _method: post|get }
+
+    

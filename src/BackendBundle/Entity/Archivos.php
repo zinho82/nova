@@ -167,4 +167,7 @@ class Archivos
     {
         return $this->nombrearchivo;
     }
+    public function __toString() {
+        return $this->nombrearchivo;
+    }
 }
