@@ -36,8 +36,11 @@ BackendBundle\Entity\Lotes:
                 fixed: false
             column: template_number
         packingDate:
-            type: date
+            type: string
             nullable: true
+            length: 50
+            options:
+                fixed: false
             column: Packing_Date
         label:
             type: string
@@ -126,8 +129,11 @@ BackendBundle\Entity\Lotes:
             options:
                 fixed: false
         etd:
-            type: date
+            type: string
             nullable: true
+            length: 50
+            options:
+                fixed: false
         pod:
             type: string
             nullable: true
@@ -135,8 +141,11 @@ BackendBundle\Entity\Lotes:
             options:
                 fixed: false
         eta:
-            type: date
+            type: string
             nullable: true
+            length: 50
+            options:
+                fixed: false
         fechaCarga:
             type: datetime
             nullable: true
