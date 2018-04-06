@@ -311,9 +311,8 @@ class ArchivosController extends Controller {
         $archivo = $em->getRepository("BackendBundle:Archivos")->find($id);
         $fp = fopen("uploads/lotes/" . $archivo->getarchivo(), "r");
         $lote = new lotes();
-
-        while ($ar = fgets($fp)) {
-            $da = explode(";", $ar);
+        while (($da = fgetcsv($fp, 1000, ";")) !== FALSE) {
+            $numero=count($da);
             $lote->setContainer($da[0]);
             $lote->setNumberPallets($da[1]);
             $lote->setTemplateNumber($da[2]);
@@ -340,7 +339,11 @@ class ArchivosController extends Controller {
             $em->persist($lote);
             $em->flush($lote);
         }
+        fclose($fp);
         return new Response();
     }
 
 }
+
+
+
