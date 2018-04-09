@@ -14,15 +14,12 @@ class UsuarioFilterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', Filters\NumberFilterType::class)
             ->add('username', Filters\TextFilterType::class)
-            ->add('password', Filters\TextFilterType::class)
             ->add('nombre', Filters\TextFilterType::class)
             ->add('app', Filters\TextFilterType::class)
             ->add('apm', Filters\TextFilterType::class)
             ->add('role', Filters\TextFilterType::class)
             ->add('correo', Filters\TextFilterType::class)
-            ->add('image', Filters\TextFilterType::class)
         
         ;
         $builder->setMethod("GET");

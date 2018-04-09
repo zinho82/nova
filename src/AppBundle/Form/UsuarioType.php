@@ -21,50 +21,50 @@ class UsuarioType extends AbstractType
         $builder
                 ->add('nombre', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  true,
                 ))
             ->add('app', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  true,
                 ))
             ->add('apm', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  false,
                 ))
             ->add('username', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  true,
             ))
             ->add('password', PasswordType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  true,
                 ))
             
             ->add('role', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  true,
                 ))
             ->add('correo', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  false,
                 ))
             ->add('image', TextType::class,array(
                 'attr'  =>  array(
-                    'class' =>  'formcontrol',
+                    'class' =>  'form-control',
                 ),
                 'required'  =>  false,
                 ))
