@@ -310,9 +310,12 @@ class ArchivosController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $archivo = $em->getRepository("BackendBundle:Archivos")->find($id);
         $fp = fopen("uploads/lotes/" . $archivo->getarchivo(), "r");
+        var_dump($fp);
         $lote = new lotes();
-        while (($da = fgetcsv($fp, 1000, ";")) !== FALSE) {
-            $numero=count($da);
+        if (($gestor = fopen("uploads/lotes/" . $archivo->getarchivo(), "r")) !== FALSE) {
+			while (($da = fgetcsv($gestor, 1000, ";")) !== FALSE) {
+//        var_dump($da);
+//            $numero=count($da);
             $lote->setContainer($da[0]);
             $lote->setNumberPallets($da[1]);
             $lote->setTemplateNumber($da[2]);
@@ -338,6 +341,7 @@ class ArchivosController extends Controller {
             $lote->setEjecutivo($this->getUser());
             $em->persist($lote);
             $em->flush($lote);
+        }
         }
         fclose($fp);
         return new Response();
