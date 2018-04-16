@@ -921,4 +921,7 @@ class General
     {
         return $this->temperature;
     }
+    public function __toString() {
+        return $this->commodityName;
+    }
 }

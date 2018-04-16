@@ -310,44 +310,46 @@ class ArchivosController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $archivo = $em->getRepository("BackendBundle:Archivos")->find($id);
         $fp = fopen("uploads/lotes/" . $archivo->getarchivo(), "r");
-        var_dump($fp);
         $lote = new lotes();
         if (($gestor = fopen("uploads/lotes/" . $archivo->getarchivo(), "r")) !== FALSE) {
-			while (($da = fgetcsv($gestor, 1000, ";")) !== FALSE) {
-//        var_dump($da);
-//            $numero=count($da);
-            $lote->setContainer($da[0]);
-            $lote->setNumberPallets($da[1]);
-            $lote->setTemplateNumber($da[2]);
-            $lote->setPackingDate($da[3]);
-            $lote->setLabel($da[4]);
-            $lote->setComoditty($da[5]);
-            $lote->setVariety($da[6]);
-            $lote->setPack($da[7]);
-            $lote->setPlu($da[8]);
-            $lote->setQuality($da[9]);
-            $lote->setScore($da[10]);
-            $lote->setNumBoxes($da[11]);
-            $lote->setGrowerCode($da[12]);
-            $lote->setGrowersName($da[13]);
-            $lote->setExportador($da[14]);
-            $lote->setConsignne($da[15]);
-            $lote->setVessel($da[16]);
-            $lote->setPol($da[17]);
-            $lote->setEtd($da[18]);
-            $lote->setPod($da[19]);
-            $lote->setEta($da[20]);
-            $lote->setFechaCarga(new \DateTime);
-            $lote->setEjecutivo($this->getUser());
-            $em->persist($lote);
-            $em->flush($lote);
+            while (($da = fgetcsv($gestor, 1000, ";")) !== FALSE) {
+                $lote->setContainer($da[0]);
+                $lote->setNumberPallets($da[1]);
+                $lote->setTemplateNumber($da[2]);
+                $lote->setPackingDate($da[3]);
+                $lote->setLabel($da[4]);
+                $lote->setComoditty($da[5]);
+                $lote->setVariety($da[6]);
+                $lote->setPack($da[7]);
+                $lote->setPlu($da[8]);
+                $lote->setQuality($da[9]);
+                $lote->setScore($da[10]);
+                $lote->setNumBoxes($da[11]);
+                $lote->setGrowerCode($da[12]);
+                $lote->setGrowersName($da[13]);
+                $lote->setExportador($da[14]);
+                $lote->setConsignne($da[15]);
+                $lote->setVessel($da[16]);
+                $lote->setPol($da[17]);
+                $lote->setEtd($da[18]);
+                $lote->setPod($da[19]);
+                $lote->setEta($da[20]);
+                $lote->setFechaCarga(new \DateTime);
+                $lote->setEjecutivo($this->getUser());
+                
+                $em->persist($lote);
+                if($em->flush($lote)==null){
+                    echo "<br>guardado $da[1]<br>";
+                }else{
+                     echo "<br>NO guardado $da[1]<br>";
+                }
+            }
+        } else {
+            echo "error archivo no abierto";
         }
-        }
+
         fclose($fp);
         return new Response();
     }
 
 }
-
-
-

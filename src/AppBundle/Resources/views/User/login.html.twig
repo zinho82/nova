@@ -4,7 +4,7 @@
     <center> <img src="{{asset('assets/images/Logo.png')}}" width="300"/></center>
     <h2>Login</h2>
     <hr/>
-    
+    {{dump(error)}}
     <form action="{{path('login_check')}}" method="POST">
         <label> Usuario</label> 
         <input type="text" id="username" name="_username" value="{{lastusername}}" class="form-control" />

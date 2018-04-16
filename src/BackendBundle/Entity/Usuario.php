@@ -4,7 +4,7 @@ namespace BackendBundle\Entity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Usuario
+ * Usuario 
  */
 class Usuario implements UserInterface, \Serializable
 {
