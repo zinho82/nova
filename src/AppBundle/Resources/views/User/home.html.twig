@@ -20,6 +20,24 @@
                         <div class="panel panel-warning">
                             <div class="panel-heading">Lotes en Custodia</div>
                             <div class="panel-body"></div>
+                            <table class="table table-hover">
+                                <thead>
+                                <th>Cantidad</th>
+                                <th>Container</th>   
+                                <th>Pallet</th>
+                                <th>Contenido</th>
+                                </thead>
+                                <tbody>
+                            {% for lo in lotes%}
+                                <tr>
+                                    <td>{{lo.cantidad}}</td>
+                                    <td>{{lo.container}}</td>
+                                    <td>{{lo.number_Pallets}}</td>
+                                    <td>{{lo.comoditty}}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                         </div>
                         <div class=" col-lg-6 col-sm-6 col-md-6">
