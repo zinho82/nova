@@ -2,9 +2,9 @@ BackendBundle\Entity\Archivos:
     type: entity
     table: archivos
     indexes:
-        fk_table1_usuario1:
+        fk_archivos_usuario1_idx:
             columns:
-                - usuario
+                - ejecutivo
     id:
         id:
             type: integer
@@ -31,21 +31,15 @@ BackendBundle\Entity\Archivos:
             length: 45
             options:
                 fixed: false
-        nombrearchivo:
-            type: text
-            nullable: true
-            length: 65535
-            options:
-                fixed: false
     manyToOne:
-        usuario:
+        ejecutivo:
             targetEntity: Usuario
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                usuario:
+                ejecutivo:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

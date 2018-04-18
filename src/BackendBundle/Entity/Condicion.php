@@ -15,6 +15,11 @@ class Condicion
     /**
      * @var integer
      */
+    private $palletNumber;
+
+    /**
+     * @var integer
+     */
     private $size;
 
     /**
@@ -78,10 +83,29 @@ class Condicion
     private $endInspect;
 
     /**
-     * @var \BackendBundle\Entity\General
+     * @var \BackendBundle\Entity\Lotes
      */
-    private $palletNumber;
+    private $lotes;
 
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Condicion
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -91,6 +115,30 @@ class Condicion
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set palletNumber
+     *
+     * @param integer $palletNumber
+     *
+     * @return Condicion
+     */
+    public function setPalletNumber($palletNumber)
+    {
+        $this->palletNumber = $palletNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get palletNumber
+     *
+     * @return integer
+     */
+    public function getPalletNumber()
+    {
+        return $this->palletNumber;
     }
 
     /**
@@ -406,26 +454,51 @@ class Condicion
     }
 
     /**
-     * Set palletNumber
+     * Set lotes
      *
-     * @param \BackendBundle\Entity\General $palletNumber
+     * @param \BackendBundle\Entity\Lotes $lotes
      *
      * @return Condicion
      */
-    public function setPalletNumber(\BackendBundle\Entity\General $palletNumber = null)
+    public function setLotes(\BackendBundle\Entity\Lotes $lotes = null)
     {
-        $this->palletNumber = $palletNumber;
+        $this->lotes = $lotes;
 
         return $this;
     }
 
     /**
-     * Get palletNumber
+     * Get lotes
      *
-     * @return \BackendBundle\Entity\General
+     * @return \BackendBundle\Entity\Lotes
      */
-    public function getPalletNumber()
+    public function getLotes()
     {
-        return $this->palletNumber;
+        return $this->lotes;
+    }
+
+    /**
+     * Set ejecutivo
+     *
+     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     *
+     * @return Condicion
+     */
+    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    {
+        $this->ejecutivo = $ejecutivo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecutivo
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getEjecutivo()
+    {
+        return $this->ejecutivo;
     }
 }
+

@@ -2,31 +2,31 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /
    
-app_calidad: 
-    resource: "@AppBundle/Resources/config/routing/calidad.yml"
-    prefix: /
-    
-app_general:
-    resource: "@AppBundle/Resources/config/routing/general.yml"
-    prefix: /
-app_condicion:
-    resource: "@AppBundle/Resources/config/routing/condicion.yml"
-    prefix: /
-app_fotos:
-    resource: "@AppBundle/Resources/config/routing/fotos.yml"
-    prefix: /
+#app_calidad: 
+#    resource: "@AppBundle/Resources/config/routing/calidad.yml"
+#    prefix: /
+#    
+#app_general:
+#    resource: "@AppBundle/Resources/config/routing/general.yml"
+#    prefix: /
+#app_condicion:
+#    resource: "@AppBundle/Resources/config/routing/condicion.yml"
+#    prefix: /
+#app_fotos:
+#    resource: "@AppBundle/Resources/config/routing/fotos.yml"
+#    prefix: /
 app_homepage: 
         path: /
         defaults: { _controller: AppBundle:User:login } 
 app_usuario:
     resource: "@AppBundle/Resources/config/routing/usuario.yml"
     prefix: /
-app_lotes:
-    resource: "@AppBundle/Resources/config/routing/lotes.yml"
-    prefix: /
-app_usuario:
-    resource: "@AppBundle/Resources/config/routing/usuario.yml"
-    prefix: /
-app_archivos:
-    resource: "@AppBundle/Resources/config/routing/archivos.yml"
-    prefix: /
+#app_lotes:
+#    resource: "@AppBundle/Resources/config/routing/lotes.yml"
+#    prefix: /
+#app_usuario:
+#    resource: "@AppBundle/Resources/config/routing/usuario.yml"
+#    prefix: /
+#app_archivos:
+#    resource: "@AppBundle/Resources/config/routing/archivos.yml"
+#    prefix: /

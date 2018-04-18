@@ -363,10 +363,39 @@ class Calidad
     private $contamination;
 
     /**
-     * @var \BackendBundle\Entity\General
+     * @var \DateTime
      */
-    private $idpallet;
+    private $inspectdate;
 
+    /**
+     * @var string
+     */
+    private $comments;
+
+    /**
+     * @var \BackendBundle\Entity\Lotes
+     */
+    private $lotes;
+
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Calidad
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -2059,26 +2088,99 @@ class Calidad
     }
 
     /**
-     * Set idpallet
+     * Set inspectdate
      *
-     * @param \BackendBundle\Entity\General $idpallet
+     * @param \DateTime $inspectdate
      *
      * @return Calidad
      */
-    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
+    public function setInspectdate($inspectdate)
     {
-        $this->idpallet = $idpallet;
+        $this->inspectdate = $inspectdate;
 
         return $this;
     }
 
     /**
-     * Get idpallet
+     * Get inspectdate
      *
-     * @return \BackendBundle\Entity\General
+     * @return \DateTime
      */
-    public function getIdpallet()
+    public function getInspectdate()
     {
-        return $this->idpallet;
+        return $this->inspectdate;
+    }
+
+    /**
+     * Set comments
+     *
+     * @param string $comments
+     *
+     * @return Calidad
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Get comments
+     *
+     * @return string
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Set lotes
+     *
+     * @param \BackendBundle\Entity\Lotes $lotes
+     *
+     * @return Calidad
+     */
+    public function setLotes(\BackendBundle\Entity\Lotes $lotes = null)
+    {
+        $this->lotes = $lotes;
+
+        return $this;
+    }
+
+    /**
+     * Get lotes
+     *
+     * @return \BackendBundle\Entity\Lotes
+     */
+    public function getLotes()
+    {
+        return $this->lotes;
+    }
+
+    /**
+     * Set ejecutivo
+     *
+     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     *
+     * @return Calidad
+     */
+    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    {
+        $this->ejecutivo = $ejecutivo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecutivo
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getEjecutivo()
+    {
+        return $this->ejecutivo;
     }
 }
+

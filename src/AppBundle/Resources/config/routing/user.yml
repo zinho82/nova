@@ -1,6 +1,8 @@
 login:
     path: /login
     defaults: { _controller: AppBundle:User:login}
+#    schemes: [https]
+    
 login_check:
     path: /login_check
 
@@ -28,10 +30,13 @@ user_search:
     path: /search
     defaults: { _controller: AppBundle:User:search}
 user_profile:
-    path: /user/{username}
+    path: /user/{nickname}
     defaults: { _controller: AppBundle:User:profile,nickname: null }
-    
 user_home:
     path: /home
-    defaults: { _controller: AppBundle:User:home }
-        
+    defaults: { _controller: AppBundle:User:home } 
+    
+user_crud:
+    path: /usuarios-admin
+    defaults: { _controller: AppBundle:User:adminUsuarios }
+    

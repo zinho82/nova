@@ -1,0 +1,42 @@
+archivos:
+    path:  /archivos
+    defaults: { _controller: "ArchivosBundle:Archivos:index" }
+
+archivos_show:
+    path:  /archivos/{id}/show
+    defaults: { _controller: "ArchivosBundle:Archivos:show" }
+
+archivos_new:
+    path:  /archivos/new
+    defaults: { _controller: "ArchivosBundle:Archivos:new" }
+
+archivos_create:
+    path:  /archivos/create
+    defaults: { _controller: "ArchivosBundle:Archivos:create" }
+    requirements: { _method: post }
+
+archivos_edit:
+    path:  /archivos/{id}/edit
+    defaults: { _controller: "ArchivosBundle:Archivos:edit" }
+
+archivos_update:
+    path:  /archivos/{id}/update
+    defaults: { _controller: "ArchivosBundle:Archivos:update" }
+    requirements: { _method: post|put }
+
+archivos_delete:
+    path:  /archivos/{id}/delete
+    defaults: { _controller: "ArchivosBundle:Archivos:delete" }
+    requirements: { _method: post|delete }
+    
+archivos_by_id_delete:
+    path:  /archivos/delete/{id}
+    defaults: { _controller: "ArchivosBundle:Archivos:deleteById" }
+    requirements: { _method: get }
+    
+
+archivos_bulk_action:
+    path:  /archivos/bulk-action
+    defaults: { _controller: "ArchivosBundle:Archivos:bulk" }
+    requirements: { _method: post }
+    

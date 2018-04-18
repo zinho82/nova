@@ -1,10 +1,6 @@
 BackendBundle\Entity\Fotos:
     type: entity
     table: fotos
-    indexes:
-        FK_pallet_foto:
-            columns:
-                - idpallet
     id:
         id:
             type: integer
@@ -15,6 +11,11 @@ BackendBundle\Entity\Fotos:
             generator:
                 strategy: IDENTITY
     fields:
+        idpallet:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
         foto:
             type: string
             nullable: true
@@ -27,15 +28,4 @@ BackendBundle\Entity\Fotos:
             length: 200
             options:
                 fixed: false
-    manyToOne:
-        idpallet:
-            targetEntity: General
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                idpallet:
-                    referencedColumnName: id
-            orphanRemoval: false
     lifecycleCallbacks: {  }

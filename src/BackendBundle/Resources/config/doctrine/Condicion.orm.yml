@@ -2,9 +2,12 @@ BackendBundle\Entity\Condicion:
     type: entity
     table: condicion
     indexes:
-        FK_pallet:
+        fk_condicion_usuario1_idx:
             columns:
-                - pallet_number
+                - ejecutivo
+        fk_condicion_lotes1_idx:
+            columns:
+                - lotes_id
     id:
         id:
             type: integer
@@ -12,9 +15,13 @@ BackendBundle\Entity\Condicion:
             options:
                 unsigned: false
             id: true
-            generator:
-                strategy: IDENTITY
     fields:
+        palletNumber:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: pallet_number
         size:
             type: integer
             nullable: true
@@ -83,14 +90,25 @@ BackendBundle\Entity\Condicion:
             nullable: true
             column: end_inspect
     manyToOne:
-        palletNumber:
-            targetEntity: General
+        ejecutivo:
+            targetEntity: Usuario
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                pallet_number:
+                ejecutivo:
+                    referencedColumnName: id
+            orphanRemoval: false
+    oneToOne:
+        lotes:
+            targetEntity: Lotes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                lotes_id:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

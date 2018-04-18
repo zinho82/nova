@@ -1,0 +1,3 @@
+lotes:
+    resource: "@LotesBundle/Resources/config/routing/lotes.yml"
+    prefix: /

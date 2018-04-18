@@ -1,28 +1,17 @@
 <?php
 
 namespace BackendBundle\Entity;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usuario
  */
-class Usuario implements UserInterface, \Serializable
+class Usuario
 {
     /**
      * @var integer
      */
     private $id;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
     /**
      * @var string
      */
@@ -58,6 +47,21 @@ class Usuario implements UserInterface, \Serializable
      */
     private $correo;
 
+    /**
+     * @var string
+     */
+    private $image;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set username
@@ -226,42 +230,6 @@ class Usuario implements UserInterface, \Serializable
     {
         return $this->correo;
     }
-     public function __toString() {
-        return (string)$this->username;
-    }
-    public function serialize() {
-        return serialize(array(
-        $this->id,
-        $this->username,
-        $this->password
-        ));
-    }
-    public function unserialize($serialized) {
-        list(
-        $this->id,
-        $this->username,
-        $this->password
-                )= unserialize($serialized);
-        
-    }
-
-    public function eraseCredentials() {
-        
-    }
-
-    public function getRoles() {
-        return array("ROLE_ADMIN");
-        
-    }
-
-    public function getSalt() {
-        return null;
-    }
-    /**
-     * @var string
-     */
-    private $image;
-
 
     /**
      * Set image
@@ -287,3 +255,4 @@ class Usuario implements UserInterface, \Serializable
         return $this->image;
     }
 }
+

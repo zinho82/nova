@@ -2,9 +2,12 @@ BackendBundle\Entity\Calidad:
     type: entity
     table: calidad
     indexes:
-        FKpallet:
+        fk_calidad_usuario_idx:
             columns:
-                - idpallet
+                - ejecutivo
+        fk_calidad_lotes1_idx:
+            columns:
+                - lotes_id
     id:
         id:
             type: integer
@@ -12,8 +15,6 @@ BackendBundle\Entity\Calidad:
             options:
                 unsigned: false
             id: true
-            generator:
-                strategy: IDENTITY
     fields:
         size:
             type: integer
@@ -450,15 +451,35 @@ BackendBundle\Entity\Calidad:
             nullable: true
             precision: 10
             scale: 0
+        inspectdate:
+            type: datetime
+            nullable: true
+        comments:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
     manyToOne:
-        idpallet:
-            targetEntity: General
+        ejecutivo:
+            targetEntity: Usuario
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                idpallet:
+                ejecutivo:
+                    referencedColumnName: id
+            orphanRemoval: false
+    oneToOne:
+        lotes:
+            targetEntity: Lotes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                lotes_id:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }
