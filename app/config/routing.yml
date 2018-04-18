@@ -1,3 +1,11 @@
+archivos:
+    resource: "@ArchivosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lotes:
+    resource: "@LotesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 #backend:
 #    resource: "@BackendBundle/Resources/config/routing.yml"
 #    prefix:   /
