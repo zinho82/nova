@@ -21,8 +21,9 @@ class AppKernel extends Kernel {
             new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
             new Petkopara\MultiSearchBundle\PetkoparaMultiSearchBundle(),
             new Petkopara\CrudGeneratorBundle\PetkoparaCrudGeneratorBundle(),
-            new LotesBundle\LotesBundle(),
+            new CalidadBundle\CalidadBundle(),
             new ArchivosBundle\ArchivosBundle(),
+            new LotesBundle\LotesBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
