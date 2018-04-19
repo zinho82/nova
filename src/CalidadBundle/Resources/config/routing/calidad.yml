@@ -18,6 +18,10 @@ calidad_create:
 calidad_edit:
     path:   /calidad/{id}/edit
     defaults: { _controller: "CalidadBundle:Calidad:edit" }
+calidad_newQ:
+    path:   /calidad/{id}/new-revision/{fruta}
+    defaults: { _controller: "CalidadBundle:Calidad:newQ" ,id:null,fruta:null}
+    methods:    [get|post]
 
 calidad_update:
     path:   /calidad/{id}/update

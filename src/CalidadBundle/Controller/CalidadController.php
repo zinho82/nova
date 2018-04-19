@@ -8,8 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use BackendBundle\Entity\Calidad;
+use BackendBundle\Entity\Lotes;
 
 /**
  * Calidad controller.
@@ -147,7 +150,124 @@ class CalidadController extends Controller
         return "Showing $startRecord - $endRecord of $totalOfRecords Records.";
     }
     
-    
+      public function newQAction(Request $request,$id=null,$fruta=null)
+    {
+    $em = $this->getDoctrine()->getManager();
+    $lotes=$em->getRepository("BackendBundle:Lotes")->find($id);
+        $calidad = new Calidad();
+        $form = $this->createFormBuilder($calidad);
+        switch($fruta){
+            case "Oranges":
+        $form
+        
+                ->add('undersize',  TextType::class,array(
+                    'label' => 'Undersize',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                 ->add('russet',  TextType::class,array(
+                    'label' => 'Russet',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                 ->add('mechanicalDamage',  TextType::class,array(
+                    'label' => 'Mechanical Damage',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                 ->add('lackOfDegreening',  TextType::class,array(
+                    'label' => 'Lack of Degreening',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                ->add('colorPale',  TextType::class,array(
+                    'label' => 'Color Pale',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                ->add('fruitWithSeeds',  TextType::class,array(
+                    'label' => 'Fruit with Seeds',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                ->add('calixbrownblack',  TextType::class,array(
+                    'label' => 'Calix Brown/Black',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                ->add('skinDefectSevere',  TextType::class,array(
+                    'label' => 'Skin Defect Severe',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                 ->add('skinDefectModerate',  TextType::class,array(
+                    'label' => 'Skin Defect Moderate (%)',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                 ->add('barCodePlu',  TextType::class,array(
+                    'label' => 'Bar Code/PLU (%)',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                 ->add('misshapen',  TextType::class,array(
+                    'label' => 'Misshapen Fruit (%)',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ))
+                ;
+        }
+        $form->add('comments', CKEditorType::class,array(
+                    'label' => 'Comments',
+                    'attr'  => array(
+                        'class' =>  'form-control',
+                    ),
+                    'required'   => true,
+                ));
+            $f = $form->getForm();
+        $f->handleRequest($request);
+
+        if ($f->isSubmitted() && $f->isValid()) {
+            
+            $calidad->setLotes($lotes);
+            $calidad->setInspectdate(new \DateTime);
+            $calidad->setEjecutivo($this->getUser());
+            $em->persist($calidad);
+            $em->flush();
+            
+            $editLink = $this->generateUrl('calidad_edit', array('id' => $calidad->getId()));
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New calidad was created successfully.</a>" );
+            
+            $nextAction=  $request->get('submit') == 'save' ? 'calidad' : 'calidad_new';
+            return $this->redirectToRoute($nextAction);
+        }
+        return $this->render('CalidadBundle:calidad:new.html.twig', array(
+            'calidad' => $calidad,
+            'form'   => $f->createView(),
+        ));
+    }
 
     /**
      * Displays a form to create a new Calidad entity.

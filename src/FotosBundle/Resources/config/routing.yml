@@ -1,0 +1,3 @@
+fotos:
+    resource: "@FotosBundle/Resources/config/routing/fotos.yml"
+    prefix: /

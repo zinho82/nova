@@ -1,3 +1,7 @@
+fotos:
+    resource: "@FotosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 calidad:
     resource: "@CalidadBundle/Resources/config/routing.yml"
     prefix:   /

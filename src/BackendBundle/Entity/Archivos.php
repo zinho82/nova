@@ -138,5 +138,33 @@ class Archivos
     {
         return $this->usuario;
     }
-}
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
 
+
+    /**
+     * Set ejecutivo
+     *
+     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     *
+     * @return Archivos
+     */
+    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    {
+        $this->ejecutivo = $ejecutivo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecutivo
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getEjecutivo()
+    {
+        return $this->ejecutivo;
+    }
+}

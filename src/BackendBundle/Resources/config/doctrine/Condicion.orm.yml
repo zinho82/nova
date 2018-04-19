@@ -89,17 +89,6 @@ BackendBundle\Entity\Condicion:
             type: datetime
             nullable: true
             column: end_inspect
-    manyToOne:
-        ejecutivo:
-            targetEntity: Usuario
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                ejecutivo:
-                    referencedColumnName: id
-            orphanRemoval: false
     oneToOne:
         lotes:
             targetEntity: Lotes
@@ -109,6 +98,17 @@ BackendBundle\Entity\Condicion:
             inversedBy: null
             joinColumns:
                 lotes_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToOne:
+        ejecutivo:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ejecutivo:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

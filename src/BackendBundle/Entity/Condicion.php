@@ -428,4 +428,76 @@ class Condicion
     {
         return $this->palletNumber;
     }
+    /**
+     * @var \BackendBundle\Entity\Lotes
+     */
+    private $lotes;
+
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Condicion
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set lotes
+     *
+     * @param \BackendBundle\Entity\Lotes $lotes
+     *
+     * @return Condicion
+     */
+    public function setLotes(\BackendBundle\Entity\Lotes $lotes = null)
+    {
+        $this->lotes = $lotes;
+
+        return $this;
+    }
+
+    /**
+     * Get lotes
+     *
+     * @return \BackendBundle\Entity\Lotes
+     */
+    public function getLotes()
+    {
+        return $this->lotes;
+    }
+
+    /**
+     * Set ejecutivo
+     *
+     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     *
+     * @return Condicion
+     */
+    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    {
+        $this->ejecutivo = $ejecutivo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecutivo
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getEjecutivo()
+    {
+        return $this->ejecutivo;
+    }
 }

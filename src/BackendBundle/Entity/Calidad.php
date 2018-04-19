@@ -2081,4 +2081,134 @@ class Calidad
     {
         return $this->idpallet;
     }
+    /**
+     * @var \DateTime
+     */
+    private $inspectdate;
+
+    /**
+     * @var string
+     */
+    private $comments;
+
+    /**
+     * @var \BackendBundle\Entity\Lotes
+     */
+    private $lotes;
+
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Calidad
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set inspectdate
+     *
+     * @param \DateTime $inspectdate
+     *
+     * @return Calidad
+     */
+    public function setInspectdate($inspectdate)
+    {
+        $this->inspectdate = $inspectdate;
+
+        return $this;
+    }
+
+    /**
+     * Get inspectdate
+     *
+     * @return \DateTime
+     */
+    public function getInspectdate()
+    {
+        return $this->inspectdate;
+    }
+
+    /**
+     * Set comments
+     *
+     * @param string $comments
+     *
+     * @return Calidad
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Get comments
+     *
+     * @return string
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Set lotes
+     *
+     * @param \BackendBundle\Entity\Lotes $lotes
+     *
+     * @return Calidad
+     */
+    public function setLotes(\BackendBundle\Entity\Lotes $lotes = null)
+    {
+        $this->lotes = $lotes;
+
+        return $this;
+    }
+
+    /**
+     * Get lotes
+     *
+     * @return \BackendBundle\Entity\Lotes
+     */
+    public function getLotes()
+    {
+        return $this->lotes;
+    }
+
+    /**
+     * Set ejecutivo
+     *
+     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     *
+     * @return Calidad
+     */
+    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    {
+        $this->ejecutivo = $ejecutivo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecutivo
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getEjecutivo()
+    {
+        return $this->ejecutivo;
+    }
 }

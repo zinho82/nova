@@ -689,4 +689,8 @@ class Lotes
     {
         return $this->fechaCarga;
     }
+    public function __toString() {
+        return $this->numberPallets;
+        
+    }
 }

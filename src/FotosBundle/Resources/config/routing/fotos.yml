@@ -1,0 +1,42 @@
+fotos:
+    path:  /fotos
+    defaults: { _controller: "FotosBundle:Fotos:index" }
+
+fotos_show:
+    path:  /fotos/{id}/show
+    defaults: { _controller: "FotosBundle:Fotos:show" }
+
+fotos_new:
+    path:  /fotos/new
+    defaults: { _controller: "FotosBundle:Fotos:new" }
+
+fotos_create:
+    path:  /fotos/create
+    defaults: { _controller: "FotosBundle:Fotos:create" }
+    requirements: { _method: post }
+
+fotos_edit:
+    path:  /fotos/{id}/edit
+    defaults: { _controller: "FotosBundle:Fotos:edit" }
+
+fotos_update:
+    path:  /fotos/{id}/update
+    defaults: { _controller: "FotosBundle:Fotos:update" }
+    requirements: { _method: post|put }
+
+fotos_delete:
+    path:  /fotos/{id}/delete
+    defaults: { _controller: "FotosBundle:Fotos:delete" }
+    requirements: { _method: post|delete }
+    
+fotos_by_id_delete:
+    path:  /fotos/delete/{id}
+    defaults: { _controller: "FotosBundle:Fotos:deleteById" }
+    requirements: { _method: get }
+    
+
+fotos_bulk_action:
+    path:  /fotos/bulk-action
+    defaults: { _controller: "FotosBundle:Fotos:bulk" }
+    requirements: { _method: post }
+    

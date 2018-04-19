@@ -2,7 +2,7 @@ archivos:
     path:  /archivos
     defaults: { _controller: "ArchivosBundle:Archivos:index" }
 
-archivos_show: 
+archivos_show:
     path:  /archivos/{id}/show
     defaults: { _controller: "ArchivosBundle:Archivos:show" }
 

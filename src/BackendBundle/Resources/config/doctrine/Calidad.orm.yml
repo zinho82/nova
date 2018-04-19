@@ -15,6 +15,8 @@ BackendBundle\Entity\Calidad:
             options:
                 unsigned: false
             id: true
+            generator:
+                strategy: IDENTITY
     fields:
         size:
             type: integer
@@ -461,17 +463,6 @@ BackendBundle\Entity\Calidad:
             options:
                 fixed: false
     manyToOne:
-        ejecutivo:
-            targetEntity: Usuario
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                ejecutivo:
-                    referencedColumnName: id
-            orphanRemoval: false
-    oneToOne:
         lotes:
             targetEntity: Lotes
             cascade: {  }
@@ -480,6 +471,16 @@ BackendBundle\Entity\Calidad:
             inversedBy: null
             joinColumns:
                 lotes_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        ejecutivo:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ejecutivo:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }
