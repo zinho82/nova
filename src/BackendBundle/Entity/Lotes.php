@@ -28,7 +28,7 @@ class Lotes
     private $templateNumber;
 
     /**
-     * @var string
+     * @var \DateTime
      */
     private $packingDate;
 
@@ -110,17 +110,7 @@ class Lotes
     /**
      * @var string
      */
-    private $pod;
-
-    /**
-     * @var string
-     */
     private $eta;
-
-    /**
-     * @var \DateTime
-     */
-    private $fechaCarga;
 
     /**
      * @var \BackendBundle\Entity\Usuario
@@ -213,7 +203,7 @@ class Lotes
     /**
      * Set packingDate
      *
-     * @param string $packingDate
+     * @param \DateTime $packingDate
      *
      * @return Lotes
      */
@@ -227,7 +217,7 @@ class Lotes
     /**
      * Get packingDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getPackingDate()
     {
@@ -595,30 +585,6 @@ class Lotes
     }
 
     /**
-     * Set pod
-     *
-     * @param string $pod
-     *
-     * @return Lotes
-     */
-    public function setPod($pod)
-    {
-        $this->pod = $pod;
-
-        return $this;
-    }
-
-    /**
-     * Get pod
-     *
-     * @return string
-     */
-    public function getPod()
-    {
-        return $this->pod;
-    }
-
-    /**
      * Set eta
      *
      * @param string $eta
@@ -640,30 +606,6 @@ class Lotes
     public function getEta()
     {
         return $this->eta;
-    }
-
-    /**
-     * Set fechaCarga
-     *
-     * @param \DateTime $fechaCarga
-     *
-     * @return Lotes
-     */
-    public function setFechaCarga($fechaCarga)
-    {
-        $this->fechaCarga = $fechaCarga;
-
-        return $this;
-    }
-
-    /**
-     * Get fechaCarga
-     *
-     * @return \DateTime
-     */
-    public function getFechaCarga()
-    {
-        return $this->fechaCarga;
     }
 
     /**
@@ -689,5 +631,62 @@ class Lotes
     {
         return $this->ejecutivo;
     }
-}
+    /**
+     * @var string
+     */
+    private $pod;
 
+    /**
+     * @var \DateTime
+     */
+    private $fechaCarga;
+
+
+    /**
+     * Set pod
+     *
+     * @param string $pod
+     *
+     * @return Lotes
+     */
+    public function setPod($pod)
+    {
+        $this->pod = $pod;
+
+        return $this;
+    }
+
+    /**
+     * Get pod
+     *
+     * @return string
+     */
+    public function getPod()
+    {
+        return $this->pod;
+    }
+
+    /**
+     * Set fechaCarga
+     *
+     * @param \DateTime $fechaCarga
+     *
+     * @return Lotes
+     */
+    public function setFechaCarga($fechaCarga)
+    {
+        $this->fechaCarga = $fechaCarga;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaCarga
+     *
+     * @return \DateTime
+     */
+    public function getFechaCarga()
+    {
+        return $this->fechaCarga;
+    }
+}

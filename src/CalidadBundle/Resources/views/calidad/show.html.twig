@@ -1,0 +1,556 @@
+{% extends 'AppBundle:Layouts:layout.html.twig' %}
+
+{% block title %}
+{{ parent() }} - calidad
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12 col-sm-12 col-lg-12">
+<div id="top" class="row">
+    <div class="page-header">
+        <h2>View calidad <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p><strong>Id</strong></p>
+        <p>
+            {{ calidad.id }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Size</strong></p>
+        <p>
+            {{ calidad.size }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Variety</strong></p>
+        <p>
+            {{ calidad.variety }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Casesnetweigth</strong></p>
+        <p>
+            {{ calidad.casesNetWeigth }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Samplenumber</strong></p>
+        <p>
+            {{ calidad.sampleNumber }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Barcodeplu</strong></p>
+        <p>
+            {{ calidad.barCodePlu }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Openappearance</strong></p>
+        <p>
+            {{ calidad.openAppearance }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Blankend</strong></p>
+        <p>
+            {{ calidad.blankEnd }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Blistermiteinjure</strong></p>
+        <p>
+            {{ calidad.blisterMiteInjure }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Discoloration</strong></p>
+        <p>
+            {{ calidad.discoloration }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Blush</strong></p>
+        <p>
+            {{ calidad.blush }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Lightblush</strong></p>
+        <p>
+            {{ calidad.lightBlush }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Scaring</strong></p>
+        <p>
+            {{ calidad.scaring }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Hardend</strong></p>
+        <p>
+            {{ calidad.hardEnd }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Insectdamage</strong></p>
+        <p>
+            {{ calidad.insectDamage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Russet</strong></p>
+        <p>
+            {{ calidad.russet }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Limbrubs</strong></p>
+        <p>
+            {{ calidad.limbRubs }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Overripe</strong></p>
+        <p>
+            {{ calidad.overripe }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Mealy</strong></p>
+        <p>
+            {{ calidad.mealy }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Scab</strong></p>
+        <p>
+            {{ calidad.scab }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Shape</strong></p>
+        <p>
+            {{ calidad.shape }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Stermpunctureskinbreaks</strong></p>
+        <p>
+            {{ calidad.stermPunctureSkinBreaks }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Stonypit</strong></p>
+        <p>
+            {{ calidad.stonyPit }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Missingcalix</strong></p>
+        <p>
+            {{ calidad.missingCalix }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Initinspect</strong></p>
+        <p>
+            {% if calidad.initInspect %}{{ calidad.initInspect|date('Y-m-d H:i:s') }}{% endif %}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Endinspect</strong></p>
+        <p>
+            {% if calidad.endInspect %}{{ calidad.endInspect|date('Y-m-d H:i:s') }}{% endif %}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Brix</strong></p>
+        <p>
+            {{ calidad.brix }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Greenstem</strong></p>
+        <p>
+            {{ calidad.greenStem }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Brownstem</strong></p>
+        <p>
+            {{ calidad.brownStem }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Drystem</strong></p>
+        <p>
+            {{ calidad.dryStem }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Sunkenstemend</strong></p>
+        <p>
+            {{ calidad.sunkenStemEnd }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Translucent</strong></p>
+        <p>
+            {{ calidad.translucent }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Grapecolor</strong></p>
+        <p>
+            {{ calidad.grapeColor }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Amber</strong></p>
+        <p>
+            {{ calidad.amber }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Split</strong></p>
+        <p>
+            {{ calidad.split }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Waterberry</strong></p>
+        <p>
+            {{ calidad.waterBerry }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Shotberry</strong></p>
+        <p>
+            {{ calidad.shotBerry }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Shalter</strong></p>
+        <p>
+            {{ calidad.shalter }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Softberries</strong></p>
+        <p>
+            {{ calidad.softBerries }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>So2damage</strong></p>
+        <p>
+            {{ calidad.so2Damage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Dehydratedberries</strong></p>
+        <p>
+            {{ calidad.dehydratedBerries }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Bruising</strong></p>
+        <p>
+            {{ calidad.bruising }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Stempuncture</strong></p>
+        <p>
+            {{ calidad.stemPuncture }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Crush</strong></p>
+        <p>
+            {{ calidad.crush }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Shiriveling</strong></p>
+        <p>
+            {{ calidad.shiriveling }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Slipskin</strong></p>
+        <p>
+            {{ calidad.slipSkin }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Lackofdegreening</strong></p>
+        <p>
+            {{ calidad.lackOfDegreening }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Colorpale</strong></p>
+        <p>
+            {{ calidad.colorPale }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Fruitwithseeds</strong></p>
+        <p>
+            {{ calidad.fruitWithSeeds }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Calixbrownblack</strong></p>
+        <p>
+            {{ calidad.calixBrownBlack }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Skindefectsevere</strong></p>
+        <p>
+            {{ calidad.skinDefectSevere }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Skindefectmoderate</strong></p>
+        <p>
+            {{ calidad.skinDefectModerate }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Misshapenfruit</strong></p>
+        <p>
+            {{ calidad.misshapenFruit }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Wellformed</strong></p>
+        <p>
+            {{ calidad.wellFormed }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Undersize</strong></p>
+        <p>
+            {{ calidad.undersize }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Brokenskin</strong></p>
+        <p>
+            {{ calidad.brokenSkin }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Wormdamage</strong></p>
+        <p>
+            {{ calidad.wormDamage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Haildamage</strong></p>
+        <p>
+            {{ calidad.hailDamage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Mechanicaldamage</strong></p>
+        <p>
+            {{ calidad.mechanicalDamage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Stemenddamage</strong></p>
+        <p>
+            {{ calidad.stemEndDamage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Misshapen</strong></p>
+        <p>
+            {{ calidad.misshapen }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Sprayburn</strong></p>
+        <p>
+            {{ calidad.sprayBurn }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Spots</strong></p>
+        <p>
+            {{ calidad.spots }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Scald</strong></p>
+        <p>
+            {{ calidad.scald }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Splitpit</strong></p>
+        <p>
+            {{ calidad.splitPit }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Qualityscore</strong></p>
+        <p>
+            {{ calidad.qualityScore }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Bloom</strong></p>
+        <p>
+            {{ calidad.bloom }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Lackofcolor</strong></p>
+        <p>
+            {{ calidad.lackOfColor }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Insectpresence</strong></p>
+        <p>
+            {{ calidad.insectPresence }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Flowerremains</strong></p>
+        <p>
+            {{ calidad.flowerRemains }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Contamination</strong></p>
+        <p>
+            {{ calidad.contamination }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Inspectdate</strong></p>
+        <p>
+            {% if calidad.inspectdate %}{{ calidad.inspectdate|date('Y-m-d H:i:s') }}{% endif %}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Comments</strong></p>
+        <p>
+            {{ calidad.comments }}
+        </p>
+
+    </div></div>
+
+<hr/>
+
+
+<div class="form-group">
+    <a class="btn btn-default" href="{{ path('calidad') }}">
+        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        Back to list
+    </a>
+    <a class="btn btn-primary" href="{{ path('calidad_edit', { 'id':  calidad.id }) }}">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        Edit
+    </a>
+    <a class="btn btn-info" href="{{ path('calidad_new') }}">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        New
+    </a>
+    <form action="{{ path('calidad_delete', { 'id': calidad.id }) }}" method="post" style="display: inline-block">
+        <input type="hidden" name="_method" value="DELETE" />
+        {{ form_widget(delete_form) }}
+        <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure');">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            Delete
+        </button>
+    </form>
+</div>
+</div>
+
+{% endblock %}
+

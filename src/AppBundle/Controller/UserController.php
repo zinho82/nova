@@ -99,8 +99,8 @@ class UserController extends Controller {
     public function homeAction(Request $request) {
         $em=  $this->getDoctrine()->getManager();
         $lotes = "select count(*) as cantidad,l.container,l.number_Pallets,l.comoditty  from lotes l group by l.container,l.number_Pallets
-
-";
+ 
+"; 
         $stmt = $em->getConnection()->prepare($lotes);
         $stmt->execute();
         return $this->render("AppBundle:User:home.html.twig", array(

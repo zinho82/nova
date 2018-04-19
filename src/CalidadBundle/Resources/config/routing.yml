@@ -1,0 +1,3 @@
+Calidad:
+    resource: "@CalidadBundle/Resources/config/routing/calidad.yml"
+    prefix:   /

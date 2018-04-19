@@ -30,7 +30,7 @@ class Archivos
     /**
      * @var \BackendBundle\Entity\Usuario
      */
-    private $ejecutivo;
+    private $usuario;
 
 
     /**
@@ -116,27 +116,27 @@ class Archivos
     }
 
     /**
-     * Set ejecutivo
+     * Set usuario
      *
-     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     * @param \BackendBundle\Entity\Usuario $usuario
      *
      * @return Archivos
      */
-    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    public function setUsuario(\BackendBundle\Entity\Usuario $usuario = null)
     {
-        $this->ejecutivo = $ejecutivo;
+        $this->usuario = $usuario;
 
         return $this;
     }
 
     /**
-     * Get ejecutivo
+     * Get usuario
      *
      * @return \BackendBundle\Entity\Usuario
      */
-    public function getEjecutivo()
+    public function getUsuario()
     {
-        return $this->ejecutivo;
+        return $this->usuario;
     }
 }
 

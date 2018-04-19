@@ -1,0 +1,4 @@
+services:
+#    calidad.example:
+#        class: CalidadBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
