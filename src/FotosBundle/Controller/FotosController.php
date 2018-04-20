@@ -4,48 +4,43 @@ namespace FotosBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
-
 use BackendBundle\Entity\Fotos;
 
 /**
  * Fotos controller.
  *
  */
-class FotosController extends Controller
-{
+class FotosController extends Controller {
+
     /**
      * Lists all Fotos entities.
      *
      */
-    public function indexAction(Request $request)
-    {
+    public function indexAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
         $queryBuilder = $em->getRepository('BackendBundle:Fotos')->createQueryBuilder('e');
 
         list($filterForm, $queryBuilder) = $this->filter($queryBuilder, $request);
         list($fotos, $pagerHtml) = $this->paginator($queryBuilder, $request);
-        
+
         $totalOfRecordsString = $this->getTotalOfRecordsString($queryBuilder, $request);
 
         return $this->render('FotosBundle:fotos:index.html.twig', array(
-            'fotos' => $fotos,
-            'pagerHtml' => $pagerHtml,
-            'filterForm' => $filterForm->createView(),
-            'totalOfRecordsString' => $totalOfRecordsString,
-
+                    'fotos' => $fotos,
+                    'pagerHtml' => $pagerHtml,
+                    'filterForm' => $filterForm->createView(),
+                    'totalOfRecordsString' => $totalOfRecordsString,
         ));
     }
 
     /**
-    * Create filter form and process filter request.
-    *
-    */
-    protected function filter($queryBuilder, Request $request)
-    {
+     * Create filter form and process filter request.
+     *
+     */
+    protected function filter($queryBuilder, Request $request) {
         $session = $request->getSession();
         $filterForm = $this->createForm('FotosBundle\Form\FotosFilterType');
 
@@ -70,13 +65,13 @@ class FotosController extends Controller
             // Get filter from session
             if ($session->has('FotosControllerFilter')) {
                 $filterData = $session->get('FotosControllerFilter');
-                
+
                 foreach ($filterData as $key => $filter) { //fix for entityFilterType that is loaded from session
                     if (is_object($filter)) {
                         $filterData[$key] = $queryBuilder->getEntityManager()->merge($filter);
                     }
                 }
-                
+
                 $filterForm = $this->createForm('FotosBundle\Form\FotosFilterType', $filterData);
                 $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
             }
@@ -85,33 +80,30 @@ class FotosController extends Controller
         return array($filterForm, $queryBuilder);
     }
 
-
     /**
-    * Get results from paginator and get paginator view.
-    *
-    */
-    protected function paginator($queryBuilder, Request $request)
-    {
+     * Get results from paginator and get paginator view.
+     *
+     */
+    protected function paginator($queryBuilder, Request $request) {
         //sorting
-        $sortCol = $queryBuilder->getRootAlias().'.'.$request->get('pcg_sort_col', 'id');
+        $sortCol = $queryBuilder->getRootAlias() . '.' . $request->get('pcg_sort_col', 'id');
         $queryBuilder->orderBy($sortCol, $request->get('pcg_sort_order', 'desc'));
         // Paginator
         $adapter = new DoctrineORMAdapter($queryBuilder);
         $pagerfanta = new Pagerfanta($adapter);
-        $pagerfanta->setMaxPerPage($request->get('pcg_show' , 10));
+        $pagerfanta->setMaxPerPage($request->get('pcg_show', 10));
 
         try {
             $pagerfanta->setCurrentPage($request->get('pcg_page', 1));
         } catch (\Pagerfanta\Exception\OutOfRangeCurrentPageException $ex) {
             $pagerfanta->setCurrentPage(1);
         }
-        
+
         $entities = $pagerfanta->getCurrentPageResults();
 
         // Paginator - route generator
         $me = $this;
-        $routeGenerator = function($page) use ($me, $request)
-        {
+        $routeGenerator = function($page) use ($me, $request) {
             $requestParams = $request->query->all();
             $requestParams['pcg_page'] = $page;
             return $me->generateUrl('fotos', $requestParams);
@@ -127,12 +119,11 @@ class FotosController extends Controller
 
         return array($entities, $pagerHtml);
     }
-    
-    
-    
+
     /*
      * Calculates the total of records string
      */
+
     protected function getTotalOfRecordsString($queryBuilder, $request) {
         $totalOfRecords = $queryBuilder->select('COUNT(e.id)')->getQuery()->getSingleScalarResult();
         $show = $request->get('pcg_show', 10);
@@ -146,62 +137,66 @@ class FotosController extends Controller
         }
         return "Showing $startRecord - $endRecord of $totalOfRecords Records.";
     }
-    
-    
 
     /**
      * Displays a form to create a new Fotos entity.
      *
      */
-    public function newAction(Request $request)
-    {
-    
+    public function newAction(Request $request) {
+
         $foto = new Fotos();
-        $form   = $this->createForm('FotosBundle\Form\FotosType', $foto);
+        $form = $this->createForm('FotosBundle\Form\FotosType', $foto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-             $em = $this->getDoctrine()->getManager();
-             $id=$request->get('id');
-            $calidad=$em->getRepository("BackendBundle:Calidad")->find($id);
-           
-            $foto->setTipo("Calidad");
-            $foto->setCalidad($calidad);
-            $em->persist($foto);
-            $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->get('id');
+            $calidad = $em->getRepository("BackendBundle:Calidad")->find($id);
+            $file = $form['foto']->getData();
+
+// Sacamos la extensión del fichero
+            $ext = $file->guessExtension();
+            $fileName = time() . "." . $ext;
+
+// Le ponemos un nombre al fichero
+            if ($ext == 'img' or $ext == 'gif' or $ext == 'jpg' or $ext == 'png') {
+                $file->move("uploads/calidad", $fileName);
+                $foto->setTipo("Calidad");
+                $foto->setCalidad($calidad);
+                $foto->setFoto($fileName);
+                $em->persist($foto);
+                $em->flush();
+            } else {
+                $this->get('session')->getFlashBag()->add('warning', "Solo se pueden cargar archivos de imagen");
+            }
             $editLink = $this->generateUrl('fotos_edit', array('id' => $foto->getId()));
-            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New foto was created successfully.</a>" );
-            $nextAction=  $request->get('submit') == 'save' ? 'fotos' : 'fotos_new';
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New foto was created successfully.</a>");
+            $nextAction = $request->get('submit') == 'save' ? 'fotos' : 'fotos_new';
             return $this->redirectToRoute($nextAction);
         }
         return $this->render('FotosBundle:fotos:new.html.twig', array(
-            'foto' => $foto,
-            'form'   => $form->createView(),
+                    'foto' => $foto,
+                    'form' => $form->createView(),
         ));
     }
-    
 
     /**
      * Finds and displays a Fotos entity.
      *
      */
-    public function showAction(Fotos $foto)
-    {
+    public function showAction(Fotos $foto) {
         $deleteForm = $this->createDeleteForm($foto);
         return $this->render('FotosBundle:fotos:show.html.twig', array(
-            'foto' => $foto,
-            'delete_form' => $deleteForm->createView(),
+                    'foto' => $foto,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
-    
-    
 
     /**
      * Displays a form to edit an existing Fotos entity.
      *
      */
-    public function editAction(Request $request, Fotos $foto)
-    {
+    public function editAction(Request $request, Fotos $foto) {
         $deleteForm = $this->createDeleteForm($foto);
         $editForm = $this->createForm('FotosBundle\Form\FotosType', $foto);
         $editForm->handleRequest($request);
@@ -210,26 +205,23 @@ class FotosController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($foto);
             $em->flush();
-            
+
             $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
             return $this->redirectToRoute('fotos_edit', array('id' => $foto->getId()));
         }
         return $this->render('FotosBundle:fotos:edit.html.twig', array(
-            'foto' => $foto,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'foto' => $foto,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
-    
-    
 
     /**
      * Deletes a Fotos entity.
      *
      */
-    public function deleteAction(Request $request, Fotos $foto)
-    {
-    
+    public function deleteAction(Request $request, Fotos $foto) {
+
         $form = $this->createDeleteForm($foto);
         $form->handleRequest($request);
 
@@ -241,10 +233,10 @@ class FotosController extends Controller
         } else {
             $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Fotos');
         }
-        
+
         return $this->redirectToRoute('fotos');
     }
-    
+
     /**
      * Creates a form to delete a Fotos entity.
      *
@@ -252,22 +244,21 @@ class FotosController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Fotos $foto)
-    {
+    private function createDeleteForm(Fotos $foto) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('fotos_delete', array('id' => $foto->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
+                        ->setAction($this->generateUrl('fotos_delete', array('id' => $foto->getId())))
+                        ->setMethod('DELETE')
+                        ->getForm()
         ;
     }
-    
+
     /**
      * Delete Fotos by id
      *
      */
-    public function deleteByIdAction(Fotos $foto){
+    public function deleteByIdAction(Fotos $foto) {
         $em = $this->getDoctrine()->getManager();
-        
+
         try {
             $em->remove($foto);
             $em->flush();
@@ -277,15 +268,12 @@ class FotosController extends Controller
         }
 
         return $this->redirect($this->generateUrl('fotos'));
-
     }
-    
 
     /**
-    * Bulk Action
-    */
-    public function bulkAction(Request $request)
-    {
+     * Bulk Action
+     */
+    public function bulkAction(Request $request) {
         $ids = $request->get("ids", array());
         $action = $request->get("bulk_action", "delete");
 
@@ -301,7 +289,6 @@ class FotosController extends Controller
                 }
 
                 $this->get('session')->getFlashBag()->add('success', 'fotos was deleted successfully!');
-
             } catch (Exception $ex) {
                 $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the fotos ');
             }
@@ -309,6 +296,5 @@ class FotosController extends Controller
 
         return $this->redirect($this->generateUrl('fotos'));
     }
-    
 
 }

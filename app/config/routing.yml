@@ -1,3 +1,7 @@
+informes:
+    resource: "@InformesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 fotos:
     resource: "@FotosBundle/Resources/config/routing.yml"
     prefix:   /

@@ -689,4 +689,7 @@ class Lotes
     {
         return $this->ejecutivo;
     }
-}
+public function __toString(){
+        return $this->container;
+    }
+}  

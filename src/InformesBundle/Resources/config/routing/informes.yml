@@ -1,0 +1,42 @@
+informes:
+    path:  /informes
+    defaults: { _controller: "InformesBundle:Informes:index" }
+
+informes_show:
+    path:  /informes/{id}/show
+    defaults: { _controller: "InformesBundle:Informes:show" }
+
+informes_new:
+    path:  /informes/new
+    defaults: { _controller: "InformesBundle:Informes:new" }
+
+informes_create:
+    path:  /informes/create
+    defaults: { _controller: "InformesBundle:Informes:create" }
+    requirements: { _method: post }
+
+informes_edit:
+    path:  /informes/{id}/edit
+    defaults: { _controller: "InformesBundle:Informes:edit" }
+
+informes_update:
+    path:  /informes/{id}/update
+    defaults: { _controller: "InformesBundle:Informes:update" }
+    requirements: { _method: post|put }
+
+informes_delete:
+    path:  /informes/{id}/delete
+    defaults: { _controller: "InformesBundle:Informes:delete" }
+    requirements: { _method: post|delete }
+    
+informes_by_id_delete:
+    path:  /informes/delete/{id}
+    defaults: { _controller: "InformesBundle:Informes:deleteById" }
+    requirements: { _method: get }
+    
+
+informes_bulk_action:
+    path:  /informes/bulk-action
+    defaults: { _controller: "InformesBundle:Informes:bulk" }
+    requirements: { _method: post }
+    
