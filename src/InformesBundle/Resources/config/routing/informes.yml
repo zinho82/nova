@@ -1,6 +1,10 @@
 informes:
     path:  /informes
     defaults: { _controller: "InformesBundle:Informes:index" }
+informes_ver:
+    path:  /informes-view/{id}
+    defaults: { _controller: "InformesBundle:Informes:ver",'id':null }
+    methods: [get|post]
 
 informes_show:
     path:  /informes/{id}/show
