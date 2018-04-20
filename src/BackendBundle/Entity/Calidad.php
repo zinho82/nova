@@ -363,9 +363,24 @@ class Calidad
     private $contamination;
 
     /**
-     * @var \BackendBundle\Entity\General
+     * @var \DateTime
      */
-    private $idpallet;
+    private $inspectdate;
+
+    /**
+     * @var string
+     */
+    private $comments;
+
+    /**
+     * @var \BackendBundle\Entity\Lotes
+     */
+    private $lotes;
+
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
 
 
     /**
@@ -2056,64 +2071,6 @@ class Calidad
     public function getContamination()
     {
         return $this->contamination;
-    }
-
-    /**
-     * Set idpallet
-     *
-     * @param \BackendBundle\Entity\General $idpallet
-     *
-     * @return Calidad
-     */
-    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
-    {
-        $this->idpallet = $idpallet;
-
-        return $this;
-    }
-
-    /**
-     * Get idpallet
-     *
-     * @return \BackendBundle\Entity\General
-     */
-    public function getIdpallet()
-    {
-        return $this->idpallet;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $inspectdate;
-
-    /**
-     * @var string
-     */
-    private $comments;
-
-    /**
-     * @var \BackendBundle\Entity\Lotes
-     */
-    private $lotes;
-
-    /**
-     * @var \BackendBundle\Entity\Usuario
-     */
-    private $ejecutivo;
-
-
-    /**
-     * Set id
-     *
-     * @param integer $id
-     *
-     * @return Calidad
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     /**

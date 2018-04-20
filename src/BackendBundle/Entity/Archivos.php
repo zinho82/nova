@@ -30,7 +30,7 @@ class Archivos
     /**
      * @var \BackendBundle\Entity\Usuario
      */
-    private $usuario;
+    private $ejecutivo;
 
 
     /**
@@ -114,35 +114,6 @@ class Archivos
     {
         return $this->tipo;
     }
-
-    /**
-     * Set usuario
-     *
-     * @param \BackendBundle\Entity\Usuario $usuario
-     *
-     * @return Archivos
-     */
-    public function setUsuario(\BackendBundle\Entity\Usuario $usuario = null)
-    {
-        $this->usuario = $usuario;
-
-        return $this;
-    }
-
-    /**
-     * Get usuario
-     *
-     * @return \BackendBundle\Entity\Usuario
-     */
-    public function getUsuario()
-    {
-        return $this->usuario;
-    }
-    /**
-     * @var \BackendBundle\Entity\Usuario
-     */
-    private $ejecutivo;
-
 
     /**
      * Set ejecutivo

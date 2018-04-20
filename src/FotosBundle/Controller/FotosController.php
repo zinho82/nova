@@ -161,13 +161,16 @@ class FotosController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+             $em = $this->getDoctrine()->getManager();
+             $id=$request->get('id');
+            $calidad=$em->getRepository("BackendBundle:Calidad")->find($id);
+           
+            $foto->setTipo("Calidad");
+            $foto->setCalidad($calidad);
             $em->persist($foto);
             $em->flush();
-            
             $editLink = $this->generateUrl('fotos_edit', array('id' => $foto->getId()));
             $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New foto was created successfully.</a>" );
-            
             $nextAction=  $request->get('submit') == 'save' ? 'fotos' : 'fotos_new';
             return $this->redirectToRoute($nextAction);
         }

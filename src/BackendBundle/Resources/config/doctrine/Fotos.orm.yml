@@ -1,6 +1,10 @@
 BackendBundle\Entity\Fotos:
     type: entity
     table: fotos
+    indexes:
+        fk_fotos_calidad1_idx:
+            columns:
+                - calidad_id
     id:
         id:
             type: integer
@@ -11,11 +15,6 @@ BackendBundle\Entity\Fotos:
             generator:
                 strategy: IDENTITY
     fields:
-        idpallet:
-            type: integer
-            nullable: false
-            options:
-                unsigned: false
         foto:
             type: string
             nullable: true
@@ -28,4 +27,15 @@ BackendBundle\Entity\Fotos:
             length: 200
             options:
                 fixed: false
+    manyToOne:
+        calidad:
+            targetEntity: Calidad
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                calidad_id:
+                    referencedColumnName: id
+            orphanRemoval: false
     lifecycleCallbacks: {  }

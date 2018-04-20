@@ -15,6 +15,11 @@ class Condicion
     /**
      * @var integer
      */
+    private $palletNumber;
+
+    /**
+     * @var integer
+     */
     private $size;
 
     /**
@@ -78,10 +83,29 @@ class Condicion
     private $endInspect;
 
     /**
-     * @var \BackendBundle\Entity\General
+     * @var \BackendBundle\Entity\Lotes
      */
-    private $palletNumber;
+    private $lotes;
 
+    /**
+     * @var \BackendBundle\Entity\Usuario
+     */
+    private $ejecutivo;
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Condicion
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -91,6 +115,30 @@ class Condicion
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set palletNumber
+     *
+     * @param integer $palletNumber
+     *
+     * @return Condicion
+     */
+    public function setPalletNumber($palletNumber)
+    {
+        $this->palletNumber = $palletNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get palletNumber
+     *
+     * @return integer
+     */
+    public function getPalletNumber()
+    {
+        return $this->palletNumber;
     }
 
     /**
@@ -403,54 +451,6 @@ class Condicion
     public function getEndInspect()
     {
         return $this->endInspect;
-    }
-
-    /**
-     * Set palletNumber
-     *
-     * @param \BackendBundle\Entity\General $palletNumber
-     *
-     * @return Condicion
-     */
-    public function setPalletNumber(\BackendBundle\Entity\General $palletNumber = null)
-    {
-        $this->palletNumber = $palletNumber;
-
-        return $this;
-    }
-
-    /**
-     * Get palletNumber
-     *
-     * @return \BackendBundle\Entity\General
-     */
-    public function getPalletNumber()
-    {
-        return $this->palletNumber;
-    }
-    /**
-     * @var \BackendBundle\Entity\Lotes
-     */
-    private $lotes;
-
-    /**
-     * @var \BackendBundle\Entity\Usuario
-     */
-    private $ejecutivo;
-
-
-    /**
-     * Set id
-     *
-     * @param integer $id
-     *
-     * @return Condicion
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     /**

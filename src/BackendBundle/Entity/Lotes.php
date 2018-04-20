@@ -28,7 +28,7 @@ class Lotes
     private $templateNumber;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $packingDate;
 
@@ -110,7 +110,17 @@ class Lotes
     /**
      * @var string
      */
+    private $pod;
+
+    /**
+     * @var string
+     */
     private $eta;
+
+    /**
+     * @var \DateTime
+     */
+    private $fechaCarga;
 
     /**
      * @var \BackendBundle\Entity\Usuario
@@ -203,7 +213,7 @@ class Lotes
     /**
      * Set packingDate
      *
-     * @param \DateTime $packingDate
+     * @param string $packingDate
      *
      * @return Lotes
      */
@@ -217,7 +227,7 @@ class Lotes
     /**
      * Get packingDate
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPackingDate()
     {
@@ -585,64 +595,6 @@ class Lotes
     }
 
     /**
-     * Set eta
-     *
-     * @param string $eta
-     *
-     * @return Lotes
-     */
-    public function setEta($eta)
-    {
-        $this->eta = $eta;
-
-        return $this;
-    }
-
-    /**
-     * Get eta
-     *
-     * @return string
-     */
-    public function getEta()
-    {
-        return $this->eta;
-    }
-
-    /**
-     * Set ejecutivo
-     *
-     * @param \BackendBundle\Entity\Usuario $ejecutivo
-     *
-     * @return Lotes
-     */
-    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
-    {
-        $this->ejecutivo = $ejecutivo;
-
-        return $this;
-    }
-
-    /**
-     * Get ejecutivo
-     *
-     * @return \BackendBundle\Entity\Usuario
-     */
-    public function getEjecutivo()
-    {
-        return $this->ejecutivo;
-    }
-    /**
-     * @var string
-     */
-    private $pod;
-
-    /**
-     * @var \DateTime
-     */
-    private $fechaCarga;
-
-
-    /**
      * Set pod
      *
      * @param string $pod
@@ -664,6 +616,30 @@ class Lotes
     public function getPod()
     {
         return $this->pod;
+    }
+
+    /**
+     * Set eta
+     *
+     * @param string $eta
+     *
+     * @return Lotes
+     */
+    public function setEta($eta)
+    {
+        $this->eta = $eta;
+
+        return $this;
+    }
+
+    /**
+     * Get eta
+     *
+     * @return string
+     */
+    public function getEta()
+    {
+        return $this->eta;
     }
 
     /**
@@ -689,8 +665,28 @@ class Lotes
     {
         return $this->fechaCarga;
     }
-    public function __toString() {
-        return $this->numberPallets;
-        
+
+    /**
+     * Set ejecutivo
+     *
+     * @param \BackendBundle\Entity\Usuario $ejecutivo
+     *
+     * @return Lotes
+     */
+    public function setEjecutivo(\BackendBundle\Entity\Usuario $ejecutivo = null)
+    {
+        $this->ejecutivo = $ejecutivo;
+
+        return $this;
+    }
+
+    /**
+     * Get ejecutivo
+     *
+     * @return \BackendBundle\Entity\Usuario
+     */
+    public function getEjecutivo()
+    {
+        return $this->ejecutivo;
     }
 }

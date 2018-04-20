@@ -13,6 +13,11 @@ class Fotos
     private $id;
 
     /**
+     * @var integer
+     */
+    private $idpallet;
+
+    /**
      * @var string
      */
     private $foto;
@@ -21,11 +26,6 @@ class Fotos
      * @var string
      */
     private $tipo;
-
-    /**
-     * @var \BackendBundle\Entity\General
-     */
-    private $idpallet;
 
 
     /**
@@ -36,6 +36,30 @@ class Fotos
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set idpallet
+     *
+     * @param integer $idpallet
+     *
+     * @return Fotos
+     */
+    public function setIdpallet($idpallet)
+    {
+        $this->idpallet = $idpallet;
+
+        return $this;
+    }
+
+    /**
+     * Get idpallet
+     *
+     * @return integer
+     */
+    public function getIdpallet()
+    {
+        return $this->idpallet;
     }
 
     /**
@@ -85,28 +109,33 @@ class Fotos
     {
         return $this->tipo;
     }
+    /**
+     * @var \BackendBundle\Entity\Calidad
+     */
+    private $calidad;
+
 
     /**
-     * Set idpallet
+     * Set calidad
      *
-     * @param \BackendBundle\Entity\General $idpallet
+     * @param \BackendBundle\Entity\Calidad $calidad
      *
      * @return Fotos
      */
-    public function setIdpallet(\BackendBundle\Entity\General $idpallet = null)
+    public function setCalidad(\BackendBundle\Entity\Calidad $calidad = null)
     {
-        $this->idpallet = $idpallet;
+        $this->calidad = $calidad;
 
         return $this;
     }
 
     /**
-     * Get idpallet
+     * Get calidad
      *
-     * @return \BackendBundle\Entity\General
+     * @return \BackendBundle\Entity\Calidad
      */
-    public function getIdpallet()
+    public function getCalidad()
     {
-        return $this->idpallet;
+        return $this->calidad;
     }
 }
