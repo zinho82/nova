@@ -6,6 +6,7 @@
 
 {% block content %}
     {{dump(lotes)}}
+    {% for lote in lotes %}
     <div class="col-md-12 col-sm-12 col-lg-12">
         <div class="row">
         <div class="col-lg-6 col-sm-6 col-md-6">
@@ -16,7 +17,7 @@
                 </tr>
                 <tr>
                     <td>Inspection Date/Time</td>
-                    <td></td>
+                    <td>{{lote.inspectdate|date('Y-m-d g:i')}}</td>
                 </tr>
                 <tr>
                     <td>Inspection Plan Name</td>
@@ -28,11 +29,11 @@
                 </tr>
                 <tr>
                     <td>Commodity Name</td>
-                    <td></td>
+                    <td>{{lote.comoditty}}</td>
                 </tr>
                 <tr>
                     <td>Variety</td>
-                    <td></td>
+                    <td>{{lote.variety}}</td>
                 </tr>
                 <tr>
                     <td>Product Pack Style</td>
@@ -40,7 +41,7 @@
                 </tr>
                 <tr>
                     <td>Label</td>
-                    <td></td>
+                    <td>{{lote.label}}</td>
                 </tr>
                 <tr>
                     <td>Cases Type</td>
@@ -56,15 +57,15 @@
             <table class="table table-bordered table-responsive table-hover">
                 <tr>
                     <td>Grower</td>
-                    <td></td>
+                    <td>{{lote.growers_name}}</td>
                 </tr>
                 <tr>
                     <td>Size</td>
-                    <td></td>
+                    <td>{{lote.size}}</td>
                 </tr>
                 <tr>
                     <td>Packing date</td>
-                    <td></td>
+                    <td>{{lote.Packing_Date}}</td>
                 </tr>
                 <tr>
                     <td>Cases Net Weight</td>
@@ -72,7 +73,7 @@
                 </tr>
                 <tr>
                     <td>Bar Code/PLU </td>
-                    <td></td>
+                    <td>{{lote.bar_code_plu}}</td>
                 </tr>
                 <tr>
                     <td>Costumer</td>
@@ -84,11 +85,11 @@
                 </tr>
                 <tr>
                     <td>Lot</td>
-                    <td></td>
+                    <td>{{lote.container}}</td>
                 </tr>
                 <tr>
                     <td>Vessel</td>
-                    <td></td>
+                    <td>{{lote.vessel}}</td>
                 </tr>
                 <tr>
                     <td>Container</td>
@@ -102,10 +103,11 @@
                 <tr><td>THIER</td></tr>
                 <tr><td></td></tr>
                 <tr><td>Comments</td></tr>
-                <tr><td></td></tr>
+                <tr><td>{{lote.comments|raw}}</td></tr>
                 <tr><td>Recommendation</td></tr>
                 <tr><td></td></tr>
             </table>
         </div>
     </div>
+                    {% endfor %}
 {% endblock %}
