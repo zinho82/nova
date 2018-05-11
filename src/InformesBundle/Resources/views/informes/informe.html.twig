@@ -7,107 +7,106 @@
 {% block content %}
     {{dump(lotes)}}
     {% for lote in lotes %}
-    <div class="col-md-12 col-sm-12 col-lg-12">
-        <div class="row">
-        <div class="col-lg-6 col-sm-6 col-md-6">
-            <table class="table table-bordered table-responsive table-hover">
-                <tr>
-                    <td>Inspector Name</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Inspection Date/Time</td>
-                    <td>{{lote.inspectdate|date('Y-m-d g:i')}}</td>
-                </tr>
-                <tr>
-                    <td>Inspection Plan Name</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Country of Origin</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Commodity Name</td>
-                    <td>{{lote.comoditty}}</td>
-                </tr>
-                <tr>
-                    <td>Variety</td>
-                    <td>{{lote.variety}}</td>
-                </tr>
-                <tr>
-                    <td>Product Pack Style</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Label</td>
-                    <td>{{lote.label}}</td>
-                </tr>
-                <tr>
-                    <td>Cases Type</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Cases Per Pallet</td>
-                    <td></td>
-                </tr>
-            </table>
+        <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <table class="table table-bordered table-responsive table-hover">
+                        <tr>
+                            <td>Inspector Name</td>
+                            <td>{{lote.nombre}} {{lote.app}}</td>
+                        </tr>
+                        <tr>
+                            <td>Inspection Date/Time</td>
+                            <td>{{lote.inspectdate|date('Y-m-d g:i')}}</td>
+                        </tr>
+                        <tr>
+                            <td>Inspection Plan Name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Country of Origin</td>
+                            <td>{{lote.pol}}</td>
+                        </tr>
+                        <tr>
+                            <td>Commodity Name</td>
+                            <td>{{lote.comoditty}}</td>
+                        </tr>
+                        <tr>
+                            <td>Variety</td>
+                            <td>{{lote.variety}}</td>
+                        </tr>
+                        <tr>
+                            <td>Product Pack Style</td>
+                            <td>{{lote.pack}}</td>
+                        </tr>
+                        <tr>
+                            <td>Label</td>
+                            <td>{{lote.label}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cases Type</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cases Per Pallet</td>
+                            <td>{{lote.num_boxes}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <table class="table table-bordered table-responsive table-hover">
+                        <tr>
+                            <td>Grower</td>
+                            <td>{{lote.growers_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>{{lote.size}}</td>
+                        </tr>
+                        <tr>
+                            <td>Packing date</td>
+                            <td>{{lote.Packing_Date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cases Net Weight</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Bar Code/PLU </td>
+                            <td>{{lote.bar_code_plu}}</td>
+                        </tr>
+                        <tr>
+                            <td>Costumer</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Shipper</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Lot</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vessel</td>
+                            <td>{{lote.vessel}}</td>
+                        </tr>
+                        <tr>
+                            <td>Container</td>
+                            <td>{{lote.container}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-hover table-responsive">
+                    <tr><td>THIER</td></tr>
+                    <tr><td></td></tr>
+                    <tr><td>Comments</td></tr>
+                    <tr><td>{{lote.comments|raw}}</td></tr>
+                    <tr><td>Recommendation</td></tr>
+                    <tr><td></td></tr>
+                </table>        </div>
         </div>
-        <div class="col-lg-6 col-sm-6 col-md-6">
-            <table class="table table-bordered table-responsive table-hover">
-                <tr>
-                    <td>Grower</td>
-                    <td>{{lote.growers_name}}</td>
-                </tr>
-                <tr>
-                    <td>Size</td>
-                    <td>{{lote.size}}</td>
-                </tr>
-                <tr>
-                    <td>Packing date</td>
-                    <td>{{lote.Packing_Date}}</td>
-                </tr>
-                <tr>
-                    <td>Cases Net Weight</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Bar Code/PLU </td>
-                    <td>{{lote.bar_code_plu}}</td>
-                </tr>
-                <tr>
-                    <td>Costumer</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Shipper</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Lot</td>
-                    <td>{{lote.container}}</td>
-                </tr>
-                <tr>
-                    <td>Vessel</td>
-                    <td>{{lote.vessel}}</td>
-                </tr>
-                <tr>
-                    <td>Container</td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        </div>
-        <div class="row">
-            <table class="table table-hover table-responsive">
-                <tr><td>THIER</td></tr>
-                <tr><td></td></tr>
-                <tr><td>Comments</td></tr>
-                <tr><td>{{lote.comments|raw}}</td></tr>
-                <tr><td>Recommendation</td></tr>
-                <tr><td></td></tr>
-            </table>
-        </div>
-    </div>
-                    {% endfor %}
+    {% endfor %}
 {% endblock %}
