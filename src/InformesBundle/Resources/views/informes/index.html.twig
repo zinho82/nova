@@ -9,6 +9,7 @@
     {{dump(lotes)}}
     <table class="table table-hover">
         <thead>
+        <th>id</th>
         <th>Container</th>
         <th>Number Pallet</th>
         <th>Comoditty</th>
@@ -23,6 +24,7 @@
             {% for lote in lotes %}
                 {{dump(lote)}}
                 <tr>
+                    <td>{{lote.id}}</td>
                     <td>{{lote.container}}</td>
                     <td>{{lote.number_Pallets}}</td>
                     <td>{{lote.comoditty}}</td>
