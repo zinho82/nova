@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use BackendBundle\Entity\Calidad;
 class InformesController extends Controller
 {
-    public function indexAction()
+    public function indexAction() 
     {
         $em=  $this->getDoctrine()->getManager();
         $lotes = "select * from lotes l 

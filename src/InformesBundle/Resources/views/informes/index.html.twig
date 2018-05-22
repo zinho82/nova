@@ -6,7 +6,6 @@
 
 {% block content %}
 <div class="col-md-12 col-sm-12 col-lg-12">
-    {{dump(lotes)}}
     <table class="table table-hover">
         <thead>
         <th>id</th>
@@ -22,9 +21,8 @@
         </thead>
         <tbody>
             {% for lote in lotes %}
-                {{dump(lote)}}
                 <tr>
-                    <td>{{lote.id}}</td>
+                    <td>{{lote.id}}</td> 
                     <td>{{lote.container}}</td>
                     <td>{{lote.number_Pallets}}</td>
                     <td>{{lote.comoditty}}</td>
