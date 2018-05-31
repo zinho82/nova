@@ -5,8 +5,9 @@
 {% endblock %}
 
 {% block content %}
+    {{dump(lotes)}}
     <div class="logoinforme"><center> <img src="{{asset('assets/images/Logo.png')}}" width="300"/></center></div>
-    {% for lote in lotes %}
+            {% for lote in lotes %}
         <div class="col-md-12 col-sm-12 col-lg-12">
             <div class="row">
                 <div class="col-lg-6 col-sm-6 col-md-6">
@@ -108,5 +109,59 @@
                     <tr><td></td></tr>
                 </table>        </div>
         </div>
+        <div class="row">
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <tr><td>QUALITY</td></tr>
+                    <tr>
+                        <th>Grower Code</th>
+                        <th>Undersize</th>
+                        <th>Russet</th>	
+                        <th>Mechanical Damage</th>	
+                        <th>Lack of Degreening</th>	
+                        <th>Color Pale</th>
+                        <th>Fruit with Seeds</th>		
+                        <th>Calix Brown/Black</th>	
+                        <th>Skin Defect Severe</th>	
+                        <th>Skin Defect Moderate</th>
+                        <th>Misshapen Fruit</th>
+                        <th> Resumme</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{lote.grower_code}}</td>
+                        <td>{{lote.undersize}}</td>
+                        <td>{{lote.russet}}</td>	
+                        <td>{{lote.mechanical_damage}}</td>	
+                        <td>{{lote.lack_of_degreening}}</td>	
+                        <td>{{lote.color_pale}}</td>
+                        <td>{{lote.fruit_with_seeds}}</td>		
+                        <td>{{lote.calix_brown_black}}</td>	
+                        <td>{{lote.skin_defect_severe}}</td>	
+                        <td>{{lote.skin_defect_moderate}}</td>
+                        <td>{{lote.misshapen_fruit}}</td>
+                        <td>
+                            {{
+                        lote.undersize+
+                        lote.russet+	
+                        lote.mechanical_damage+
+                        lote.lack_of_degreening+	
+                        lote.color_pale+
+                        lote.fruit_with_seeds+	
+                        lote.calix_brown_black+
+                        lote.skin_defect_severe+	
+                        lote.skin_defect_moderate+
+                        lote.misshapen_fruit
+                            }}
+
+
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>        </div>
     {% endfor %}
 {% endblock %}
