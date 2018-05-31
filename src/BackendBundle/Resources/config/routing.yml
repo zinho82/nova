@@ -1,6 +1,4 @@
-backend_calidad:
-    resource: "@BackendBundle/Resources/config/routing/calidad.yml"
-    prefix:   /calidad
+
 
 backend_homepage:
     path:     /

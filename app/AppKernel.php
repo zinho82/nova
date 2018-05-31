@@ -27,6 +27,7 @@ class AppKernel extends Kernel {
             new FotosBundle\FotosBundle(),
             new InformesBundle\InformesBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new CalificacionBundle\CalificacionBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

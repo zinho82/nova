@@ -1,0 +1,42 @@
+condicion:
+    path:  /condicion
+    defaults: { _controller: "CalificacionBundle:Condicion:index" }
+
+condicion_show:
+    path:  /condicion/{id}/show
+    defaults: { _controller: "CalificacionBundle:Condicion:show" }
+
+condicion_new:
+    path:  /condicion/new
+    defaults: { _controller: "CalificacionBundle:Condicion:new" }
+
+condicion_create:
+    path:  /condicion/create
+    defaults: { _controller: "CalificacionBundle:Condicion:create" }
+    requirements: { _method: post }
+
+condicion_edit:
+    path:  /condicion/{id}/edit
+    defaults: { _controller: "CalificacionBundle:Condicion:edit" }
+
+condicion_update:
+    path:  /condicion/{id}/update
+    defaults: { _controller: "CalificacionBundle:Condicion:update" }
+    requirements: { _method: post|put }
+
+condicion_delete:
+    path:  /condicion/{id}/delete
+    defaults: { _controller: "CalificacionBundle:Condicion:delete" }
+    requirements: { _method: post|delete }
+    
+condicion_by_id_delete:
+    path:  /condicion/delete/{id}
+    defaults: { _controller: "CalificacionBundle:Condicion:deleteById" }
+    requirements: { _method: get }
+    
+
+condicion_bulk_action:
+    path:  /condicion/bulk-action
+    defaults: { _controller: "CalificacionBundle:Condicion:bulk" }
+    requirements: { _method: post }
+    
