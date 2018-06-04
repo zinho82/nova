@@ -22,9 +22,10 @@ group by l.container,l.number_Pallets";
     public function verAction(Request $request,$id=null)
     {
         $em=  $this->getDoctrine()->getManager();
-        $lotes = "select * from lotes l "
+         $lotes = "select * from lotes l "
                 . "inner join calidad c on c.lotes_id=l.id and  c.id=$id  "
                 . "inner join usuario usr on usr.id=c.ejecutivo "
+                . "inner join condicion co on co.lotes_id=l.id "
                 . " group by l.container,l.number_Pallets"; 
         $stmt = $em->getConnection()->prepare($lotes);
         $stmt->execute();
