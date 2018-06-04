@@ -108,5 +108,134 @@
                     <tr><td></td></tr>
                 </table>        </div>
         </div>
+        <div class="row">
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <tr><td>QUALITY</td></tr>
+                    <tr>
+                        <th>Grower Code</th>
+                        <th>Undersize</th>
+                        <th>Russet</th>	
+                        <th>Mechanical Damage</th>	
+                        <th>Lack of Degreening</th>	
+                        <th>Color Pale</th>
+                        <th>Fruit with Seeds</th>		
+                        <th>Calix Brown/Black</th>	
+                        <th>Skin Defect Severe</th>	
+                        <th>Skin Defect Moderate</th>
+                        <th>Misshapen Fruit</th>
+                        <th> Resumme</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{lote.grower_code}}</td>
+                        <td>{{lote.undersize}}</td>
+                        <td>{{lote.russet}}</td>	
+                        <td>{{lote.mechanical_damage}}</td>	
+                        <td>{{lote.lack_of_degreening}}</td>	
+                        <td>{{lote.color_pale}}</td>
+                        <td>{{lote.fruit_with_seeds}}</td>		
+                        <td>{{lote.calix_brown_black}}</td>	
+                        <td>{{lote.skin_defect_severe}}</td>	
+                        <td>{{lote.skin_defect_moderate}}</td>
+                        <td>{{lote.misshapen_fruit}}</td>
+                        <td>
+                            {{
+                        lote.undersize+
+                        lote.russet+	
+                        lote.mechanical_damage+
+                        lote.lack_of_degreening+	
+                        lote.color_pale+
+                        lote.fruit_with_seeds+	
+                        lote.calix_brown_black+
+                        lote.skin_defect_severe+	
+                        lote.skin_defect_moderate+
+                        lote.misshapen_fruit
+                            }}
+
+
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>        </div>
+        <div class="row">
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <tr><td>Condition</td></tr>
+                    <tr>
+                        <th>Grower Code</th>
+                        <th>Sunburn</th>
+                        <th>Decay</th>	
+                        <th>Mold</th>	
+                        <th>Creasinng</th>
+                        <th>Oleacellosis Ligth</th>		
+                        <th>Oleacellosis Moderate</th>	
+                        <th>Oleacellosis Severe</th>	
+                        <th>Dehydrated</th>
+                        <th>Misshapen Fruit</th>
+                        <th>Skin Breakdown</th>
+                        <th>Soft</th>
+                        <th>Puffines</th>
+                        <th>Spot Fumigation Damage</th>
+                        <th>Internal Condition</th>
+                        <th>Granulation</th>
+                        <th>Dry Cells</th>
+                        <th>Brix</th>
+                        <th> Resumme</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{lote.grower_code}}</td>
+                        <td>{{lote.sun_burn}}</td>
+                        <td>{{lote.decay}}</td>	
+                        <td>{{lote.mold}}</td>	
+                        <td>{{lote.creasing}}</td>
+                        <td>{{lote.oleacellosis_ligth}}</td>		
+                        <td>{{lote.oceallosis_moderate}}</td>	
+                        <td>{{lote.oleacellosis_severe}}</td>	
+                        <td>{{lote.dehydrated}}</td>
+                        <td>{{lote.miss_hapen_fruit}}</td>
+                        <td>{{lote.skin_breakdown}}</td>
+                        <td>{{lote.soft}}</td>
+                        <td>{{lote.puffiness}}</td>
+                        <td>{{lote.spot_fumigation_damage}}</td>
+                        <td>{{lote.internal_condition}}</td>
+                        <td>{{lote.granulation}}</td>
+                        <td>{{lote.dry_cells}}</td>
+                        <td>{{lote.brix}}</td>
+                        <td>
+                            {{
+                        lote.sun_burn+
+                        lote.decay+
+                        lote.mold+
+                        lote.creasing+
+                        lote.oleacellosis_ligth+	
+                        lote.oceallosis_moderate+
+                        lote.oleacellosis_severe+
+                        lote.dehydrated+
+                        lote.miss_hapen_fruit+
+                        lote.skin_breakdown+
+                        lote.soft+
+                        lote.puffiness+
+                        lote.spot_fumigation_damage+
+                        lote.internal_condition+
+                        lote.granulation+
+                        lote.dry_cells+
+                        lote.brix
+                            }}
+
+
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>        </div>
     {% endfor %}
 {% endblock %}
