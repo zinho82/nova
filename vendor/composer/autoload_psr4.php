@@ -32,6 +32,7 @@ return array(
     'Petkopara\\CrudGeneratorBundle\\' => array($vendorDir . '/petkopara/crud-generator-bundle'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Lexik\\Bundle\\FormFilterBundle\\' => array($vendorDir . '/lexik/form-filter-bundle'),
+    'Knp\\Bundle\\SnappyBundle\\' => array($vendorDir . '/knplabs/knp-snappy-bundle'),
     'Knp\\Bundle\\PaginatorBundle\\' => array($vendorDir . '/knplabs/knp-paginator-bundle'),
     'Ivory\\JsonBuilder\\' => array($vendorDir . '/egeloen/json-builder/src'),
     'Ivory\\CKEditorBundle\\' => array($vendorDir . '/egeloen/ckeditor-bundle'),
