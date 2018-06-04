@@ -15,6 +15,8 @@ BackendBundle\Entity\Condicion:
             options:
                 unsigned: false
             id: true
+            generator:
+                strategy: IDENTITY
     fields:
         palletNumber:
             type: integer
@@ -89,6 +91,94 @@ BackendBundle\Entity\Condicion:
             type: datetime
             nullable: true
             column: end_inspect
+        missHapenFruit:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: miss_hapen_fruit
+        creasing:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        oleacellosisLigth:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: oleacellosis_ligth
+        oceallosisModerate:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: oceallosis_moderate
+        oleacellosisSevere:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: oleacellosis_severe
+        sunburn:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        dehydrated:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        skinBreakdown:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: skin_breakdown
+        soft:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        puffiness:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        spotFumigationDamage:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: spot_fumigation_damage
+        internalCondition:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: internal_condition
+        granulation:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        dryCells:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: dry_cells
+        brix:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        sumconditiondefects:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
     oneToOne:
         lotes:
             targetEntity: Lotes

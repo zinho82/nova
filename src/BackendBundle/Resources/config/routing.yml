@@ -1,3 +1,7 @@
+backend_condicion:
+    resource: "@BackendBundle/Resources/config/routing/condicion.yml"
+    prefix:   /condicion
+
 
 
 backend_homepage:
