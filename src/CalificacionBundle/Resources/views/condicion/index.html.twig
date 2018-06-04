@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-lg-12 col-sm-12 col-md-12">
+<div class="col-lg-12 col-md-12 col-sm-12">
 
 <div class="row">
     <div class="col-md-12">
@@ -64,6 +64,54 @@
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.endInspect) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.missHapenFruit) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.creasing) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.oleacellosisLigth) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.oceallosisModerate) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.oleacellosisSevere) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.sunburn) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.dehydrated) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.skinBreakdown) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.soft) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.puffiness) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.spotFumigationDamage) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.internalCondition) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.granulation) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.dryCells) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.brix) }}</div>
+
+                 
+                    <div class="col-md-6">{{ form_row(filterForm.sumconditiondefects) }}</div>
 
                                 <div class="col-md-6">
                     {{ form_rest(filterForm) }}
@@ -168,6 +216,22 @@
                             <th>{{macros.th_sortable('bruising',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
                             <th>{{macros.th_sortable('initInspect',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
                             <th>{{macros.th_sortable('endInspect',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('missHapenFruit',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('creasing',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('oleacellosisLigth',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('oceallosisModerate',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('oleacellosisSevere',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('sunburn',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('dehydrated',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('skinBreakdown',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('soft',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('puffiness',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('spotFumigationDamage',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('internalCondition',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('granulation',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('dryCells',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('brix',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
+                            <th>{{macros.th_sortable('sumconditiondefects',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'condicion')}}</th>
     
                        
                         <th width = "130px">List</th>
@@ -192,6 +256,22 @@
                         <td>{{ condicion.bruising }}</td>
                         <td>{%- if condicion.initInspect %}{{ condicion.initInspect|date('Y-m-d H:i:s') }}{% endif %}</td>
                         <td>{%- if condicion.endInspect %}{{ condicion.endInspect|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ condicion.missHapenFruit }}</td>
+                        <td>{{ condicion.creasing }}</td>
+                        <td>{{ condicion.oleacellosisLigth }}</td>
+                        <td>{{ condicion.oceallosisModerate }}</td>
+                        <td>{{ condicion.oleacellosisSevere }}</td>
+                        <td>{{ condicion.sunburn }}</td>
+                        <td>{{ condicion.dehydrated }}</td>
+                        <td>{{ condicion.skinBreakdown }}</td>
+                        <td>{{ condicion.soft }}</td>
+                        <td>{{ condicion.puffiness }}</td>
+                        <td>{{ condicion.spotFumigationDamage }}</td>
+                        <td>{{ condicion.internalCondition }}</td>
+                        <td>{{ condicion.granulation }}</td>
+                        <td>{{ condicion.dryCells }}</td>
+                        <td>{{ condicion.brix }}</td>
+                        <td>{{ condicion.sumconditiondefects }}</td>
     
                         <td class="actions">
                             <a  onclick="return confirm('Are you sure!');" title="Delete" class="btn btn-danger btn-sm" href="{{ path('condicion_by_id_delete', { 'id': condicion.id}) }}">
@@ -239,6 +319,7 @@
 </div> <!-- /#bottom -->
 
 
+        </div>
 
 {% endblock %}
 

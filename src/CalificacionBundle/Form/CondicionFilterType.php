@@ -29,6 +29,22 @@ class CondicionFilterType extends AbstractType
             ->add('bruising', Filters\NumberFilterType::class)
             ->add('initInspect', Filters\DateTimeFilterType::class)
             ->add('endInspect', Filters\DateTimeFilterType::class)
+            ->add('missHapenFruit', Filters\NumberFilterType::class)
+            ->add('creasing', Filters\NumberFilterType::class)
+            ->add('oleacellosisLigth', Filters\NumberFilterType::class)
+            ->add('oceallosisModerate', Filters\NumberFilterType::class)
+            ->add('oleacellosisSevere', Filters\NumberFilterType::class)
+            ->add('sunburn', Filters\NumberFilterType::class)
+            ->add('dehydrated', Filters\NumberFilterType::class)
+            ->add('skinBreakdown', Filters\NumberFilterType::class)
+            ->add('soft', Filters\NumberFilterType::class)
+            ->add('puffiness', Filters\NumberFilterType::class)
+            ->add('spotFumigationDamage', Filters\NumberFilterType::class)
+            ->add('internalCondition', Filters\NumberFilterType::class)
+            ->add('granulation', Filters\NumberFilterType::class)
+            ->add('dryCells', Filters\NumberFilterType::class)
+            ->add('brix', Filters\NumberFilterType::class)
+            ->add('sumconditiondefects', Filters\NumberFilterType::class)
         
             ->add('lotes', Filters\EntityFilterType::class, array(
                     'class' => 'BackendBundle\Entity\Lotes',

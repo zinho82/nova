@@ -1,42 +1,45 @@
 condicion:
-    path:  /condicion
+    path:  /condition
     defaults: { _controller: "CalificacionBundle:Condicion:index" }
 
 condicion_show:
-    path:  /condicion/{id}/show
+    path:  /condition/{id}/show
     defaults: { _controller: "CalificacionBundle:Condicion:show" }
 
 condicion_new:
-    path:  /condicion/new
-    defaults: { _controller: "CalificacionBundle:Condicion:new" }
-
+    path:  /condition/new/{id}/{fruta}
+    defaults: { _controller: "CalificacionBundle:Condicion:new",id:null,fruta:null }
+    methods: [get|post]
+#condicion_new:
+#    path:  /condition/new
+#    defaults: { _controller: "CalificacionBundle:Condicion:new" }
 condicion_create:
-    path:  /condicion/create
+    path:  /condition/create
     defaults: { _controller: "CalificacionBundle:Condicion:create" }
     requirements: { _method: post }
 
 condicion_edit:
-    path:  /condicion/{id}/edit
+    path:  /condition/{id}/edit
     defaults: { _controller: "CalificacionBundle:Condicion:edit" }
 
 condicion_update:
-    path:  /condicion/{id}/update
+    path:  /condition/{id}/update
     defaults: { _controller: "CalificacionBundle:Condicion:update" }
     requirements: { _method: post|put }
 
 condicion_delete:
-    path:  /condicion/{id}/delete
+    path:  /condition/{id}/delete
     defaults: { _controller: "CalificacionBundle:Condicion:delete" }
     requirements: { _method: post|delete }
     
 condicion_by_id_delete:
-    path:  /condicion/delete/{id}
+    path:  /condition/delete/{id}
     defaults: { _controller: "CalificacionBundle:Condicion:deleteById" }
     requirements: { _method: get }
     
 
 condicion_bulk_action:
-    path:  /condicion/bulk-action
+    path:  /condition/bulk-action
     defaults: { _controller: "CalificacionBundle:Condicion:bulk" }
     requirements: { _method: post }
     

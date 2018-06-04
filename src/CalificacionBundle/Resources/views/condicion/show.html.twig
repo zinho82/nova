@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-lg-12 col-sm-12 col-md-12">
+<div class="col-lg-12 col-md-12 col-sm-12">
 <div id="top" class="row">
     <div class="page-header">
         <h2>View condicion <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </h2>
@@ -117,6 +117,118 @@
             {% if condicion.endInspect %}{{ condicion.endInspect|date('Y-m-d H:i:s') }}{% endif %}
         </p>
 
+    </div>
+    <div class="col-md-6">
+        <p><strong>Misshapenfruit</strong></p>
+        <p>
+            {{ condicion.missHapenFruit }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Creasing</strong></p>
+        <p>
+            {{ condicion.creasing }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Oleacellosisligth</strong></p>
+        <p>
+            {{ condicion.oleacellosisLigth }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Oceallosismoderate</strong></p>
+        <p>
+            {{ condicion.oceallosisModerate }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Oleacellosissevere</strong></p>
+        <p>
+            {{ condicion.oleacellosisSevere }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Sunburn</strong></p>
+        <p>
+            {{ condicion.sunburn }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Dehydrated</strong></p>
+        <p>
+            {{ condicion.dehydrated }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Skinbreakdown</strong></p>
+        <p>
+            {{ condicion.skinBreakdown }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Soft</strong></p>
+        <p>
+            {{ condicion.soft }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Puffiness</strong></p>
+        <p>
+            {{ condicion.puffiness }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Spotfumigationdamage</strong></p>
+        <p>
+            {{ condicion.spotFumigationDamage }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Internalcondition</strong></p>
+        <p>
+            {{ condicion.internalCondition }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Granulation</strong></p>
+        <p>
+            {{ condicion.granulation }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Drycells</strong></p>
+        <p>
+            {{ condicion.dryCells }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Brix</strong></p>
+        <p>
+            {{ condicion.brix }}
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <p><strong>Sumconditiondefects</strong></p>
+        <p>
+            {{ condicion.sumconditiondefects }}
+        </p>
+
     </div></div>
 
 <hr/>
@@ -145,6 +257,8 @@
     </form>
 </div>
 
+
 </div>
+
 {% endblock %}
 
